@@ -1,15 +1,19 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
-import {Progress} from "antd";
+import {Col, Divider, Progress, Row} from "antd";
+import image from './assets/salzsammler-logo.png';
 
 function App() {
-  return (
-    <div className="App">
-      <h3>This website is currently under construction.</h3>
-      <Progress percent={10} status={"active"}/>
-    </div>
-  );
+    return (
+        <div className="App">
+            <Row>
+                <Col>
+                    <img src={image} height={500}/>
+                </Col>
+            </Row>
+        </div>
+    );
 }
 
 export default App;

@@ -1,5 +1,15 @@
 .App {
   text-align: center;
+  background: #b6a4d8;
+  background-color: #b6a4d8;
+}
+body{
+    background-color: #b6a4d8;
+}
+h1{
+  color: white;
+  font-family: 'Georgia Pro Cond Black';
+  font-size: 79px;
 }
 
 .App-logo {
@@ -14,7 +24,7 @@
 }
 
 .App-header {
-  background-color: #282c34;
+  background-color: #b6a4d8;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
