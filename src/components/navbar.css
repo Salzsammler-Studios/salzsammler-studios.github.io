@@ -1,0 +1,24 @@
+.ant-menu {
+    border-bottom: none;
+    font-size: 1vw;
+}
+
+
+.ant-menu-item-selected {
+    color: black !important;
+    font-size: 2vw;
+}
+
+.ant-menu-item-selected::after, .ant-menu-item:hover, .ant-menu-item:hover::after {
+    border-bottom-color: black !important;
+    opacity: 1 !important;
+}
+
+
+.Header {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    background: #f6f4ef;
+    font-family: 'Poppins', sans-serif;
+}
