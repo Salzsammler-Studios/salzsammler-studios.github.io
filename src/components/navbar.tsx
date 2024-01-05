@@ -14,25 +14,26 @@ function NavBar() {
     return (
         <Menu className={"Header"} onClick={onClick}
               mode={"horizontal"}
-              selectedKeys={[current]}>
+              selectedKeys={[current]}
+              style={{borderBottom: "none !important"}}>
             <Menu.Item key="home">
                 <Link to="/">
-                    <span className="nav-text">Home</span>
+                    <span className="nav-text" style={{fontSize: "1.5vw", opacity: current === "home" ? 1 : 0.5}}>Home</span>
                 </Link>
             </Menu.Item>
             <Menu.Item key="about_us">
                 <Link to="/about_us">
-                    <span className="nav-text">About Us</span>
+                    <span className="nav-text" style={{fontSize: "1.5vw", opacity: current === "about_us" ? 1 : 0.5}}>About Us</span>
                 </Link>
             </Menu.Item>
             <Menu.Item key="project">
                 <Link to="/project">
-                    <span className="nav-text">Project</span>
+                    <span className="nav-text" style={{fontSize: "1.5vw", opacity: current === "project" ? 1 : 0.5}}>Project</span>
                 </Link>
             </Menu.Item>
             <Menu.Item key="gallery">
                 <Link to="/gallery">
-                    <span className="nav-text">Gallery</span>
+                    <span className="nav-text" style={{fontSize: "1.5vw", opacity: current === "gallery" ? 1 : 0.5}}>Gallery</span>
                 </Link>
             </Menu.Item>
         </Menu>

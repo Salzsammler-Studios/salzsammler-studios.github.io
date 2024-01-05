@@ -14,9 +14,10 @@ const BaseLayout = () => {
                 <Col span={4}>
                     <img src={image} width={"20%"} alt={"Salzsammler Logo"}/>
                 </Col>
-                <Col span={12}><NavBar/>
+                <Col span={10}></Col>
+                <Col span={10}><NavBar/>
                 </Col>
-                <Col span={6}></Col>
+                <Col span={1}></Col>
             </Row>
             <Content><Outlet/></Content>
             <div>Footer</div>
