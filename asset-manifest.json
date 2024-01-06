@@ -1,17 +1,18 @@
 {
   "files": {
-    "main.css": "./static/css/main.dc39e2db.css",
-    "main.js": "./static/js/main.4f1b545a.js",
+    "main.css": "./static/css/main.3a5fad72.css",
+    "main.js": "./static/js/main.bfa65f89.js",
     "static/js/787.b6074bd8.chunk.js": "./static/js/787.b6074bd8.chunk.js",
+    "static/media/overlay_city_1.png": "./static/media/overlay_city_1.3f66dae7f27e48703f42.png",
     "static/media/overlay.png": "./static/media/overlay.43dc6337155d277b70da.png",
     "static/media/salzsammler-logo-icon.png": "./static/media/salzsammler-logo-icon.43412434dfbbceb2ba85.png",
     "index.html": "./index.html",
-    "main.dc39e2db.css.map": "./static/css/main.dc39e2db.css.map",
-    "main.4f1b545a.js.map": "./static/js/main.4f1b545a.js.map",
+    "main.3a5fad72.css.map": "./static/css/main.3a5fad72.css.map",
+    "main.bfa65f89.js.map": "./static/js/main.bfa65f89.js.map",
     "787.b6074bd8.chunk.js.map": "./static/js/787.b6074bd8.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.dc39e2db.css",
-    "static/js/main.4f1b545a.js"
+    "static/css/main.3a5fad72.css",
+    "static/js/main.bfa65f89.js"
   ]
 }
