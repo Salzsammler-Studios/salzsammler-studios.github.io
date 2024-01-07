@@ -20,7 +20,6 @@ const BaseLayout = () => {
                 <Col span={1}></Col>
             </Row>
             <Content><Outlet/></Content>
-            <div>Footer</div>
         </Layout>
     )
 };
