@@ -27,4 +27,5 @@
     background: #f6f4ef;
     font-weight: 600;
     font-family: 'Poppins', sans-serif;
+    z-index: 50;
 }
