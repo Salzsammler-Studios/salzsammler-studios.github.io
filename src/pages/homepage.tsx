@@ -8,7 +8,7 @@ const Homepage = () => {
             <Box height="xs"></Box>
             <Box></Box>
             <Box></Box>
-            <Stack maxW="xl">
+            <Stack maxW="xl" marginLeft={["-3rem",0]} paddingRight={["2rem",0]}>
                 <Heading size="sm">Interaktive Installationen</Heading>
                 <Heading size={["lg", "4xl"]} sx={{ fontWeight: 900 }}>Salzsammler</Heading>
 
