@@ -1,17 +1,12 @@
 {
   "files": {
-    "main.css": "./static/css/main.163212cd.css",
-    "main.js": "./static/js/main.47a0bc4a.js",
+    "main.js": "./static/js/main.b25d5092.js",
     "static/js/787.b6074bd8.chunk.js": "./static/js/787.b6074bd8.chunk.js",
-    "static/media/overlay.png": "./static/media/overlay.43dc6337155d277b70da.png",
-    "static/media/salzsammler-logo-icon.png": "./static/media/salzsammler-logo-icon.43412434dfbbceb2ba85.png",
     "index.html": "./index.html",
-    "main.163212cd.css.map": "./static/css/main.163212cd.css.map",
-    "main.47a0bc4a.js.map": "./static/js/main.47a0bc4a.js.map",
+    "main.b25d5092.js.map": "./static/js/main.b25d5092.js.map",
     "787.b6074bd8.chunk.js.map": "./static/js/787.b6074bd8.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.163212cd.css",
-    "static/js/main.47a0bc4a.js"
+    "static/js/main.b25d5092.js"
   ]
 }
