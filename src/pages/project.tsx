@@ -4,12 +4,11 @@ import React from "react";
 const Project = () => {
     return (
         <Box>
-            <Heading size={["3xs", "2xl"]} noOfLines={2} maxW={['10rem', 'md']} paddingTop={['1rem', '1rem']} paddingLeft={['1rem', '1rem']}>Salzsammler Studios</Heading>
-            <Grid padding={5} gap={5} marginTop="7rem" templateColumns='repeat(3, 1fr)'>
-                <GridItem colSpan={3}><Heading size={["xs", "xl"]} color="#A74D4A" w="60%">Eine interaktive Installation, die es Kindern ermöglicht, geschichtlichen Inhalten und Materialien intuitiv und mit Spielspaß zu begegnen.</Heading></GridItem>
+            <Grid padding={5} gap={5} marginTop={["2rem", "7rem"]} templateColumns='repeat(3, 1fr)'>
+                <GridItem colSpan={3}><Heading size={["xs", "xl"]} color="highlight" w="60%">Eine interaktive Installation, die es Kindern ermöglicht, geschichtlichen Inhalten und Materialien intuitiv und mit Spielspaß zu begegnen.</Heading></GridItem>
                 <GridItem colSpan={3}><Image src="project_image.png" w="100%" /></GridItem>
                 <GridItem colSpan={1}><Image src="horse.png" marginTop={["0", "-10rem"]} /></GridItem>
-                <GridItem colSpan={2} alignSelf="center"><Heading size={["2xs", "xl"]} color="#A74D4A">Der Handel und Transport von Waren stehen im Mittelpunkt. Kinder übernehmen Aufgaben wie das Annehmen von Baumaterialien, Lebensmitteln und Luxusgütern</Heading></GridItem>
+                <GridItem colSpan={2} alignSelf="center"><Heading size={["xs", "xl"]} color="highlight">Der Handel und Transport von Waren stehen im Mittelpunkt. Kinder übernehmen Aufgaben wie das Annehmen von Baumaterialien, Lebensmitteln und Luxusgütern</Heading></GridItem>
                 <GridItem colSpan={1}></GridItem>
                 <GridItem colSpan={1}><Text>Der Handel und Transport von Waren stehen im Mittelpunkt. Kinder übernehmen Aufgaben wie das Annehmen von Baumaterialien, Lebensmitteln und Luxusgütern. Die Installation besteht aus Spielflächen, einem Projektor, einer Kamera, Würfeln und einer Recheneinheit.</Text></GridItem>
                 <GridItem colSpan={1}><Text>Der Fluss: Hier interagieren bis zu 3 Spieler mit Booten, verschieben sie und agieren auf der größten Spielfläche.

@@ -9,7 +9,13 @@ const fonts = {
     body: 'Poppins',
     mono: 'Poppins',
 };
-const theme = extendTheme({fonts});
+const theme = extendTheme({
+    fonts,
+    colors: {
+        highlight: '#A74D4A',
+        background: '#F5F5F5',
+    }
+});
 
 function Page() {
     return (

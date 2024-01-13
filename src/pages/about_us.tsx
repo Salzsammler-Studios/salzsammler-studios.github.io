@@ -5,9 +5,7 @@ import TeamCards from "../components/teamCards";
 const AboutUs = () => {
     return (
         <Box>
-            <Heading size={["3xs","2xl"]} noOfLines={2} maxW={['10rem','md']} paddingTop={['1rem','1rem']} paddingLeft={['1rem','1rem']}>Salzsammler Studios</Heading>
-
-            <SimpleGrid columns={[1, 3]} spacing={0} marginLeft={["1.5rem","5rem"]}>
+            <SimpleGrid columns={[1, 3]} spacing={0} marginLeft={["1.5rem","2.5rem"]}>
                 <Box height="5rem"></Box>
                 <Box></Box>
                 <Box></Box>
