@@ -15,7 +15,7 @@ const App = () => {
                 <Tab _selected={{ opacity: 1, fontSize: ['md', '3xl'] }} sx={{ fontWeight: 600, opacity: 0.5 }} fontSize={['sm', '2xl']}>Contact</Tab>
             </TabList>
 
-            <TabPanels>
+            <TabPanels textAlign="start">
                 <TabPanel sx={{ margin: 0, padding: 0 }}><Homepage /></TabPanel>
                 <TabPanel sx={{ margin: 0, padding: 0 }}>
                     <Logo/>
