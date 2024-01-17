@@ -5,7 +5,7 @@ import { ArrowForwardIcon } from '@chakra-ui/icons';
 const Homepage = () => {
     return <Box minH="102vh" h="100%" bgImage={["url('/mobile_overlay.png')", "url('/overlay.png')"]} bgPosition="bottom left" bgRepeat="no-repeat" bgSize="cover">
         <SimpleGrid columns={2} spacing={10}>
-            <Box height={["2xs","xs"]}></Box>
+            <Box height={["2xs","2xs"]}></Box>
             <Box></Box>
             <Box></Box>
             <Stack maxW="xl" marginLeft={["-3rem",0]} paddingRight={["2rem",0]}>

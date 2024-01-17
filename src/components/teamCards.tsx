@@ -9,11 +9,11 @@ type TeamCardProps = {
 }
 const TeamCards = ({image, name, title, text}: TeamCardProps) => {
 
-    return <Box>
-        <Image src={image} marginBottom="1rem"></Image>
+    return <Box style={{marginLeft: 'auto', marginRight: 'auto'}}>
+        <Image src={image} marginBottom="1rem" height={["60%"]}></Image>
         <Heading size="xl" sx={{ fontWeight: 600 }} color="highlight">{name}</Heading>
         <Heading size="md" sx={{ fontWeight: 400 }} marginBottom={"1rem"}>{title}</Heading>
-        <Text maxW="sm">{text}</Text>
+        <Text maxW="xs">{text}</Text>
     </Box>
 }
 
