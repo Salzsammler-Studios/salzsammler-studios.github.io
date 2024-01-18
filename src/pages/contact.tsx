@@ -1,4 +1,4 @@
-import { Box, HStack, Heading, SimpleGrid, Text, VStack } from "@chakra-ui/react";
+import { Box, HStack, Heading, VStack } from "@chakra-ui/react";
 import ContactCard from "../components/contact_card";
 import { EmailIcon, PhoneIcon, ViewIcon } from "@chakra-ui/icons";
 

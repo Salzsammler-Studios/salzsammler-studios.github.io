@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Box, Image, Tab, Tabs, TabList, TabPanel, TabPanels, Heading } from '@chakra-ui/react';
+import { useState } from 'react';
+import { Box, Tab, Tabs, TabList, TabPanel, TabPanels } from '@chakra-ui/react';
 import Homepage from './pages/homepage';
 import Project from './pages/project';
 import AboutUs from './pages/about_us';
@@ -13,12 +13,12 @@ const App = () => {
     const bg = colors[tabIndex]
 
     return <Box backgroundColor={bg}>
-        <Tabs align='end' position="relative" variant='unstyled' isLazy size={['sm', 'lg']} onChange={(index) => setTabIndex(index)}>
+        <Tabs align='end' position="relative" variant='unstyled' size={['sm', 'lg']} onChange={(index) => setTabIndex(index)}>
             <TabList sx={{ marginBottom: ["-7.5rem", "-8.5rem"] }} padding={"2rem"}>
-                <Tab color={tabIndex == 3 ? 'background' : 'black'} _selected={{ opacity: 1, fontSize: ['sm', '3xl'] }} sx={{ fontWeight: 600, opacity: 0.5 }} fontSize={['xs', '2xl']}>Home</Tab>
-                <Tab color={tabIndex == 3 ? 'background' : 'black'} _selected={{ opacity: 1, fontSize: ['sm', '3xl'] }} sx={{ fontWeight: 600, opacity: 0.5 }} fontSize={['xs', '2xl']}>Projekt</Tab>
-                <Tab color={tabIndex == 3 ? 'background' : 'black'} _selected={{ opacity: 1, fontSize: ['sm', '3xl'] }} sx={{ fontWeight: 600, opacity: 0.5 }} fontSize={['xs', '2xl']}>Team</Tab>
-                <Tab color={tabIndex == 3 ? 'background' : 'black'} _selected={{ opacity: 1, fontSize: ['sm', '3xl'] }} sx={{ fontWeight: 600, opacity: 0.5 }} fontSize={['xs', '2xl']}>Kontakt</Tab>
+                <Tab color={tabIndex === 3 ? 'background' : 'black'} _selected={{ opacity: 1, fontSize: ['sm', '3xl'] }} sx={{ fontWeight: 600, opacity: 0.5 }} fontSize={['xs', '2xl']}>Home</Tab>
+                <Tab color={tabIndex === 3 ? 'background' : 'black'} _selected={{ opacity: 1, fontSize: ['sm', '3xl'] }} sx={{ fontWeight: 600, opacity: 0.5 }} fontSize={['xs', '2xl']}>Projekt</Tab>
+                <Tab color={tabIndex === 3 ? 'background' : 'black'} _selected={{ opacity: 1, fontSize: ['sm', '3xl'] }} sx={{ fontWeight: 600, opacity: 0.5 }} fontSize={['xs', '2xl']}>Team</Tab>
+                <Tab color={tabIndex === 3 ? 'background' : 'black'} _selected={{ opacity: 1, fontSize: ['sm', '3xl'] }} sx={{ fontWeight: 600, opacity: 0.5 }} fontSize={['xs', '2xl']}>Kontakt</Tab>
             </TabList>
             <TabPanels textAlign="start">
                 <TabPanel sx={{ margin: 0, padding: 0 }}><Homepage /></TabPanel>

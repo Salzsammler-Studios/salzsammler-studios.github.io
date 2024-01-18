@@ -1,4 +1,4 @@
-import { Box, Center, VStack, Text, Heading, Link } from "@chakra-ui/react"
+import { Box, Center, VStack, Heading, Link } from "@chakra-ui/react"
 
 type ContactCardProps = {
     icon: React.ReactElement;
