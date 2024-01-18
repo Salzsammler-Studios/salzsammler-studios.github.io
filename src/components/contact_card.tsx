@@ -1,11 +1,12 @@
-import { Box, Center, VStack, Text, Heading } from "@chakra-ui/react"
+import { Box, Center, VStack, Text, Heading, Link } from "@chakra-ui/react"
 
 type ContactCardProps = {
     icon: React.ReactElement;
     text: string;
     link: string;
+    href?: string;
 }
-const ContactCard = ({icon, text, link}:ContactCardProps) => {
+const ContactCard = ({ icon, text, link, href }: ContactCardProps) => {
     return <Box>
         <VStack>
             <Center height="7rem" width="7rem" marginBottom="-3rem" zIndex="2" sx={{
@@ -26,7 +27,7 @@ const ContactCard = ({icon, text, link}:ContactCardProps) => {
                 <VStack>
                     <Box h={"1rem"}></Box>
                     <Heading size="xl" color={"highlight"} fontWeight={300}>{text}</Heading>
-                    <Heading textAlign="center" size="lg" color={"highlight"} fontWeight={600}>{link}</Heading>
+                    <Link href={href} isExternal color={"highlight"}><Heading textAlign="center" size="lg" color={"highlight"} fontWeight={600}>{link}</Heading></Link>
                 </VStack>
             </Center>
         </VStack>
