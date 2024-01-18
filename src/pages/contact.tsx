@@ -1,5 +1,6 @@
 import { Box, HStack, Heading, SimpleGrid, Text, VStack } from "@chakra-ui/react";
 import ContactCard from "../components/contact_card";
+import { EmailIcon, PhoneIcon, ViewIcon } from "@chakra-ui/icons";
 
 const Contact = () => {
     return <Box paddingLeft={"5rem"} paddingRight={"5rem"}>
@@ -9,9 +10,9 @@ const Contact = () => {
             <Heading size="md" fontWeight={400} color="background">Wir würden uns gerne über zukünftige Installationen unterhalten</Heading>
             <Box height="1rem"></Box>
             <HStack spacing={"3rem"}>
-                <ContactCard />
-                <ContactCard />
-                <ContactCard />
+                <ContactCard icon={<PhoneIcon color="highlight" boxSize={"2.5rem"} />} text="Ruf uns an" link="+49 123 456 78"/>
+                <ContactCard icon={<EmailIcon color="highlight" boxSize={"3rem"} />} text="Schreib uns" link='salzsammler. studios@gmail.com'/>
+                <ContactCard icon={<ViewIcon color="highlight" boxSize={"3rem"} />} text="Besuch uns" link="Instagram"/>
             </HStack>
             <Box height="3rem"></Box>
         </VStack>

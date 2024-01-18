@@ -12,9 +12,9 @@ const AboutUs = () => {
                 <Box></Box>
                 <Heading size="3xl" textAlign="center" sx={{ fontWeight: 600 }} marginBottom="3rem">Das Team</Heading>
                 <Box></Box>
-                <TeamCards image='/ruben.png' name='Ruben Schäfer' title='DEVELOPER' text='Wenn ich nicht gerade an Salzsammler arbeite, bin ich Webentwickler. kreative Selbstverwirklichung mit technischem Know-how'/>
+                <TeamCards image='/ruben.png' name='Ruben Schäfer' title='DEVELOPER' text='Wenn ich nicht gerade an Salzsammler arbeite, bin ich Webentwickler. kreative Selbstverwirklichung mit technischem Know-how.'/>
                 <TeamCards image='/john.png' name='John Beinecke' title='PROJECTMANAGER' text='Meine Aufgabe als Projektmanager vereint meine Leidenschaft und Expertise für Spieleentwicklung und lässt mich mit einem kühlen Kopf den Überblick behalten.'/>
-                <TeamCards image='/nic.png' name='Nic Schilling' title='SOUND & GAME DESIGN' text='Theater, musik und Komponist, studiert Videospiele science an der Uni Bayreuth. Kreative Multitalente, von der Musikbühne zum Game Design'/>
+                <TeamCards image='/nic.png' name='Nic Schilling' title='SOUND & GAME DESIGN' text='Mit meiner Leidenschaft für Musik, Theater und Games arbeite ich im Game Design, in der Produktion und in der Komposition und verbinde alles zu einem harmonischen Ganzen.'/>
             </SimpleGrid>
 
             <Image src="/about_us_footer.png" width="100vw" margin={0} padding={0}/>

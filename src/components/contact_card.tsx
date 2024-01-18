@@ -1,8 +1,11 @@
-import { FolderOpenTwoTone } from "@ant-design/icons"
-import { PhoneIcon } from "@chakra-ui/icons"
 import { Box, Center, VStack, Text, Heading } from "@chakra-ui/react"
 
-const ContactCard = () => {
+type ContactCardProps = {
+    icon: React.ReactElement;
+    text: string;
+    link: string;
+}
+const ContactCard = ({icon, text, link}:ContactCardProps) => {
     return <Box>
         <VStack>
             <Center height="7rem" width="7rem" marginBottom="-3rem" zIndex="2" sx={{
@@ -10,7 +13,7 @@ const ContactCard = () => {
                 background: "#F5F5F5",
                 boxShadow: "0px 4px 4px 0px rgba(0, 0, 0, 0.25)"
             }}>
-                <PhoneIcon color="highlight" boxSize={"2.5rem"} />
+                {icon}
             </Center>
             <Center
                 height="13rem"
@@ -21,8 +24,9 @@ const ContactCard = () => {
                     boxShadow: "0px 4px 4px 0px rgba(0, 0, 0, 0.25)"
                 }}>
                 <VStack>
-                    <Heading size="xl" color={"highlight"} fontWeight={300}>Ruf uns an</Heading>
-                    <Heading size="xl" color={"highlight"} fontWeight={600}>+49 123 456 789</Heading>
+                    <Box h={"1rem"}></Box>
+                    <Heading size="xl" color={"highlight"} fontWeight={300}>{text}</Heading>
+                    <Heading textAlign="center" size="lg" color={"highlight"} fontWeight={600}>{link}</Heading>
                 </VStack>
             </Center>
         </VStack>
