@@ -8,7 +8,7 @@ import Contact from './pages/contact';
 
 const App = () => {
 
-    const colors: string[] = ["background", 'backgroundProject', 'backgroundAboutUs', 'highlight']
+    const colors: string[] = ["background", 'background', 'background', 'highlight']
     const [tabIndex, setTabIndex] = useState(0)
     const bg = colors[tabIndex]
 

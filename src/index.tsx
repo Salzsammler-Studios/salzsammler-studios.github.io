@@ -14,9 +14,9 @@ const theme = extendTheme({
     colors: {
         black: '#121212',
         highlight: '#A74D4A',
-        background: '#F5F5F5',
+        backgroundAboutUs: '#F5F5F5',
         backgroundProject: '#EAE6E1',
-        backgroundAboutUs: '#F6F4EF'
+        background: '#F6F4EF'
     }
 });
 

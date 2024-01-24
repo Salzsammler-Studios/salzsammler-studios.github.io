@@ -5,7 +5,18 @@ const Project = () => {
         <Box>
             <Grid padding={"5rem"} gap={10} marginTop={["2rem", "4rem"]} templateColumns='repeat(3, 1fr)'>
                 <GridItem colSpan={3}><Heading size={["xs", "2xl"]} style={{ fontWeight: 600 }} color="highlight" w="80%">Eine interaktive Installation, die es Kindern ermöglicht, geschichtlichen Inhalten und Materialien intuitiv und mit Spielspaß zu begegnen.</Heading></GridItem>
-                <GridItem colSpan={3}><Image src="project_image.png" w="100%" /></GridItem>
+                <GridItem colSpan={3}>
+                    <Box
+                        as='iframe'
+                        src='https://www.youtube-nocookie.com/embed/grhau10Lkio?si=bMaPeC31GLPXVpMz?frameborder=0'
+                        allow="accelerometer; encrypted-media; gyroscope; picture-in-picture"
+                        allowFullScreen
+                        width='100%'
+                        sx={{
+                            aspectRatio: '16/9'
+                        }}
+                    />
+                </GridItem>
                 <GridItem colSpan={1}><Image src="horse.png" marginTop={["0", "-10rem"]} /></GridItem>
                 <GridItem colSpan={2} alignSelf="center"><Heading size={["xs", "xl"]} color="highlight">Der Handel und Transport von Waren stehen im Mittelpunkt. Kinder übernehmen Aufgaben wie das Annehmen von Baumaterialien, Lebensmitteln und Luxusgütern</Heading></GridItem>
                 <GridItem colSpan={1}></GridItem>
