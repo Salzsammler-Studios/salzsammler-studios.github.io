@@ -5,8 +5,9 @@ type ContactCardProps = {
     text: string;
     link: string;
     href?: string;
+    textWidth: string;
 }
-const ContactCard = ({ icon, text, link, href }: ContactCardProps) => {
+const ContactCard = ({ icon, text, link, href, textWidth }: ContactCardProps) => {
     return <Box>
         <VStack>
             <Center height="7rem" width="7rem" marginBottom="-3rem" zIndex="2" sx={{
@@ -25,9 +26,8 @@ const ContactCard = ({ icon, text, link, href }: ContactCardProps) => {
                     boxShadow: "0px 4px 4px 0px rgba(0, 0, 0, 0.25)"
                 }}>
                 <VStack>
-                    <Box h={"1rem"}></Box>
                     <Heading size="xl" color={"highlight"} fontWeight={300}>{text}</Heading>
-                    <Link href={href} isExternal color={"highlight"}><Heading textAlign="center" size="lg" color={"highlight"} fontWeight={600}>{link}</Heading></Link>
+                    <Link w={textWidth} href={href} isExternal color={"highlight"}><Heading textAlign="center" size="lg" color={"highlight"} fontWeight={600}>{link}</Heading></Link>
                 </VStack>
             </Center>
         </VStack>
