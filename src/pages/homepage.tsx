@@ -5,7 +5,7 @@ import { ArrowForwardIcon } from '@chakra-ui/icons';
 const Homepage = () => {
     return <Box minH={"105vh"}>
         <Box pointerEvents={"none"} marginLeft={"-15rem"} marginTop={"-20rem"} width={"100%"} height={"100%"} position={"absolute"} bgImage={"url('/cloudsTogether.png')"} bgRepeat={"no-repeat"} bgPosition={"left top"}></Box>
-        <Box pointerEvents={"none"} marginLeft={"-0.1rem"} position={"absolute"} width={"100%"} height={"100%"} bgImage={"url('/layout2.svg')"} bgPosition="left bottom" bgRepeat="no-repeat" bgSize="60%"/>
+        <Box pointerEvents={"none"} marginLeft={"-0.1rem"} position={"absolute"} width={"100%"} height={"100%"} bgImage={"url('/layout2.svg')"} bgPosition="left bottom" bgRepeat="no-repeat" bgSize="50%"/>
         <SimpleGrid columns={2} spacing={10}>
             <Box></Box>
             <Box></Box>
