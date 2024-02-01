@@ -12,3 +12,7 @@ We deploy changes in the following style:
 
 For more information see:
 https://github.com/gitname/react-gh-pages
+
+Todo: 
+1. Add DNS to Settings->Pages-> Custom Domain
+2. Verify Domain to account->pages->add a verified domain
