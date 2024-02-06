@@ -1,5 +1,6 @@
 import { Box, Heading, SimpleGrid, Image } from "@chakra-ui/react";
 import TeamCards from "../components/teamCards";
+import about_us_footer from "../assets/about_us_footer.svg";
 
 const AboutUs = () => {
     return (
@@ -16,7 +17,7 @@ const AboutUs = () => {
                 <TeamCards image='/nic.png' name='Nic Schilling' title='GAME DESIGNER' text='Mit meiner Leidenschaft für Musik, Theater und Games arbeite ich im Game Design, in der Produktion und in der Komposition und verbinde alles zu einem harmonischen Ganzen.' />
             </SimpleGrid>
             
-            <Image src="/about_us_footer.svg" w={"105vw"}/>
+            <Image src={about_us_footer} w={"105vw"}/>
         </Box>
     );
 }
