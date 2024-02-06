@@ -4,10 +4,10 @@ import { EmailIcon, PhoneIcon, ViewIcon } from "@chakra-ui/icons";
 
 const Contact = () => {
     const instagramLink = "https://www.instagram.com/salzsammler/?igsh=MWlzZWdidzQ5c2F3cQ%3D%3D"
-    return <Box paddingLeft={"5rem"} paddingRight={"5rem"}>
+    return <Box paddingLeft={["1rem","5rem"]} paddingRight={["1rem","5rem"]}>
         <VStack spacing={"2rem"}>
             <Box height="8rem"></Box>
-            <Heading size="4xl" fontWeight={600} color="background" textAlign="center" >Kontaktieren Sie uns!</Heading>
+            <Heading size={["2xl","4xl"]} fontWeight={600} color="background" textAlign="center" w={["80%", "100%"]} >Kontaktieren Sie uns!</Heading>
             <Heading size="lg" fontWeight={100} color="background" textAlign="center" w={"80%"}>Wir freuen uns darauf, mit Ihnen über zukünftige Installationen zu sprechen.</Heading>
             <Box height="6rem"></Box>
             <HStack spacing={"3rem"}>

@@ -8,7 +8,7 @@ type LogoProps = {
 const Logo = ({ color }: LogoProps) => {
     return (
         <>
-            <Box visibility={["visible", "hidden"]} marginTop={["3.5rem", "2rem"]} marginLeft={"0.5rem"}>
+            <Box visibility={["visible", "hidden"]} position={"fixed"} margin={0} padding={0} top={"2rem"} left={"-14rem"}>
                 <SalzsammlerLogoIcon color={color} height={"1.5rem"}/>
             </Box>
             <Box visibility={["hidden", "visible"]} marginTop={-12} marginLeft={"4rem"}>

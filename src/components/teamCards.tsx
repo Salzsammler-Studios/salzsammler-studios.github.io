@@ -13,7 +13,7 @@ const TeamCards = ({image, name, title, text}: TeamCardProps) => {
         <Image src={image} marginBottom="1rem" height={["auto"]} width={"23.3rem"}></Image>
         <Heading size="xl" sx={{ fontWeight: 600 }} color="highlight">{name}</Heading>
         <Heading size="md" sx={{ fontWeight: 400 }} marginBottom={"1rem"}>{title}</Heading>
-        <Text maxW="xs">{text}</Text>
+        <Text maxW="xs" marginBottom={"4rem"}>{text}</Text>
     </Box>
 }
 

@@ -5,7 +5,7 @@ const Project = () => {
     const rightText = "Salzsammler nutzt einen Projektor, um eine immersive und interaktive Projektionsfläche zu erschaffen, auf der Spielende und Würfel von der Kamera erfasst werden und somit nahtlos in die Anwendung integriert werden. Darüber hinaus setzt die Anwendung modernste Computer Vision-Technologien ein, um einen flüssigen Ablauf und eine beeindruckende Nutzererfahrung sicherzustellen."
     return (
         <Box>
-            <Grid padding={"5rem"} gap={10} marginTop={["2rem", "4rem"]} templateColumns='repeat(3, 1fr)'>
+            <Grid padding={["1rem","5rem"]} gap={10} marginTop={["2rem", "4rem"]} templateColumns='repeat(3, 1fr)'>
                 <GridItem colSpan={3}><Heading size={["xs", "2xl"]} style={{ fontWeight: 600 }} color="highlight" w="80%">Eine interaktive Installation, die es Kindern ermöglicht, geschichtlichen Inhalten und Materialien intuitiv und mit Spielspaß zu begegnen.</Heading></GridItem>
                 <GridItem colSpan={3} marginBottom={["5rem"]}>
                     <Box
@@ -13,14 +13,14 @@ const Project = () => {
                         src='https://www.youtube-nocookie.com/embed/grhau10Lkio?si=bMaPeC31GLPXVpMz?frameborder=0'
                         allow="accelerometer; encrypted-media; gyroscope; picture-in-picture"
                         allowFullScreen
-                        width='100%'
+                        width={['90%','100%']}
                         sx={{
                             aspectRatio: '16/9',
                             borderRadius: '63',
                         }}
                     />
                 </GridItem>
-                <GridItem colSpan={1}><Image src="horse.png" marginTop={["0", "-10rem"]} /></GridItem>
+                <GridItem colSpan={1}><Image src="horse.png" marginTop={["0rem", "-10rem"]} /></GridItem>
                 <GridItem colSpan={2} alignSelf="center"><Heading size={["xs", "xl"]} color="highlight">Der Handel und Transport von Waren stehen im Mittelpunkt. Kinder übernehmen Aufgaben wie das Annehmen von Baumaterialien, Lebensmitteln und Luxusgütern</Heading></GridItem>
                 <GridItem colSpan={1}></GridItem>
                 <GridItem colSpan={1}><Text>{leftText}</Text></GridItem>
