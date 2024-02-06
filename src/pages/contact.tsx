@@ -8,7 +8,7 @@ const Contact = () => {
         <VStack spacing={"2rem"}>
             <Box height="8rem"></Box>
             <Heading size="4xl" fontWeight={600} color="background" textAlign="center" >Kontaktieren Sie uns!</Heading>
-            <Heading size="xl" fontWeight={400} color="background" textAlign="center" w={"80%"}>Wir freuen uns darauf, mit Ihnen über zukünftige Installationen zu sprechen.</Heading>
+            <Heading size="lg" fontWeight={100} color="background" textAlign="center" w={"80%"}>Wir freuen uns darauf, mit Ihnen über zukünftige Installationen zu sprechen.</Heading>
             <Box height="6rem"></Box>
             <HStack spacing={"3rem"}>
                 <ContactCard icon={<PhoneIcon color="highlight" boxSize={"2.5rem"} />} text="" link="+49 123 456 78" href="tel:123-456-7890" textWidth="100%"/>
