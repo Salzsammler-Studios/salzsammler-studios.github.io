@@ -15,7 +15,7 @@ const Contact = () => {
                 <ContactCard icon={<EmailIcon color="highlight" boxSize={"3rem"} />} text="" link='salzsammler. studios@gmail.com' href="mailto:salzsammler.studios@gmail.com" textWidth="80%" />
                 <ContactCard icon={<Image src="/instagram.svg" color="highlight" boxSize={"3.5rem"} />} text="" link="Instagram" href={instagramLink} textWidth="100%" />
             </HStack>
-            <Box height="2rem"></Box>
+            <Box height="15rem"></Box>
         </VStack>
     </Box>
 }
