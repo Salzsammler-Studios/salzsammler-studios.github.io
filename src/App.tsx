@@ -1,37 +1,19 @@
 import { useState } from 'react';
-import { Box, Tab, Tabs, TabList, TabPanel, TabPanels } from '@chakra-ui/react';
-import Homepage from './pages/homepage';
-import Project from './pages/project';
-import AboutUs from './pages/about_us';
-import Logo from './components/logo';
-import Contact from './pages/contact';
+import { Box } from '@chakra-ui/react';
+import Content from './components/content';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 
 const App = () => {
-
-    const colors: string[] = ["background", 'background', 'background', 'highlight']
-    const [tabIndex, setTabIndex] = useState(0)
-    const bg = colors[tabIndex]
-
-    return <Box backgroundColor={bg}>
-        <Tabs align='end' position="relative" variant='unstyled' size={['sm', 'lg']} onChange={(index) => setTabIndex(index)}>
-            <TabList sx={{ marginBottom: ["-7.5rem", "-8.5rem"] }} padding={"2rem"} paddingRight={"3rem"}>
-                <Tab color={tabIndex === 3 ? 'background' : 'black'} _selected={{ opacity: 1, fontSize: ['sm', '3xl'] }} sx={{ fontWeight: 600, opacity: 0.5 }} fontSize={['xs', '2xl']}>Home</Tab>
-                <Tab color={tabIndex === 3 ? 'background' : 'black'} _selected={{ opacity: 1, fontSize: ['sm', '3xl'] }} sx={{ fontWeight: 600, opacity: 0.5 }} fontSize={['xs', '2xl']}>Projekt</Tab>
-                <Tab color={tabIndex === 3 ? 'background' : 'black'} _selected={{ opacity: 1, fontSize: ['sm', '3xl'] }} sx={{ fontWeight: 600, opacity: 0.5 }} fontSize={['xs', '2xl']}>Team</Tab>
-                <Tab color={tabIndex === 3 ? 'background' : 'black'} _selected={{ opacity: 1, fontSize: ['sm', '3xl'] }} sx={{ fontWeight: 600, opacity: 0.5 }} fontSize={['xs', '2xl']}>Kontakt</Tab>
-            </TabList>
-            <TabPanels textAlign="start">
-                <TabPanel sx={{ margin: 0, padding: 0 }}><Homepage /></TabPanel>
-                <TabPanel sx={{ margin: 0, padding: 0 }}>
-                    <Logo color='black'/>
-                    <Project /></TabPanel>
-                <TabPanel sx={{ margin: 0, padding: 0 }} >
-                    <Logo color='black'/>
-                    <AboutUs /></TabPanel>
-                <TabPanel sx={{ margin: 0, padding: 0 }}><Logo color='background'/><Contact /></TabPanel>
-            </TabPanels>
-        </Tabs>
-    </Box>
+    return (
+        <Router>
+            <Routes>
+                <Route path="/" element={<Content initialTabIndex={0} />} />
+                <Route path="/project" element={<Content initialTabIndex={1} />} />
+                <Route path="/team" element={<Content initialTabIndex={2} />} />
+                <Route path="/contact" element={<Content initialTabIndex={3} />} />
+                {/* Add more routes for additional tabs */}
+            </Routes>
+        </Router>)
 }
 
 export default App;
