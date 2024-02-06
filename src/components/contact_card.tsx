@@ -19,7 +19,7 @@ const ContactCard = ({ icon, text, link, href, textWidth }: ContactCardProps) =>
             </Center>
             <Center
                 height="13rem"
-                width="20rem"
+                width="22rem"
                 sx={{
                     borderRadius: "17px",
                     background: "#F5F5F5",
