@@ -10,7 +10,7 @@ const Project = () => {
                 <GridItem colSpan={3} marginBottom={["5rem"]}>
                     <Box
                         as='iframe'
-                        src='https://www.youtube-nocookie.com/embed/grhau10Lkio?si=bMaPeC31GLPXVpMz?frameborder=0'
+                        src='https://www.youtube.com/embed/_pMCzDzWwfA?si=6P265PWT41l5tdFC?frameborder=0'
                         allow="accelerometer; encrypted-media; gyroscope; picture-in-picture"
                         allowFullScreen
                         width={['90%','100%']}
