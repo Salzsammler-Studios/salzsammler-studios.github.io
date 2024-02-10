@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { Box } from '@chakra-ui/react';
 import Content from './components/content';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { HashRouter as Router, Route, Routes } from 'react-router-dom';
 
 const App = () => {
     return (

@@ -17,7 +17,7 @@ const Homepage = () => {
                 <Heading fontSize={["xl", "7xl"]} sx={{ fontWeight: 900 }}>Salzsammler</Heading>
 
                 <Text marginTop={["0rem","-0.7rem"]}maxW={["100%","90%"]} fontSize={["sm", "2xl"]} lineHeight={["","9"]}>Salzsammler Studios fokussiert sich auf Innovationen im Bereich der Extended Reality, um didaktisch wertvolle Informationen interaktiv und spielbar erfahrbar zu machen.</Text>
-                <Text as="u" color="highlight" marginTop={"1rem"}><Text as="a" href="/project" fontSize={["sm", "2xl"]} sx={{ fontWeight: 600 }}>Mehr erfahren</Text><ArrowForwardIcon /></Text>
+                <Text as="u" color="highlight" marginTop={"1rem"}><Text as="a" href="#" fontSize={["sm", "2xl"]} sx={{ fontWeight: 600 }}>Mehr erfahren</Text><ArrowForwardIcon /></Text>
             </Stack>
         </SimpleGrid>
     </Box>
