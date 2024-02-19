@@ -11,7 +11,7 @@ const Contact = () => {
             <Heading size="lg" fontWeight={100} color="background" textAlign="center" w={"80%"}>Wir freuen uns darauf, mit Ihnen über zukünftige Installationen zu sprechen.</Heading>
             <Box height="6rem"></Box>
             <HStack spacing={"3rem"}>
-                <ContactCard icon={<PhoneIcon color="highlight" boxSize={"2.5rem"} />} text="" link="+49 123 456 78" href="tel:123-456-7890" textWidth="100%" />
+                <ContactCard icon={<PhoneIcon color="highlight" boxSize={"2.5rem"} />} text="" link="+49 176 240 71380" href="tel:176-240-71380" textWidth="100%" />
                 <ContactCard icon={<EmailIcon color="highlight" boxSize={"3rem"} />} text="" link='salzsammler. studios@gmail.com' href="mailto:salzsammler.studios@gmail.com" textWidth="80%" />
                 <ContactCard icon={<Image src="/instagram.svg" color="highlight" boxSize={"3.5rem"} />} text="" link="Instagram" href={instagramLink} textWidth="100%" />
             </HStack>
