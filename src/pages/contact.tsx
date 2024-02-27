@@ -19,7 +19,7 @@ const Contact = () => {
             <Box height="15rem">
             </Box>
         </VStack>
-        <Footer bgColor="background" textColor="highlight" />
+        <Footer bgColor="background" textColor="highlight" currentStep={3} />
     </Box>
 }
 

@@ -4,19 +4,20 @@ import Logo from "./logo";
 type FooterProps = {
     bgColor: string;
     textColor: string;	
+    currentStep: number;
 }
-const Footer = ({bgColor, textColor}:FooterProps) => {
+const Footer = ({bgColor, textColor, currentStep}:FooterProps) => {
     return (
-        <Box minH={["sm","10rem"]} bgColor={bgColor} marginTop={"-0.1rem"} paddingBottom={"4rem"}>
+        <Box minH={["sm","8rem"]} bgColor={bgColor} marginTop={"-0.1rem"} paddingBottom={"2rem"}>
             <HStack justifyContent={"space-between"} alignItems={"baseline"} paddingTop={"4rem"}>
                 <Logo color={textColor} />
                 <HStack spacing={10} alignItems={"start"}>
                 <VStack spacing={0} alignItems={"start"}>
                     <Text as="b" color={textColor}>MENU</Text>
                     <Text as="a" href={"#/"} color={textColor}><Text as="u">Home</Text></Text>
-                    <Text as="a" href={"#/project"} color={textColor}><Text as="u">Projekt</Text></Text>
-                    <Text as="a" href={"#/team"} color={textColor}><Text as="u">Team</Text></Text>
-                    <Text as="a" href={"#/contact"} color={textColor}><Text as="u">Kontakt</Text></Text>
+                    {currentStep != 1 &&<Text as="a" href={"#/project"} color={textColor}><Text as="u">Projekt</Text></Text>}
+                    {currentStep != 2 &&<Text as="a" href={"#/team"} color={textColor}><Text as="u">Team</Text></Text>}
+                    {currentStep != 3 &&<Text as="a" href={"#/contact"} color={textColor}><Text as="u">Kontakt</Text></Text>}
                     <Text as="a" href={"#/"} color={textColor}><Text as="u">Impressum</Text></Text>
                 </VStack>
                 <VStack spacing={0} alignItems={"start"} paddingRight={"2rem"}>

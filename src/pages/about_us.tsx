@@ -19,7 +19,7 @@ const AboutUs = () => {
             </SimpleGrid>
             
             <Image src={about_us_footer} w={"105vw"} style={{shapeRendering: "crispEdges"}}/>
-            <Footer bgColor="backgroundGreen" textColor="background"/>
+            <Footer bgColor="backgroundGreen" textColor="background" currentStep={2}/>
         </Box>
     );
 }

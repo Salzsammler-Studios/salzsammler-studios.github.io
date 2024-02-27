@@ -35,7 +35,7 @@ const Project = () => {
                 <GridItem colSpan={1}><Text color="background" w="80%">Der Projektor wird über der Spielfläche installiert und ist für die Erzeugung der interaktiven Projektionsfläche verantwortlich. Das zu projizierende Bild erhält der Projektor durch die Recheneinheit.</Text></GridItem>
                 <GridItem colSpan={1}><Text color="background" w="80%">Die Würfel sind Spielobjekte mit verschiedenen Symbolen auf ihren Seitenflächen, die von den Spielenden platziert und rotiert werden können, um den Zustand der Anwendung zu beeinflussen. Je nach Ausrichtung und Position der Symbole können diese über das Bild der Kamera erfasst und an die Anwendung weitergeleitet und dort weiterverarbeitet werden.</Text></GridItem>
                     </Grid>*/}
-            <Footer bgColor="highlight" textColor="background" />
+            <Footer currentStep={1} bgColor="highlight" textColor="background" />
         </Box>
     );
 }
