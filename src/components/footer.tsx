@@ -18,7 +18,7 @@ const Footer = ({bgColor, textColor, currentStep}:FooterProps) => {
                     {currentStep != 1 &&<Text as="a" href={"#/project"} color={textColor}><Text as="u">Projekt</Text></Text>}
                     {currentStep != 2 &&<Text as="a" href={"#/team"} color={textColor}><Text as="u">Team</Text></Text>}
                     {currentStep != 3 &&<Text as="a" href={"#/contact"} color={textColor}><Text as="u">Kontakt</Text></Text>}
-                    <Text as="a" href={"#/"} color={textColor}><Text as="u">Impressum</Text></Text>
+                    <Text as="a" href={"#/impressum"} color={textColor}><Text as="u">Impressum</Text></Text>
                 </VStack>
                 <VStack spacing={0} alignItems={"start"} paddingRight={"2rem"}>
                     <Text as="b" color={textColor}>KONTAKT</Text>
