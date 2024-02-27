@@ -8,8 +8,8 @@ const AboutUs = () => {
         <Box>
             <SimpleGrid columns={[1, 3]} spacing={0} paddingLeft={"4rem"} paddingRight={"4rem"}>
                 <Box height="5rem"></Box>
-                <Box></Box>
-                <Box></Box>
+                <Box height="5rem"></Box>
+                <Box height="5rem"></Box>
                 <Box></Box>
                 <Heading size="3xl" textAlign="center" sx={{ fontWeight: 600 }} marginBottom="3rem">Das Team</Heading>
                 <Box></Box>
