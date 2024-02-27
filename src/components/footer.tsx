@@ -7,9 +7,10 @@ type FooterProps = {
 }
 const Footer = ({bgColor, textColor}:FooterProps) => {
     return (
-        <Box minH={["sm","10rem"]} bgColor={bgColor} marginTop={"-0.1rem"}>
-            <HStack justifyContent={"space-between"} alignItems={"baseline"}>
+        <Box minH={["sm","10rem"]} bgColor={bgColor} marginTop={"-0.1rem"} paddingBottom={"4rem"}>
+            <HStack justifyContent={"space-between"} alignItems={"baseline"} paddingTop={"4rem"}>
                 <Logo color={textColor} />
+                <HStack spacing={10} alignItems={"start"}>
                 <VStack spacing={0} alignItems={"start"}>
                     <Text as="b" color={textColor}>MENU</Text>
                     <Text as="a" href={"#/"} color={textColor}><Text as="u">Home</Text></Text>
@@ -23,6 +24,7 @@ const Footer = ({bgColor, textColor}:FooterProps) => {
                     <Text as="a" href="tel:176-240-71380" color={textColor}><Text as="u">+49 176 240 71380</Text></Text>
                     <Text as="a" href={"mailto:salzsammler.studios@gmail.com"} color={textColor}><Text as="u">salzsammler.studios@gmail.com</Text></Text>
                 </VStack>
+                </HStack>
             </HStack>
         </Box>
     )
