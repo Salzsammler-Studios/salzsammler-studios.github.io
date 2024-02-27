@@ -10,7 +10,7 @@ type ContactCardProps = {
 const ContactCard = ({ icon, text, link, href, textWidth }: ContactCardProps) => {
     return <Box>
         <VStack>
-            <Center height="7rem" width="7rem" marginBottom="-3rem" zIndex="2" sx={{
+            <Center height="7rem" width="7rem" marginBottom="-3.5rem" zIndex="2" sx={{
                 borderRadius: "100%",
                 background: "#F5F5F5",
                 boxShadow: "0px 4px 4px 0px rgba(0, 0, 0, 0.25)"
