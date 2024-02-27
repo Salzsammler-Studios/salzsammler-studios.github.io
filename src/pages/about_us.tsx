@@ -1,5 +1,6 @@
 import { Box, Heading, SimpleGrid, Image } from "@chakra-ui/react";
 import TeamCards from "../components/teamCards";
+import Footer from "../components/footer";
 import about_us_footer from "../assets/about_us_footer.svg";
 
 const AboutUs = () => {
@@ -18,6 +19,7 @@ const AboutUs = () => {
             </SimpleGrid>
             
             <Image src={about_us_footer} w={"105vw"} style={{shapeRendering: "crispEdges"}}/>
+            <Footer bgColor="backgroundGreen" textColor="background"/>
         </Box>
     );
 }

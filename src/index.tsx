@@ -16,7 +16,8 @@ const theme = extendTheme({
         highlight: '#A74D4A',
         backgroundAboutUs: '#F5F5F5',
         backgroundProject: '#EAE6E1',
-        background: '#F6F4EF'
+        background: '#F6F4EF',
+        backgroundGreen: '#708E66',
     }
 });
 
