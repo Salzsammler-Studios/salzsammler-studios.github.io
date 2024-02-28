@@ -80,7 +80,7 @@ const Content = ({ initialTabIndex }: ContentType) => {
               top="3rem"
               right="1rem"
             />
-            <Drawer placement="left" onClose={onClose} isOpen={isOpen}>
+            <Drawer placement="right" onClose={onClose} isOpen={isOpen}>
             <DrawerOverlay />
         <DrawerContent>
           <DrawerBody>
