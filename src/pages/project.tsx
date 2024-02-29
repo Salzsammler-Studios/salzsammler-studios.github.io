@@ -1,32 +1,14 @@
-import { Box, Grid, GridItem, Heading, Image, Text } from "@chakra-ui/react";
+import { Box, Grid, GridItem, Heading, Image, Text, VStack } from "@chakra-ui/react";
 import Footer from "../components/footer";
+import { useMediaQuery } from "react-responsive";
 
 const Project = () => {
+    const isMobile = useMediaQuery({ query: '(max-width: 768px)' })
     const leftText = "Kinder werden nicht nur zum Spielen angeregt, sondern auch dazu, historische Themen zu erforschen und ein tiefes Verständnis für kulturelle Zusammenhänge zu entwickeln. Durch die enge Zusammenarbeit mit Experten aus Kulturinstitutionen entsteht eine immersive Lernumgebung, die Kinder für Geschichte begeistert und ihnen einen interaktiven Zugang zu historischen Inhalten bietet."
     const rightText = "Salzsammler nutzt einen Projektor, um eine immersive und interaktive Projektionsfläche zu erschaffen, auf der Spielende und Würfel von der Kamera erfasst werden und somit nahtlos in die Anwendung integriert werden. Darüber hinaus setzt die Anwendung modernste Computer Vision-Technologien ein, um einen flüssigen Ablauf und eine beeindruckende Nutzererfahrung sicherzustellen."
     return (
         <Box>
-            <Grid padding={["1rem", "5rem"]} gap={10} marginTop={["2rem", "4rem"]} templateColumns='repeat(3, 1fr)'>
-                <GridItem colSpan={3}><Heading size={["xs", "2xl"]} style={{ fontWeight: 600 }} color="highlight" w="80%">Eine interaktive Installation, die es Kindern ermöglicht, geschichtlichen Inhalten und Materialien intuitiv und mit Spielspaß zu begegnen.</Heading></GridItem>
-                <GridItem colSpan={3} marginBottom={["5rem"]}>
-                    <Box
-                        as='iframe'
-                        src='https://www.youtube.com/embed/_pMCzDzWwfA?si=6P265PWT41l5tdFC?frameborder=0'
-                        allow="accelerometer; encrypted-media; gyroscope; picture-in-picture"
-                        allowFullScreen
-                        width={['90%', '100%']}
-                        sx={{
-                            aspectRatio: '16/9',
-                            borderRadius: '63',
-                        }}
-                    />
-                </GridItem>
-                <GridItem colSpan={1}><Image src="horse.png" marginTop={["0rem", "-10rem"]} /></GridItem>
-                <GridItem colSpan={2} alignSelf="center"><Heading size={["xs", "xl"]} color="highlight">Der Handel und Transport von Waren stehen im Mittelpunkt. Kinder übernehmen Aufgaben wie das Annehmen von Baumaterialien, Lebensmitteln und Luxusgütern</Heading></GridItem>
-                <GridItem colSpan={1}></GridItem>
-                <GridItem colSpan={1}><Text>{leftText}</Text></GridItem>
-                <GridItem colSpan={1}><Text>{rightText}</Text></GridItem>
-            </Grid>
+            {isMobile ? <MobileProject leftText={leftText} rightText={rightText} /> : <DesktopProject leftText={leftText} rightText={rightText} />}
             {/*<Grid padding={"5rem"} gap={10} templateColumns='repeat(3, 1fr)' backgroundColor={"highlight"}>
                 <GridItem colSpan={1}><Heading size={["xs", "2xl"]} style={{ fontWeight: 600 }} color="background" w="80%">Kamera</Heading></GridItem>
                 <GridItem colSpan={1}><Heading size={["xs", "2xl"]} style={{ fontWeight: 600 }} color="background" w="80%">Projektor</Heading></GridItem>
@@ -38,6 +20,55 @@ const Project = () => {
             <Footer currentStep={1} bgColor="highlight" textColor="background" />
         </Box>
     );
+}
+
+type ProjectType = {
+    leftText: string;
+    rightText: string;
+}
+const MobileProject = ({ leftText, rightText }: ProjectType) => {
+    return (
+    <VStack padding={"2rem"} gap={10} marginTop={"2rem"}>
+        <Heading size={["lg", "2xl"]} style={{ fontWeight: 700 }} color="highlight">Eine interaktive Installation, die es ermöglicht, Inhalten mit Spielspaß zu begegnen.</Heading>
+            <Box
+                as='iframe'
+                src='https://www.youtube.com/embed/_pMCzDzWwfA?si=6P265PWT41l5tdFC?frameborder=0'
+                allow="accelerometer; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                width={['100%', '100%']}
+                sx={{
+                    aspectRatio: '16/9',
+                    borderRadius: '15',
+                }}
+            />
+        <Heading size={["md", "xl"]} color="highlight">Der Handel und Transport von Waren stehen im Mittelpunkt. Kinder übernehmen Aufgaben wie das Annehmen von Baumaterialien, Lebensmitteln und Luxusgütern</Heading>
+        <Text fontSize={"xs"}>{leftText}</Text>
+        <Text fontSize={"xs"}>{rightText}</Text>
+    </VStack>)
+}
+
+const DesktopProject = ({ leftText, rightText }: ProjectType) => {
+    return (<Grid padding={["1rem", "5rem"]} gap={10} marginTop={["2rem", "4rem"]} templateColumns='repeat(3, 1fr)'>
+        <GridItem colSpan={3}><Heading size={["xs", "2xl"]} style={{ fontWeight: 600 }} color="highlight" w="80%">Eine interaktive Installation, die es Kindern ermöglicht, geschichtlichen Inhalten und Materialien intuitiv und mit Spielspaß zu begegnen.</Heading></GridItem>
+        <GridItem colSpan={3} marginBottom={["5rem"]}>
+            <Box
+                as='iframe'
+                src='https://www.youtube.com/embed/_pMCzDzWwfA?si=6P265PWT41l5tdFC?frameborder=0'
+                allow="accelerometer; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                width={['90%', '100%']}
+                sx={{
+                    aspectRatio: '16/9',
+                    borderRadius: '63',
+                }}
+            />
+        </GridItem>
+        <GridItem colSpan={1}><Image src="horse.png" marginTop={["0rem", "-10rem"]} /></GridItem>
+        <GridItem colSpan={2} alignSelf="center"><Heading size={["xs", "xl"]} color="highlight">Der Handel und Transport von Waren stehen im Mittelpunkt. Kinder übernehmen Aufgaben wie das Annehmen von Baumaterialien, Lebensmitteln und Luxusgütern</Heading></GridItem>
+        <GridItem colSpan={1}></GridItem>
+        <GridItem colSpan={1}><Text>{leftText}</Text></GridItem>
+        <GridItem colSpan={1}><Text>{rightText}</Text></GridItem>
+    </Grid>)
 }
 
 export default Project;
