@@ -70,7 +70,7 @@ const Content = ({ initialTabIndex }: ContentType) => {
         {isMobile ? (
           <>
             <IconButton
-              icon={<HamburgerIcon />}
+              icon={<HamburgerIcon color={location.pathname == "/contact" ? "background" : "black"} />}
               aria-label="Menu"
               onClick={onOpen}
               variant="ghost"
