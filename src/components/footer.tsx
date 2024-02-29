@@ -9,7 +9,7 @@ type FooterProps = {
 const Footer = ({bgColor, textColor, currentStep}:FooterProps) => {
     return (
         <Box minH={["sm","8rem"]} bgColor={bgColor} marginTop={"-0.1rem"} paddingBottom={"2rem"}>
-            <HStack justifyContent={"space-between"} alignItems={"baseline"} paddingTop={"4rem"}>
+            <HStack justifyContent={"space-between"} alignItems={"top"} paddingTop={"4rem"}>
                 <Logo color={textColor} />
                 <HStack spacing={10} alignItems={"start"}>
                 <VStack spacing={0} alignItems={"start"}>

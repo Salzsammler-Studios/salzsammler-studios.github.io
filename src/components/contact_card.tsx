@@ -27,7 +27,7 @@ const ContactCard = ({ icon, text, link, href, textWidth }: ContactCardProps) =>
                 }}>
                 <VStack>
                     <Heading size="xl" color={"highlight"} fontWeight={300}>{text}</Heading>
-                    <Link w={textWidth} href={href} isExternal color={"highlight"}><Heading textAlign="center" size="lg" color={"highlight"} fontWeight={600}>{link}</Heading></Link>
+                    <Link w={textWidth} href={href} isExternal color={"highlight"}><Heading textAlign="center" fontSize={"1.7rem"}color={"highlight"} fontWeight={600}>{link}</Heading></Link>
                 </VStack>
             </Center>
         </VStack>
