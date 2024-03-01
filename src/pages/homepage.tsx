@@ -1,8 +1,9 @@
 import {useNavigate} from 'react-router-dom';
 import { Box, Text, Heading, Stack, SimpleGrid, VStack } from '@chakra-ui/react';
 import { ArrowForwardIcon } from '@chakra-ui/icons';
-import {ReactComponent as HomepageBackground} from '../assets/homepage_background.svg';
 import { useMediaQuery } from 'react-responsive';
+import {ReactComponent as HomepageBackground} from '../assets/homepage_background.svg';
+import {ReactComponent as MobileHomepageBackground} from '../assets/mobile_town.svg';
 
 const Homepage = () => {
     const isMobile = useMediaQuery({ query: '(max-width: 768px)' })
@@ -43,7 +44,7 @@ const MobileHomepage = () => {
 
     return <Box minH={"105vh"}>
          <Box marginTop={"-3rem"} pointerEvents={"none"} bgSize={"80%"} width={"100%"} height={"100%"} position={"absolute"} bgImage={"url('/mobile_clouds.svg')"} bgRepeat={"no-repeat"} bgPosition={"left top"} style={{ shapeRendering: "crispEdges" }}></Box>
-         <Box marginTop={"1rem"} zIndex={2} pointerEvents={"none"} bgSize={"80%"} width={"101%"} height={"101%"} position={"absolute"} bgImage={"url('/mobile_town.svg')"} bgRepeat={"no-repeat"} bgPosition={"right bottom"} bottom={0}style={{ shapeRendering: "crispEdges" }}></Box>
+         <MobileHomepageBackground pointerEvents={"none"} style={{ shapeRendering: "crispEdges", position: "absolute", bottom: "0", right: "0" }}/>
         <VStack>
             <Box marginTop={"16rem"} pointerEvents={"none"}></Box>
             <Heading fontSize={"md"} marginBottom={"-1.25rem"} sx={{ fontWeight: 600}}>Interaktive Installationen</Heading>
