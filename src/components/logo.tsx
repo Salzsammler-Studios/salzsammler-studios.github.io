@@ -1,6 +1,4 @@
-import { Box, Heading, Icon, createIcon } from "@chakra-ui/react";
-// somehow this icon gets placed wherever.
-import {ReactComponent as SalzsammlerLogoIcon} from "../assets/logo.svg"
+import { Box, Heading} from "@chakra-ui/react";
 
 type LogoProps = {
     color: string

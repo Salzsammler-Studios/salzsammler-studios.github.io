@@ -1,6 +1,6 @@
 import { Box, HStack, Heading, VStack, Image } from "@chakra-ui/react";
 import ContactCard from "../components/contact_card";
-import { EmailIcon, PhoneIcon, ViewIcon } from "@chakra-ui/icons";
+import { EmailIcon, PhoneIcon } from "@chakra-ui/icons";
 import Footer from "../components/footer";
 import { useMediaQuery } from "react-responsive";
 

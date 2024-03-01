@@ -3,7 +3,10 @@ import { Box, Text, Heading, Stack, SimpleGrid, VStack } from '@chakra-ui/react'
 import { ArrowForwardIcon } from '@chakra-ui/icons';
 import { useMediaQuery } from 'react-responsive';
 import {ReactComponent as HomepageBackground} from '../assets/homepage_background.svg';
-import {ReactComponent as MobileHomepageBackground} from '../assets/mobile_town.svg';
+import {ReactComponent as CloudBig} from '../assets/cloud_big.svg';
+import {ReactComponent as CloudSmall} from '../assets/cloud_small.svg';
+import {ReactComponent as MobileHomepageBackground} from '../assets/mobile_homepage_background.svg';
+import {ReactComponent as MobileClound} from '../assets/mobile_clouds.svg';
 
 const Homepage = () => {
     const isMobile = useMediaQuery({ query: '(max-width: 768px)' })
@@ -16,9 +19,9 @@ const Homepage = () => {
 
 const DesktopHomepage = () => {
     return <Box minH={"100vh"}>
-    <Box pointerEvents={"none"} bgSize={"25%"} width={"100%"} height={"100%"} position={"absolute"} bgImage={"url('/cloud_small.svg')"} bgRepeat={"no-repeat"} bgPosition={"left top"} style={{ shapeRendering: "crispEdges" }}></Box>
+    <CloudSmall style={{position: "absolute", top: "0"}}/>
     <HomepageBackground pointerEvents={"none"} style={{position: "absolute", bottom: "-1.5rem", left: "-0.3rem"}} />
-    <Box pointerEvents={"none"} bgSize={"60%"} width={"100%"} height={"100%"} position={"absolute"} bgImage={"url('/cloud_big.svg')"} bgRepeat={"no-repeat"} bgPosition={"left top"} style={{ shapeRendering: "crispEdges" }}></Box>
+    <CloudBig style={{position: "absolute", top: "0"}}/>
 
     <SimpleGrid columns={2} spacing={10}>
         <Box></Box>
@@ -43,8 +46,8 @@ const MobileHomepage = () => {
     };
 
     return <Box minH={"105vh"}>
-         <Box marginTop={"-3rem"} pointerEvents={"none"} bgSize={"80%"} width={"100%"} height={"100%"} position={"absolute"} bgImage={"url('/mobile_clouds.svg')"} bgRepeat={"no-repeat"} bgPosition={"left top"} style={{ shapeRendering: "crispEdges" }}></Box>
-         <MobileHomepageBackground pointerEvents={"none"} style={{ shapeRendering: "crispEdges", position: "absolute", bottom: "0", right: "0" }}/>
+         <MobileClound pointerEvents={"none"} style={{ shapeRendering: "crispEdges", position: "absolute", marginTop: "-3rem", left:"0" }}/>
+         <MobileHomepageBackground pointerEvents={"none"} style={{position: "absolute", bottom: "0", right: "0" }}/>
         <VStack>
             <Box marginTop={"16rem"} pointerEvents={"none"}></Box>
             <Heading fontSize={"md"} marginBottom={"-1.25rem"} sx={{ fontWeight: 600}}>Interaktive Installationen</Heading>

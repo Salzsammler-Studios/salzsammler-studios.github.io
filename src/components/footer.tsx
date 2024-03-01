@@ -18,7 +18,7 @@ const Footer = ({ bgColor, textColor, currentStep }: FooterProps) => {
 
 const MobileFooter = ({ bgColor, textColor, currentStep }: FooterProps) => {
     return (
-        <Box borderTopRadius={currentStep == 2 ? ["0px", "0px"] : ["30px", "0px"]} minH={["0rem", "8rem"]} bgColor={bgColor} marginTop={"-0.1rem"} padding={"2rem"}>
+        <Box borderTopRadius={currentStep === 2 ? ["0px", "0px"] : ["30px", "0px"]} minH={["0rem", "8rem"]} bgColor={bgColor} marginTop={"-0.1rem"} padding={"2rem"}>
             <VStack justifyContent={"space-between"} alignItems={"top"} paddingTop={["0rem","4rem"]}>
                 <Box marginLeft={["-2rem","0rem"]} marginBottom={"2rem"} marginTop={["-3rem","0rem"]}>
                     <Logo color={textColor} />
@@ -27,9 +27,9 @@ const MobileFooter = ({ bgColor, textColor, currentStep }: FooterProps) => {
                     <VStack spacing={0} alignItems={"start"}>
                         <Text as="b" color={textColor}>MENU</Text>
                         <Text as="a" href={"#/"} color={textColor} lineHeight={"1.2rem"}><Text as="u">Home</Text></Text>
-                        {currentStep != 1 && <Text as="a" href={"#/project"} color={textColor} lineHeight={"1.2rem"}><Text as="u">Projekt</Text></Text>}
-                        {currentStep != 2 && <Text as="a" href={"#/team"} color={textColor} lineHeight={"1.2rem"}><Text as="u">Team</Text></Text>}
-                        {currentStep != 3 && <Text as="a" href={"#/contact"} color={textColor} lineHeight={"1.2rem"}><Text as="u">Kontakt</Text></Text>}
+                        {currentStep !== 1 && <Text as="a" href={"#/project"} color={textColor} lineHeight={"1.2rem"}><Text as="u">Projekt</Text></Text>}
+                        {currentStep !== 2 && <Text as="a" href={"#/team"} color={textColor} lineHeight={"1.2rem"}><Text as="u">Team</Text></Text>}
+                        {currentStep !== 3 && <Text as="a" href={"#/contact"} color={textColor} lineHeight={"1.2rem"}><Text as="u">Kontakt</Text></Text>}
                         <Text as="a" href={"#/impressum"} color={textColor}><Text as="u" lineHeight={"1.2rem"}>Impressum</Text></Text>
                     </VStack>
                     <VStack spacing={0} alignItems={"start"} paddingRight={"2rem"}>
@@ -52,9 +52,9 @@ const DesktopFooter = ({ bgColor, textColor, currentStep }: FooterProps) => {
                     <VStack spacing={0} alignItems={"start"}>
                         <Text as="b" color={textColor}>MENU</Text>
                         <Text as="a" href={"#/"} color={textColor}><Text as="u">Home</Text></Text>
-                        {currentStep != 1 && <Text as="a" href={"#/project"} color={textColor}><Text as="u">Projekt</Text></Text>}
-                        {currentStep != 2 && <Text as="a" href={"#/team"} color={textColor}><Text as="u">Team</Text></Text>}
-                        {currentStep != 3 && <Text as="a" href={"#/contact"} color={textColor}><Text as="u">Kontakt</Text></Text>}
+                        {currentStep !== 1 && <Text as="a" href={"#/project"} color={textColor}><Text as="u">Projekt</Text></Text>}
+                        {currentStep !== 2 && <Text as="a" href={"#/team"} color={textColor}><Text as="u">Team</Text></Text>}
+                        {currentStep !== 3 && <Text as="a" href={"#/contact"} color={textColor}><Text as="u">Kontakt</Text></Text>}
                         <Text as="a" href={"#/impressum"} color={textColor}><Text as="u">Impressum</Text></Text>
                     </VStack>
                     <VStack spacing={0} alignItems={"start"} paddingRight={"2rem"}>
