@@ -9,7 +9,7 @@ const Project = () => {
     const rightText = "Salzsammler nutzt einen Projektor, um eine immersive und interaktive Projektionsfläche zu erschaffen, auf der Spielende und Würfel von der Kamera erfasst werden und somit nahtlos in die Anwendung integriert werden. Darüber hinaus setzt die Anwendung modernste Computer Vision-Technologien ein, um einen flüssigen Ablauf und eine beeindruckende Nutzererfahrung sicherzustellen."
     return (
         <Box>
-            {isMobile ? <MobileProject leftText={leftText} rightText={rightText} headerText={headerText} /> : <DesktopProject leftText={leftText} rightText={rightText} headerText={headerText}/>}
+            {isMobile ? <MobileProject leftText={leftText} rightText={rightText} headerText={headerText} /> : <DesktopProject leftText={leftText} rightText={rightText} headerText={headerText} />}
             {/*<Grid padding={"5rem"} gap={10} templateColumns='repeat(3, 1fr)' backgroundColor={"highlight"}>
                 <GridItem colSpan={1}><Heading size={["xs", "2xl"]} style={{ fontWeight: 600 }} color="background" w="80%">Kamera</Heading></GridItem>
                 <GridItem colSpan={1}><Heading size={["xs", "2xl"]} style={{ fontWeight: 600 }} color="background" w="80%">Projektor</Heading></GridItem>
@@ -30,8 +30,8 @@ type ProjectType = {
 }
 const MobileProject = ({ leftText, rightText, headerText }: ProjectType) => {
     return (
-    <VStack padding={"2rem"} gap={10} marginTop={"2rem"}>
-        <Heading size={["lg", "2xl"]} style={{ fontWeight: 700 }} color="highlight">{headerText}</Heading>
+        <VStack padding={"2rem"} gap={10} marginTop={"2rem"}>
+            <Heading size={["lg", "2xl"]} style={{ fontWeight: 700 }} color="highlight">{headerText}</Heading>
             <Box
                 as='iframe'
                 src='https://www.youtube.com/embed/_pMCzDzWwfA?si=6P265PWT41l5tdFC?frameborder=0'
@@ -43,10 +43,10 @@ const MobileProject = ({ leftText, rightText, headerText }: ProjectType) => {
                     borderRadius: '15',
                 }}
             />
-        <Heading size={["md", "xl"]} color="highlight">Der Handel und Transport von Waren stehen im Mittelpunkt. Kinder übernehmen Aufgaben wie das Annehmen von Baumaterialien, Lebensmitteln und Luxusgütern</Heading>
-        <Text fontSize={"xs"}>{leftText}</Text>
-        <Text fontSize={"xs"}>{rightText}</Text>
-    </VStack>)
+            <Heading size={["md", "xl"]} color="highlight">Der Handel und Transport von Waren stehen im Mittelpunkt. Kinder übernehmen Aufgaben wie das Annehmen von Baumaterialien, Lebensmitteln und Luxusgütern</Heading>
+            <Text fontSize={"xs"}>{leftText}</Text>
+            <Text fontSize={"xs"}>{rightText}</Text>
+        </VStack>)
 }
 
 const DesktopProject = ({ leftText, rightText, headerText }: ProjectType) => {
@@ -54,6 +54,7 @@ const DesktopProject = ({ leftText, rightText, headerText }: ProjectType) => {
         <GridItem colSpan={3}><Heading size={["xs", "3xl"]} style={{ fontWeight: 600 }} color="highlight" w="80%">{headerText}</Heading></GridItem>
         <GridItem colSpan={3}>
             <Box
+                title="Ein Video von Salzsammler Studios, das die Anwendung Salzsammler zeigt."
                 as='iframe'
                 src='https://www.youtube.com/embed/_pMCzDzWwfA?si=6P265PWT41l5tdFC?frameborder=0'
                 allow="accelerometer; encrypted-media; gyroscope; picture-in-picture"
@@ -65,7 +66,7 @@ const DesktopProject = ({ leftText, rightText, headerText }: ProjectType) => {
                 }}
             />
         </GridItem>
-        <GridItem colSpan={1}><Image src="horse.png" marginTop={"-10rem"} /></GridItem>
+        <GridItem colSpan={1}><Image src="horse.png" marginTop={"-10rem"} alt="Ein Bild von einem Pferd mit Karren" /></GridItem>
         <GridItem colSpan={2} alignSelf="center"><Heading size={["xs", "xl"]} color="highlight">Der Handel und Transport von Waren stehen im Mittelpunkt. Kinder übernehmen Aufgaben wie das Annehmen von Baumaterialien, Lebensmitteln und Luxusgütern</Heading></GridItem>
         <GridItem colSpan={1}></GridItem>
         <GridItem colSpan={1}><Text fontSize={"xl"}>{leftText}</Text></GridItem>

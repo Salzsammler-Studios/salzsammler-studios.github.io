@@ -19,9 +19,9 @@ const Homepage = () => {
 
 const DesktopHomepage = () => {
     return <Box minH={"100vh"}>
-    <CloudSmall style={{position: "absolute", top: "0"}}/>
-    <HomepageBackground pointerEvents={"none"} style={{position: "absolute", bottom: "-1.5rem", left: "-0.3rem"}} />
-    <CloudBig style={{position: "absolute", top: "0"}}/>
+    <CloudSmall style={{position: "absolute", top: "0"}} role="img" title='>Eine kleine Wolke auf der Salzsammler Homepage'/>
+    <HomepageBackground pointerEvents={"none"} style={{position: "absolute", bottom: "-1.5rem", left: "-0.3rem"}} role="img" title='Eine Stadt in der Installation Salzsammler'/>
+    <CloudBig style={{position: "absolute", top: "0"}} role="img" title='>Eine große Wolke auf der Salzsammler Homepage'/>
 
     <SimpleGrid columns={2} spacing={10}>
         <Box></Box>
