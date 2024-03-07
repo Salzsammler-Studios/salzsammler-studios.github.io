@@ -29,7 +29,7 @@ const DesktopHomepage = () => {
         <Box></Box>
         <Box></Box>
         <Stack marginTop={["10rem", "16rem"]} maxW="110%" marginLeft={["-1rem", "2rem"]} marginRight={"auto"}>
-            <Heading fontSize={["sm", "3xl"]} marginBottom={["-0.5rem", "-1.25rem"]} sx={{ fontWeight: 600 }} className='SubTitleAnimation'>Interaktive Installationen</Heading>
+            <Heading fontSize={["sm", "3xl"]} marginBottom={["-0.5rem", "-1.25rem"]} sx={{ fontWeight: 600 }} className='TitleAnimation'>Interaktive Installationen</Heading>
             <Heading whiteSpace={"nowrap"} fontSize={["xl", "5rem"]} sx={{ fontWeight: 900 }} className={'TitleAnimation'}>Salzsammler</Heading>
 
             <Text marginTop={["0rem", "-0.7rem"]} maxW={["100%", "90%"]} fontSize={["sm", "2xl"]} lineHeight={["", "9"]} className='SubTitleAnimation'>Salzsammler Studios fokussiert sich auf Innovationen im Bereich der Extended Reality, um didaktisch wertvolle Informationen interaktiv und spielbar erfahrbar zu machen.</Text>
@@ -51,7 +51,7 @@ const MobileHomepage = () => {
          <MobileHomepageBackground pointerEvents={"none"} style={{position: "absolute", bottom: "0", right: "0" }}/>
         <VStack>
             <Box marginTop={"16rem"} pointerEvents={"none"}></Box>
-            <Heading fontSize={"md"} marginBottom={"-1.25rem"} sx={{ fontWeight: 600}} className='SubTitleAnimation'>Interaktive Installationen</Heading>
+            <Heading fontSize={"md"} marginBottom={"-1.25rem"} sx={{ fontWeight: 600}} className='TitleAnimation'>Interaktive Installationen</Heading>
             <Heading fontSize={ "4xl"} sx={{ fontWeight: 900}} className={'TitleAnimation'}>Salzsammler</Heading>
             <Heading fontSize={ "4xl"} sx={{ fontWeight: 900}} marginTop={"-1.5rem"} className={'TitleAnimation'}>Studios</Heading>
 
