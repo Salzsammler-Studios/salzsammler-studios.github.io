@@ -1,8 +1,7 @@
-import { Box, Heading, SimpleGrid, Image } from "@chakra-ui/react";
+import { Box, Heading, SimpleGrid } from "@chakra-ui/react";
 import TeamCards from "../components/teamCards";
 import Footer from "../components/footer";
-import about_us_footer from "../assets/about_us_footer.svg";
-
+import { ReactComponent as AboutUsFooter } from '../assets/aboutUsFooter.svg';
 const AboutUs = () => {
     return (
         <Box>
@@ -17,8 +16,7 @@ const AboutUs = () => {
                 <TeamCards image='/john.png' name='John Beinecke' title='PRODUCER' text='Meine Aufgabe als Producer vereint meine Leidenschaft und Expertise für Spieleentwicklung und lässt mich mit einem kühlen Kopf den Überblick behalten.' />
                 <TeamCards image='/nic.png' name='Nic Schilling' title='GAME DESIGNER' text='Mit meiner Leidenschaft für Musik, Theater und Games arbeite ich im Game Design, in der Produktion und in der Komposition und verbinde alles zu einem harmonischen Ganzen.' />
             </SimpleGrid>
-            
-            <Image src={about_us_footer} w={"100vw"} style={{shapeRendering: "crispEdges"}} alt="Eine Stadt in der Installation Salzsammler"/>
+            <AboutUsFooter style={{display: "flex",width: "100%", height: "auto", zIndex: "2"}} title="Eine Stadt in der Installation Salzsammler"/>
             <Footer bgColor="backgroundGreen" textColor="background" currentStep={2}/>
         </Box>
     );

@@ -45,7 +45,7 @@ const MobileFooter = ({ bgColor, textColor, currentStep }: FooterProps) => {
 
 const DesktopFooter = ({ bgColor, textColor, currentStep }: FooterProps) => {
     return (
-        <Box minH={["sm", "8rem"]} bgColor={bgColor} marginTop={currentStep == 2 ? "-4rem":"-0.1rem"} paddingBottom={"2rem"}>
+        <Box minH={["sm", "8rem"]} bgColor={bgColor} marginTop="-0.1rem" paddingBottom={"2rem"}>
             <HStack justifyContent={"space-between"} alignItems={"top"} paddingTop={"4rem"}>
                 <Logo color={textColor} />
                 <HStack spacing={10} alignItems={"start"}>
