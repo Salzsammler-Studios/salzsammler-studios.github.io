@@ -51,12 +51,12 @@ const MobileHomepage = () => {
          <MobileHomepageBackground pointerEvents={"none"} style={{position: "absolute", bottom: "0", right: "0" }}/>
         <VStack>
             <Box marginTop={"16rem"} pointerEvents={"none"}></Box>
-            <Heading fontSize={"md"} marginBottom={"-1.25rem"} sx={{ fontWeight: 600}}>Interaktive Installationen</Heading>
+            <Heading fontSize={"md"} marginBottom={"-1.25rem"} sx={{ fontWeight: 600}} className='SubTitleAnimation'>Interaktive Installationen</Heading>
             <Heading fontSize={ "4xl"} sx={{ fontWeight: 900}} className={'TitleAnimation'}>Salzsammler</Heading>
             <Heading fontSize={ "4xl"} sx={{ fontWeight: 900}} marginTop={"-1.5rem"} className={'TitleAnimation'}>Studios</Heading>
 
-            <Text marginTop={"0.5rem"} maxW={"70%"} fontSize={"sm"} lineHeight={["", "9"]}>Salzsammler Studios fokussiert sich auf Innovationen im Bereich der Extended Reality, um didaktisch wertvolle Informationen interaktiv und spielbar erfahrbar zu machen.</Text>
-            <Box as="button" marginTop={"0.1rem"} onClick={handleClick} bg="highlight" color={"background"} borderRadius={"5px"} padding="0.6rem"><b>Mehr erfahren</b></Box>
+            <Text marginTop={"0.5rem"} maxW={"70%"} fontSize={"sm"} lineHeight={["", "9"]} className='SubTitleAnimation'>Salzsammler Studios fokussiert sich auf Innovationen im Bereich der Extended Reality, um didaktisch wertvolle Informationen interaktiv und spielbar erfahrbar zu machen.</Text>
+            <Box as="button" marginTop={"0.1rem"} onClick={handleClick} bg="highlight" color={"background"} borderRadius={"5px"} padding="0.6rem" className='ExploreMoreAnimation'><b>Mehr erfahren</b></Box>
         </VStack>
     </Box>
 }
