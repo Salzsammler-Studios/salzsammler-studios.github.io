@@ -10,7 +10,7 @@ const Contact = () => {
     return <Box>
         <VStack minHeight={["100vh"]} spacing={"2rem"} paddingLeft={["1rem", "5rem"]} paddingRight={["1rem", "5rem"]}>
             <Box height={["2rem","12rem"]}></Box>
-            <Heading fontSize={["2.5rem","7xl"]} fontWeight={600} color="background" textAlign="center" w={["90%", "100%"]} >Sie haben Interesse?</Heading>
+            <Heading fontSize={["2.5rem","7xl"]} fontWeight={600} color="background" textAlign="center" w={["90%", "100%"]} >Kontaktieren Sie uns!</Heading>
             <Heading size="lg" fontWeight={100} color="background" textAlign="center" w={["85%","70%"]}>Wir freuen uns darauf, mit Ihnen über zukünftige Installationen zu sprechen.</Heading>
             <Box height={["0rem","4rem"]}></Box>
             {isMobile ?

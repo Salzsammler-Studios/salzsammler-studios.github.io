@@ -6,7 +6,7 @@ import about_us_footer from "../assets/about_us_footer.svg";
 const AboutUs = () => {
     return (
         <Box>
-            <SimpleGrid columns={[1, 3]} alignItems={"baseline"} spacing={0} paddingLeft={"4vw"} paddingRight={"4vw"}>
+            <SimpleGrid columns={[1, 3]} alignItems={"baseline"} justifyContent={"center"} columnGap={"2rem"} paddingLeft={"5vw"} paddingRight={"4vw"} >
                 <Box height="5rem"></Box>
                 <Box height="5rem"></Box>
                 <Box height="5rem"></Box>
@@ -18,7 +18,7 @@ const AboutUs = () => {
                 <TeamCards image='/nic.png' name='Nic Schilling' title='GAME DESIGNER' text='Mit meiner Leidenschaft für Musik, Theater und Games arbeite ich im Game Design, in der Produktion und in der Komposition und verbinde alles zu einem harmonischen Ganzen.' />
             </SimpleGrid>
             
-            <Image src={about_us_footer} w={"105vw"} style={{shapeRendering: "crispEdges"}}/>
+            <Image src={about_us_footer} w={"100vw"} style={{shapeRendering: "crispEdges"}}/>
             <Footer bgColor="backgroundGreen" textColor="background" currentStep={2}/>
         </Box>
     );
