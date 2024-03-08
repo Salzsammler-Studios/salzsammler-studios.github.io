@@ -50,16 +50,16 @@ const MobileHomepage = () => {
     return <Box minH={"105vh"}>
         <MobileCloudSmall className='SmallCloudAnimation' pointerEvents={"none"} style={{ position: "absolute", top: "3rem" }} />
         <MobileCloudBig className='BigCloudAnimation' pointerEvents={"none"} style={{ position: "absolute", top:"-3rem", left: "0"}} />
-        <MobileHomepageBackground pointerEvents={"none"} style={{ position: "absolute", bottom: "0", right: "0" }} />
+        <MobileHomepageBackground pointerEvents={"none"} style={{ position: "absolute", bottom: "2.5rem", right: "0" }} />
 
         <VStack>
-            <Box marginTop={"16rem"} pointerEvents={"none"}></Box>
-            <Heading fontSize={"md"} marginBottom={"-1.25rem"} sx={{ fontWeight: 600 }} className='TitleAnimation'>Interaktive Installationen</Heading>
-            <Heading fontSize={"4xl"} sx={{ fontWeight: 900 }} className={'TitleAnimation'}>Salzsammler</Heading>
-            <Heading fontSize={"4xl"} sx={{ fontWeight: 900 }} marginTop={"-1.5rem"} className={'TitleAnimation'}>Studios</Heading>
+            <Box marginTop={"17rem"} pointerEvents={"none"}></Box>
+            <Heading fontSize={"xl"} marginBottom={"-1.25rem"} sx={{ fontWeight: 600 }} className='TitleAnimation'>Interaktive Installationen</Heading>
+            <Heading fontSize={"5xl"} sx={{ fontWeight: 900 }} className={'TitleAnimation'}>Salzsammler</Heading>
+            <Heading fontSize={"5xl"} sx={{ fontWeight: 900 }} marginTop={"-1.5rem"} className={'TitleAnimation'}>Studios</Heading>
 
-            <Text marginTop={"0.5rem"} maxW={"70%"} fontSize={"sm"} lineHeight={["", "9"]} className='SubTitleAnimation'>Salzsammler Studios fokussiert sich auf Innovationen im Bereich der Extended Reality, um didaktisch wertvolle Informationen interaktiv und spielbar erfahrbar zu machen.</Text>
-            <Box as="button" marginTop={"0.1rem"} onClick={handleClick} bg="highlight" color={"background"} borderRadius={"5px"} padding="0.6rem" className='ExploreMoreAnimation'><b>Mehr erfahren</b></Box>
+            <Text marginTop={"0.5rem"} textAlign={"center"} maxW={"80%"} fontSize={"md"} lineHeight={"5"} className='SubTitleAnimation'>Salzsammler Studios fokussiert sich auf Innovationen im Bereich der Extended Reality, um didaktisch wertvolle Informationen interaktiv und spielbar erfahrbar zu machen.</Text>
+            <Box as="button" marginTop={"1rem"} onClick={handleClick} bg="highlight" color={"background"} borderRadius={"10px"} padding="0.8rem" className='ExploreMoreAnimation'><b>Mehr erfahren</b></Box>
         </VStack>
     </Box>
 }
