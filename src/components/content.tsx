@@ -7,7 +7,7 @@ import Project from "../pages/project";
 import { useState, useEffect } from "react";
 import { useNavigate, useLocation } from 'react-router-dom';
 import { useMediaQuery } from "react-responsive";
-import { ReactComponent as Hamburger } from "../assets/hamburger.svg";
+import HamburgerIcon from "./hamburgericon";
 import '../App.css';
 
 type ContentType = {
@@ -71,14 +71,14 @@ const Content = ({ initialTabIndex }: ContentType) => {
       {isMobile ? (
         <>
           <IconButton
-            icon={<Hamburger color={location.pathname === "/contact" ? "background" : "black"} />}
+            icon={<HamburgerIcon color={location.pathname === "/contact" ? "background" : "black"} />}
             aria-label="Menu"
             onClick={onOpen}
             variant="ghost"
             zIndex={100}
             borderRadius="50%"
             position="absolute"
-            top="1rem"
+            top="3rem"
             right="1rem"
           />
           <Drawer placement="right" onClose={onClose} isOpen={isOpen}>

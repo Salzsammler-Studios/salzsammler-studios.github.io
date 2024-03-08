@@ -53,7 +53,7 @@ const MobileHomepage = () => {
         <MobileHomepageBackground pointerEvents={"none"} style={{ position: "absolute", bottom: "2.5rem", right: "0" }} />
 
         <VStack>
-            <Box marginTop={"17rem"} pointerEvents={"none"}></Box>
+            <Box marginTop={"14rem"} pointerEvents={"none"}></Box>
             <Heading fontSize={"xl"} marginBottom={"-1.25rem"} sx={{ fontWeight: 600 }} className='TitleAnimation'>Interaktive Installationen</Heading>
             <Heading fontSize={"5xl"} sx={{ fontWeight: 900 }} className={'TitleAnimation'}>Salzsammler</Heading>
             <Heading fontSize={"5xl"} sx={{ fontWeight: 900 }} marginTop={"-1.5rem"} className={'TitleAnimation'}>Studios</Heading>

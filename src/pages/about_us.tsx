@@ -6,9 +6,9 @@ const AboutUs = () => {
     return (
         <Box>
             <SimpleGrid columns={[1, 3]} alignItems={"baseline"} justifyContent={"center"} columnGap={"2rem"} paddingLeft={"5vw"} paddingRight={"4vw"} >
-                <Box height="5rem"></Box>
-                <Box height="5rem"></Box>
-                <Box height="5rem"></Box>
+                <Box height={["2rem","5rem"]}></Box>
+                <Box height={["2rem","5rem"]}></Box>
+                <Box height={["2rem","5rem"]}></Box>
                 <Box></Box>
                 <Heading size="3xl" textAlign="center" sx={{ fontWeight: 600 }} marginBottom="3rem">Das Team</Heading>
                 <Box></Box>
