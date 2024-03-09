@@ -49,7 +49,7 @@ const MobileHomepage = () => {
 
     return <Box minH={"105vh"}>
         <MobileCloudSmall className='SmallCloudAnimation' pointerEvents={"none"} style={{ position: "absolute", top: "3rem" }} />
-        <MobileCloudBig className='BigCloudAnimation' pointerEvents={"none"} style={{ position: "absolute", top:"-3rem", left: "0"}} />
+        <MobileCloudBig className='BigCloudAnimation' pointerEvents={"none"} style={{ position: "absolute", top:"-5rem", left: "0"}} />
         <MobileHomepageBackground pointerEvents={"none"} style={{ position: "absolute", bottom: "2.5rem", right: "0" }} />
 
         <VStack>
