@@ -9,6 +9,7 @@ import { ReactComponent as MobileHomepageBackground } from '../assets/mobile_hom
 import { ReactComponent as MobileCloudBig } from '../assets/mobileCloudBig.svg';
 import { ReactComponent as MobileCloudSmall } from '../assets/mobileCloudSmall.svg';
 import '../App.css';
+import { useTranslation } from 'react-i18next';
 
 const Homepage = () => {
     const isMobile = useMediaQuery({ query: '(max-width: 768px)' })
@@ -20,6 +21,7 @@ export default Homepage;
 
 
 const DesktopHomepage = () => {
+    const { t } = useTranslation();
     return <Box minH={"100vh"}>
         <CloudSmall style={{ position: "absolute", top: "0" }} className='SmallCloudAnimation' role="img" title='>Eine kleine Wolke auf der Salzsammler Homepage' />
         <HomepageBackground pointerEvents={"none"} style={{ position: "absolute", bottom: "-1.5rem", left: "-0.3rem" }} role="img" title='Eine Stadt in der Installation Salzsammler' />
@@ -30,17 +32,18 @@ const DesktopHomepage = () => {
             <Box></Box>
             <Box></Box>
             <Stack marginTop={["10rem", "16rem"]} maxW="110%" marginLeft={["-1rem", "2rem"]} marginRight={"auto"}>
-                <Heading fontSize={["sm", "3xl"]} marginBottom={["-0.5rem", "-1.25rem"]} sx={{ fontWeight: 600 }} className='TitleAnimation'>Interaktive Installationen</Heading>
-                <Heading whiteSpace={"nowrap"} fontSize={["xl", "5rem"]} sx={{ fontWeight: 900 }} className={'TitleAnimation'}>Salzsammler</Heading>
+                <Heading fontSize={["sm", "3xl"]} marginBottom={["-0.5rem", "-1.25rem"]} sx={{ fontWeight: 600 }} className='TitleAnimation'>{t('homepage.header1')}</Heading>
+                <Heading whiteSpace={"nowrap"} fontSize={["xl", "5rem"]} sx={{ fontWeight: 900 }} className={'TitleAnimation'}>{t('homepage.header2')}</Heading>
 
-                <Text marginTop={["0rem", "-0.7rem"]} maxW={["100%", "90%"]} fontSize={["sm", "2xl"]} lineHeight={["", "9"]} className='SubTitleAnimation'>Salzsammler Studios fokussiert sich auf Innovationen im Bereich der Extended Reality, um didaktisch wertvolle Informationen interaktiv und spielbar erfahrbar zu machen.</Text>
-                <Text as="u" color="highlight" marginTop={"1rem"} className='ExploreMoreAnimation'><Text as="a" href="#/project" fontSize={["sm", "2xl"]} sx={{ fontWeight: 600 }}>Mehr erfahren</Text><ArrowForwardIcon /></Text>
+                <Text marginTop={["0rem", "-0.7rem"]} maxW={["100%", "90%"]} fontSize={["sm", "2xl"]} lineHeight={["", "9"]} className='SubTitleAnimation'>{t('homepage.subheader')}</Text>
+                <Text as="u" color="highlight" marginTop={"1rem"} className='ExploreMoreAnimation'><Text as="a" href="#/project" fontSize={["sm", "2xl"]} sx={{ fontWeight: 600 }}>{t('homepage.button')}</Text><ArrowForwardIcon /></Text>
             </Stack>
         </SimpleGrid>
     </Box>
 }
 
 const MobileHomepage = () => {
+    const { t } = useTranslation();
     const navigate = useNavigate();
 
     const handleClick = () => {
@@ -54,12 +57,12 @@ const MobileHomepage = () => {
 
         <VStack>
             <Box marginTop={"14rem"} pointerEvents={"none"}></Box>
-            <Heading fontSize={"xl"} marginBottom={"-1.25rem"} sx={{ fontWeight: 600 }} className='TitleAnimation'>Interaktive Installationen</Heading>
-            <Heading fontSize={"5xl"} sx={{ fontWeight: 900 }} className={'TitleAnimation'}>Salzsammler</Heading>
-            <Heading fontSize={"5xl"} sx={{ fontWeight: 900 }} marginTop={"-1.5rem"} className={'TitleAnimation'}>Studios</Heading>
+            <Heading fontSize={"xl"} marginBottom={"-1.25rem"} sx={{ fontWeight: 600 }} className='TitleAnimation'>{t('homepage.header1')}</Heading>
+            <Heading fontSize={"5xl"} sx={{ fontWeight: 900 }} className={'TitleAnimation'}>{t('homepage.header2')}</Heading>
+            <Heading fontSize={"5xl"} sx={{ fontWeight: 900 }} marginTop={"-1.5rem"} className={'TitleAnimation'}>{t('homepage.header3')}</Heading>
 
-            <Text marginTop={"0.5rem"} textAlign={"center"} maxW={"80%"} fontSize={"md"} lineHeight={"5"} className='SubTitleAnimation'>Salzsammler Studios fokussiert sich auf Innovationen im Bereich der Extended Reality, um didaktisch wertvolle Informationen interaktiv und spielbar erfahrbar zu machen.</Text>
-            <Box as="button" marginTop={"1rem"} onClick={handleClick} bg="highlight" color={"background"} borderRadius={"10px"} padding="0.8rem" className='ExploreMoreAnimation'><b>Mehr erfahren</b></Box>
+            <Text marginTop={"0.5rem"} textAlign={"center"} maxW={"80%"} fontSize={"md"} lineHeight={"5"} className='SubTitleAnimation'>{t('homepage.subheader')}</Text>
+            <Box as="button" marginTop={"1rem"} onClick={handleClick} bg="highlight" color={"background"} borderRadius={"10px"} padding="0.8rem" className='ExploreMoreAnimation'><b>{t('homepage.button')}</b></Box>
         </VStack>
     </Box>
 }
