@@ -46,7 +46,7 @@ const MobileProject = () => {
 const DesktopProject = () => {
     const { t } = useTranslation();
     return (<Grid padding={["1rem", "5rem"]} gap={10} marginTop={["2rem", "4rem"]} templateColumns='repeat(3, 1fr)'>
-        <GridItem colSpan={3}><Heading size={["xs", "3xl"]} style={{ fontWeight: 600 }} color="highlight" w="80%">{t('project.headerText')}</Heading></GridItem>
+        <GridItem colSpan={3}><Heading size={["xs", "3xl"]} style={{ fontWeight: 600 }} letterSpacing="-2px" fontWeight="600" lineHeight="1.0" color="highlight" w="80%">{t('project.headerText')}</Heading></GridItem>
         <GridItem colSpan={3}>
             <Box
                 title="Ein Video von Salzsammler Studios, das die Anwendung Salzsammler zeigt."
@@ -62,7 +62,7 @@ const DesktopProject = () => {
             />
         </GridItem>
         <GridItem colSpan={1}><Image src="horse.png" marginTop={"-10rem"} alt="Ein Bild von einem Pferd mit Karren" /></GridItem>
-        <GridItem colSpan={2} alignSelf="center"><Heading size={["xs", "xl"]} color="highlight">{t('project.header1')}</Heading></GridItem>
+        <GridItem colSpan={2} alignSelf="center"><Heading size={["xs", "xl"]} letterSpacing="-2px" fontWeight="600" lineHeight="1.0" color="highlight">{t('project.header1')}</Heading></GridItem>
         <GridItem colSpan={1}></GridItem>
         <GridItem colSpan={1}><Text fontSize={"xl"}>{t('project.leftText')}</Text></GridItem>
         <GridItem colSpan={1}><Text fontSize={"xl"}>{t('project.rightText')}</Text></GridItem>

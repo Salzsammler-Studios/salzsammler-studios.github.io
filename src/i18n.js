@@ -55,7 +55,7 @@ i18n
                     },
                     project: {
                         header1: 'Der Handel und Transport von Waren stehen im Mittelpunkt. Kinder übernehmen Aufgaben wie das Annehmen von Baumaterialien, Lebensmitteln und Luxusgütern',
-                        headerText: 'Eine interaktive Installation, die es Kindern ermöglicht, geschichtlichen Inhalten mit Spielspaß zu begegnen.',
+                        headerText: 'Eine interaktive Installation, die es Kindern ermöglicht, Geschichte mit Spielspaß zu begegnen.',
                         leftText: 'Kinder werden nicht nur zum Spielen angeregt, sondern auch dazu, historische Themen zu erforschen und ein tiefes Verständnis für kulturelle Zusammenhänge zu entwickeln. Durch die enge Zusammenarbeit mit Experten aus Kulturinstitutionen entsteht eine immersive Lernumgebung, die Kinder für Geschichte begeistert und ihnen einen interaktiven Zugang zu historischen Inhalten bietet.',
                         rightText: 'Salzsammler nutzt einen Projektor, um eine immersive und interaktive Projektionsfläche zu erschaffen, auf der Spielende und Würfel von der Kamera erfasst werden und somit nahtlos in die Anwendung integriert werden. Darüber hinaus setzt die Anwendung modernste Computer Vision-Technologien ein, um einen flüssigen Ablauf und eine beeindruckende Nutzererfahrung sicherzustellen.',
                     },
