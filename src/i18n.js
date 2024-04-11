@@ -20,7 +20,7 @@ i18n
             en: {
                 translation: {
                     homepage: {
-                        header1: 'Interactive Installation',
+                        header1: 'Interactive Installations',
                         header2: 'Salzsammler',
                         header3: 'Studios',
                         subheader: 'Salzsammler Studios focuses on innovations in the field of extended reality in order to make didactically valuable information interactive and playable.',
@@ -30,7 +30,7 @@ i18n
                         header1: 'The trade and transport of goods take center stage. Children take on tasks such as accepting wares like building materials, food, and luxury goods.',
                         headerText: 'An interactive installation that enables children to encounter historical content while having fun.',
                         leftText: 'Children are not only encouraged to play, but also to explore historical topics and develop a deep understanding of cultural contexts. Close cooperation with experts from cultural institutions creates an immersive learning environment that gets children excited about history and offers them interactive access to historical content.',
-                        rightText: 'Salzsammler uses a projector to create an immersive and interactive projection screen where the player and dice are captured by the camera and seamlessly integrated into the application. In addition, the application uses state-of-the-art computer vision technologies to ensure a smooth flow and an impressive user experience.',
+                        rightText: 'Salzsammler employs a projector to create an immersive and interactive projection screen. The players and dice are seamlessly integrated into the application via the usage of camera. In addition, the application uses state-of-the-art computer vision technologies to ensure a smooth and fluid user experience.',
                     },
                     about_us: {
                         header: 'About us',
