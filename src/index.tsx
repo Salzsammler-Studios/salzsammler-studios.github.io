@@ -20,6 +20,7 @@ const theme = extendTheme({
         backgroundProject: '#EAE6E1',
         background: '#F6F4EF',
         backgroundGreen: '#708E66',
+        random: '#F4F4F4'
     }
 });
 
