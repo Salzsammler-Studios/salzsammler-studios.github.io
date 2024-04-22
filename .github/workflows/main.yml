@@ -11,7 +11,7 @@ jobs:
 
     steps:
       - name: Checkout code
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
 
       - name: Deploy over FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
@@ -19,5 +19,5 @@ jobs:
           server: hosting203126.ae831.netcup.net
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
-          server-dir: /salzsammler/build
+          server-dir: /salzsammler/build/
           local-dir: ./
