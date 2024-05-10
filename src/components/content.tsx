@@ -9,6 +9,8 @@ import { useNavigate, useLocation } from 'react-router-dom';
 import { useMediaQuery } from "react-responsive";
 import HamburgerIcon from "./hamburgericon";
 import '../App.css';
+import LanguageButton from "./language_button";
+import { useTranslation } from "react-i18next";
 
 type ContentType = {
   initialTabIndex: number
@@ -23,6 +25,7 @@ const Content = ({ initialTabIndex }: ContentType) => {
 
   const navigate = useNavigate();
   const location = useLocation();
+  const { t } = useTranslation();
 
   const handleTabChange = (index: number) => {
     setTabIndex(index);
@@ -86,10 +89,11 @@ const Content = ({ initialTabIndex }: ContentType) => {
             <DrawerContent>
               <DrawerBody>
                 <VStack spacing={4}>
-                  <Link href="#/" onClick={onClose}>Home</Link>
-                  <Link href="#/project" onClick={onClose}>Projekt</Link>
-                  <Link href="#/team" onClick={onClose}>Team</Link>
-                  <Link href="#/contact" onClick={onClose}>Kontakt</Link>
+                  <Link href="#/" onClick={onClose}>{t('navbar.home')}</Link>
+                  <Link href="#/project" onClick={onClose}>{t('navbar.project')}</Link>
+                  <Link href="#/team" onClick={onClose}>{t('navbar.about_us')}</Link>
+                  <Link href="#/contact" onClick={onClose}>{t('navbar.contact')}</Link>
+                  <LanguageButton/>
                 </VStack>
               </DrawerBody>
             </DrawerContent>
@@ -111,12 +115,13 @@ const Content = ({ initialTabIndex }: ContentType) => {
           </Tabs>
         </>
       ) : (
+        <><LanguageButton/>
         <Tabs index={initialTabIndex} isLazy align='end' position="relative" variant='unstyled' size={['sm', 'lg']} onChange={handleTabChange}>
           <TabList sx={{ marginBottom: ["-7.5rem", "-8.5rem"] }} padding={"2rem"} paddingRight={["0rem", "3rem"]} className="NavBarAnimation">
-            <Tab color={tabIndex === 3 ? 'background' : 'black'} _selected={{ opacity: 1, fontSize: ['sm', '3xl'] }} sx={{ fontWeight: 600, opacity: 0.5 }} fontSize={['xs', '2xl']}>Home</Tab>
-            <Tab color={tabIndex === 3 ? 'background' : 'black'} _selected={{ opacity: 1, fontSize: ['sm', '3xl'] }} sx={{ fontWeight: 600, opacity: 0.5 }} fontSize={['xs', '2xl']}>Projekt</Tab>
-            <Tab color={tabIndex === 3 ? 'background' : 'black'} _selected={{ opacity: 1, fontSize: ['sm', '3xl'] }} sx={{ fontWeight: 600, opacity: 0.5 }} fontSize={['xs', '2xl']}>Team</Tab>
-            <Tab color={tabIndex === 3 ? 'background' : 'black'} _selected={{ opacity: 1, fontSize: ['sm', '3xl'] }} sx={{ fontWeight: 600, opacity: 0.5 }} fontSize={['xs', '2xl']}>Kontakt</Tab>
+            <Tab color={tabIndex === 3 ? 'background' : 'black'} _selected={{ opacity: 1, fontSize: ['sm', '3xl'] }} sx={{ fontWeight: 600, opacity: 0.5 }} fontSize={['xs', '2xl']}>{t('navbar.home')}</Tab>
+            <Tab color={tabIndex === 3 ? 'background' : 'black'} _selected={{ opacity: 1, fontSize: ['sm', '3xl'] }} sx={{ fontWeight: 600, opacity: 0.5 }} fontSize={['xs', '2xl']}>{t('navbar.project')}</Tab>
+            <Tab color={tabIndex === 3 ? 'background' : 'black'} _selected={{ opacity: 1, fontSize: ['sm', '3xl'] }} sx={{ fontWeight: 600, opacity: 0.5 }} fontSize={['xs', '2xl']}>{t('navbar.about_us')}</Tab>
+            <Tab color={tabIndex === 3 ? 'background' : 'black'} _selected={{ opacity: 1, fontSize: ['sm', '3xl'] }} sx={{ fontWeight: 600, opacity: 0.5 }} fontSize={['xs', '2xl']}>{t('navbar.contact')}</Tab>
           </TabList>
           <TabPanels textAlign="start">
             <TabPanel sx={{ margin: 0, padding: 0 }}><Homepage /></TabPanel>
@@ -129,6 +134,7 @@ const Content = ({ initialTabIndex }: ContentType) => {
             <TabPanel sx={{ margin: 0, padding: 0 }}><Logo color='background' /><Contact /></TabPanel>
           </TabPanels>
         </Tabs>
+        </>
       )}
     </Box>
   );

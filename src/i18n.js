@@ -33,7 +33,7 @@ i18n
                         rightText: 'Salzsammler employs a projector to create an immersive and interactive projection screen. The players and dice are seamlessly integrated into the application via the usage of camera. In addition, the application uses state-of-the-art computer vision technologies to ensure a smooth and fluid user experience.',
                     },
                     about_us: {
-                        header: 'About us',
+                        header: 'The Team',
                         rubentext: 'When I\'m not working on salzsammler, I\'m a web developer combining creative self-realization with technical know-how.',
                         johntext: 'My job as a producer combines my passion and expertise for game development and allows me to keep a cool head and keep an overview.',
                         nictext: 'With my passion for music, theater and games, I work in game design, production and composition and combine everything into a harmonious whole.',
@@ -41,6 +41,13 @@ i18n
                     contact: {
                         header: 'Get in Touch',
                         subheader: 'We would love to chat about future installations with you.',
+                    },
+                    navbar: {
+                        home: 'Home',
+                        project: 'Project',
+                        about_us: 'Team',
+                        contact: 'Contact',
+                    
                     }
                 }
             },
@@ -68,6 +75,12 @@ i18n
                     contact: {
                         header: 'Kontaktieren Sie uns!',
                         subheader: 'Wir freuen uns darauf, mit Ihnen über zukünftige Installationen zu sprechen.',
+                    },
+                    navbar: {
+                        home: 'Home',
+                        project: 'Projekt',
+                        about_us: 'Team',
+                        contact: 'Kontakt',
                     }
                 }
             }
