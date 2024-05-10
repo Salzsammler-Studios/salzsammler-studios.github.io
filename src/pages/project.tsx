@@ -4,10 +4,11 @@ import { useMediaQuery } from "react-responsive";
 import { useTranslation } from "react-i18next";
 
 const Project = () => {
+
     const isMobile = useMediaQuery({ query: '(max-width: 768px)' })
-     return (
+    return (
         <Box>
-            {isMobile ? <MobileProject /> : <DesktopProject/>}
+            {isMobile ? <MobileProject /> : <DesktopProject />}
             {/*<Grid padding={"5rem"} gap={10} templateColumns='repeat(3, 1fr)' backgroundColor={"highlight"}>
                 <GridItem colSpan={1}><Heading size={["xs", "2xl"]} style={{ fontWeight: 600 }} color="background" w="80%">Kamera</Heading></GridItem>
                 <GridItem colSpan={1}><Heading size={["xs", "2xl"]} style={{ fontWeight: 600 }} color="background" w="80%">Projektor</Heading></GridItem>
@@ -21,14 +22,18 @@ const Project = () => {
     );
 }
 
+
+
 const MobileProject = () => {
-    const { t } = useTranslation();
+    const { i18n, t } = useTranslation();
+    const isGerman = i18n.language === 'de';
+    const youtubeUrl = isGerman ? 'https://www.youtube.com/embed/_pMCzDzWwfA?si=6P265PWT41l5tdFC?frameborder=0' : 'https://www.youtube.com/embed/C5qvPOB-ej8?si=6IAWbJVgy59qPoCR?frameborder=0';
     return (
         <VStack padding={"2rem"} gap={10} marginTop={"2rem"}>
             <Heading size={["lg", "2xl"]} style={{ fontWeight: 700 }} color="highlight">{t('project.headerText')}</Heading>
             <Box
                 as='iframe'
-                src='https://www.youtube.com/embed/_pMCzDzWwfA?si=6P265PWT41l5tdFC?frameborder=0'
+                src={youtubeUrl}
                 allow="accelerometer; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
                 width={['100%', '100%']}
@@ -44,14 +49,16 @@ const MobileProject = () => {
 }
 
 const DesktopProject = () => {
-    const { t } = useTranslation();
+    const { i18n, t } = useTranslation();
+    const isGerman = i18n.language === 'de';
+    const youtubeUrl = isGerman ? 'https://www.youtube.com/embed/_pMCzDzWwfA?si=6P265PWT41l5tdFC?frameborder=0' : 'https://www.youtube.com/embed/C5qvPOB-ej8?si=6IAWbJVgy59qPoCR?frameborder=0';
     return (<Grid padding={["1rem", "5rem"]} gap={10} marginTop={["2rem", "4rem"]} templateColumns='repeat(3, 1fr)'>
         <GridItem colSpan={3}><Heading size={["xs", "3xl"]} style={{ fontWeight: 600 }} letterSpacing="-2px" fontWeight="600" lineHeight="1.0" color="highlight" w="80%">{t('project.headerText')}</Heading></GridItem>
         <GridItem colSpan={3}>
             <Box
                 title="Ein Video von Salzsammler Studios, das die Anwendung Salzsammler zeigt."
                 as='iframe'
-                src='https://www.youtube.com/embed/_pMCzDzWwfA?si=6P265PWT41l5tdFC?frameborder=0'
+                src={youtubeUrl}
                 allow="accelerometer; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
                 width={['90%', '100%']}
