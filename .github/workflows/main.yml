@@ -1,0 +1,12 @@
+name: Execute Webhook
+on:
+  push:
+    branches:
+      - gh-pages
+
+jobs:
+  execute_webhook:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Execute Webhook
+        run: curl -X POST -H 'Content-Type: application/json' -d '{"key": "value"}' https://ae831.netcup.net:8443/modules/git/public/web-hook.php?uuid=6efd7899-d300-cdf1-97dd-5fd8a6c21a4b
