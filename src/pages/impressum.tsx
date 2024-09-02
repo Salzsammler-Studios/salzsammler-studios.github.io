@@ -14,7 +14,7 @@ const Impressum = () => {
             <br></br>
             <b>Kontakt:</b>
             <p>Telefon: 0176 24071386</p>
-            <p>E-Mail: salzsammler.studios@gmail.com</p>
+            <p>E-Mail: info@salzsammler.de</p>
             <br></br>
             <p>Inhaltlich Verantwortlicher: Ruben Schäfer, Kirchgasse 12, 95444 Bayreuth</p>
             <br></br>
