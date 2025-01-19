@@ -1,8 +1,7 @@
-import { useState } from 'react';
-import { Box } from '@chakra-ui/react';
 import Content from './components/content';
 import { HashRouter as Router, Route, Routes } from 'react-router-dom';
 import Impressum from './pages/impressum';
+import DataPrivacy from './pages/data_privacy';
 
 const App = () => {
     return (
@@ -13,6 +12,7 @@ const App = () => {
                 <Route path="/team" element={<Content initialTabIndex={2} />} />
                 <Route path="/contact" element={<Content initialTabIndex={3} />} />
                 <Route path="/impressum" element={<Impressum />} />
+                <Route path="/data_privacy" element={<DataPrivacy />} />
                 {/* Add more routes for additional tabs */}
             </Routes>
         </Router>)

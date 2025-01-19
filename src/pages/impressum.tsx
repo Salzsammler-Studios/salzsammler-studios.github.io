@@ -6,11 +6,11 @@ const Impressum = () => {
             <Heading>Impressum</Heading>
             <Text>Angaben gemäß § 5 TMG</Text>
             <br></br>
-            <b>Niclas Schilling, Ruben Schäfer und John Beinecke GbR, Salzsammler Studios</b>
-            <p>Schwindstraße 28</p>
-            <p>95447 Bayreuth</p>
+            <b>Schilling & Schäfer GbR, Salzsammler Studios</b>
+            <p>Neufeldstr. 6</p>
+            <p>81243 München</p>
             <br></br>
-            <p><b>Vertretungsberechtigte Gesellschafter:</b> Nic Schilling, John Beinecke und Ruben Schäfer</p>
+            <p><b>Vertretungsberechtigte Gesellschafter:</b> Nic Schilling und Ruben Schäfer</p>
             <br></br>
             <b>Kontakt:</b>
             <p>Telefon: 0176 24071386</p>

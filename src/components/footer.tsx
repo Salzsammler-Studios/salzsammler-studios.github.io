@@ -56,11 +56,12 @@ const DesktopFooter = ({ bgColor, textColor, currentStep }: FooterProps) => {
                         {currentStep !== 2 && <Text as="a" href={"#/team"} color={textColor}><Text as="u">Team</Text></Text>}
                         {currentStep !== 3 && <Text as="a" href={"#/contact"} color={textColor}><Text as="u">Kontakt</Text></Text>}
                         <Text as="a" href={"#/impressum"} color={textColor}><Text as="u">Impressum</Text></Text>
+                        <Text as="a" href={"#/data_privacy"} color={textColor}><Text as="u">Datenschutz</Text></Text>
                     </VStack>
                     <VStack spacing={0} alignItems={"start"} paddingRight={"2rem"}>
                         <Text as="b" color={textColor}>KONTAKT</Text>
                         <Text as="a" href="tel:176-240-71380" color={textColor}><Text as="u">+49 176 240 71380</Text></Text>
-                        <Text as="a" href={"mailto:salzsammler.studios@gmail.com"} color={textColor}><Text as="u">salzsammler.studios@gmail.com</Text></Text>
+                        <Text as="a" href={"mailto:info@salzsammler.de"} color={textColor}><Text as="u">info@salzsammler.de</Text></Text>
                     </VStack>
                 </HStack>
             </HStack>
