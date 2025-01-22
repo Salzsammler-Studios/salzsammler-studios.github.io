@@ -3,6 +3,8 @@ import reportWebVitals from "./reportWebVitals";
 import { extendTheme, ChakraProvider } from '@chakra-ui/react';
 import App from './App';
 
+// import i18n (needs to be bundled ;))
+import './i18n';
 
 const fonts = {
     heading: 'Poppins',
@@ -16,7 +18,9 @@ const theme = extendTheme({
         highlight: '#A74D4A',
         backgroundAboutUs: '#F5F5F5',
         backgroundProject: '#EAE6E1',
-        background: '#F6F4EF'
+        background: '#F6F4EF',
+        backgroundGreen: '#708E66',
+        random: '#F4F4F4'
     }
 });
 

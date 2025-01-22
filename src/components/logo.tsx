@@ -1,6 +1,4 @@
-import { Box, Heading, Icon, createIcon } from "@chakra-ui/react";
-// somehow this icon gets placed wherever.
-import {ReactComponent as SalzsammlerLogoIcon} from "../assets/logo.svg"
+import { Box, Heading} from "@chakra-ui/react";
 
 type LogoProps = {
     color: string
@@ -8,11 +6,8 @@ type LogoProps = {
 const Logo = ({ color }: LogoProps) => {
     return (
         <>
-            <Box visibility={["visible", "hidden"]} position={"fixed"} margin={0} padding={0} top={"2rem"} left={"-14rem"}>
-                <SalzsammlerLogoIcon color={color} height={"1.5rem"}/>
-            </Box>
-            <Box visibility={["hidden", "visible"]} marginTop={-12} marginLeft={"4rem"}>
-                <Heading color={color} size={["3xs", "2xl"]} noOfLines={2} maxW={['10rem', 'md']} paddingTop={['1rem', '2rem']} paddingLeft={['1rem', '1rem']} fontWeight={800}>Salzsammler Studios</Heading>
+            <Box marginTop={[-4,-12]} marginLeft={["1rem","4rem"]}>
+                <Heading as="a" href="#/" color={color} size={["md", "2xl"]} noOfLines={2} maxW={['12rem', 'md']} paddingTop={['3rem', '2rem']} paddingLeft={['1rem', '1rem']} fontWeight={800}>Salzsammler Studios</Heading>
             </Box>
         </>
     );
