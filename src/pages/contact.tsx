@@ -17,13 +17,13 @@ const Contact = () => {
             <Box height={["0rem","4rem"]}></Box>
             {isMobile ?
                 <VStack spacing={"2rem"}>
-                    <ContactCard icon={<PhoneIcon color="highlight" boxSize={"2.5rem"} />} text="" link="+49 176 240 71380" href="tel:176-240-71380" textWidth="100%" />
+                    <ContactCard icon={<PhoneIcon color="highlight" boxSize={"2.5rem"} />} text="" link="+49 176 240 71386" href="tel:176-240-71386" textWidth="100%" />
                     <ContactCard icon={<EmailIcon color="highlight" boxSize={"3rem"} />} text="" link='info@salzsammler.de' href="mailto:info@salzsammler.de" textWidth="80%" />
                     <ContactCard icon={<Image src="/instagram.svg" color="highlight" boxSize={"3.5rem"} />} text="" link="Instagram" href={instagramLink} textWidth="100%" />
                 </VStack>
 
                 : (<HStack spacing={"3rem"}>
-                    <ContactCard icon={<PhoneIcon color="highlight" boxSize={"2.5rem"} />} text="" link="+49 176 240 71380" href="tel:176-240-71380" textWidth="100%" />
+                    <ContactCard icon={<PhoneIcon color="highlight" boxSize={"2.5rem"} />} text="" link="+49 176 240 71386" href="tel:176-240-71386" textWidth="100%" />
                     <ContactCard icon={<EmailIcon color="highlight" boxSize={"3rem"} />} text="" link='info@salzsammler.de' href="mailto:info@salzsammler.de" textWidth="100%" />
                     <ContactCard icon={<Image src="/instagram.svg" color="highlight" boxSize={"3.5rem"} />} text="" link="Instagram" href={instagramLink} textWidth="100%" />
                 </HStack>)}
