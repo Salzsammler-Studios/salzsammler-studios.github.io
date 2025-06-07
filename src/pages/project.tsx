@@ -51,7 +51,7 @@ const MobileProject = () => {
 const DesktopProject = () => {
     const { i18n, t } = useTranslation();
     const isGerman = i18n.language === 'de';
-    const youtubeUrl = isGerman ? 'https://www.youtube.com/embed/_pMCzDzWwfA?si=6P265PWT41l5tdFC?frameborder=0' : 'https://www.youtube.com/embed/C5qvPOB-ej8?si=6IAWbJVgy59qPoCR?frameborder=0';
+    const youtubeUrl = isGerman ? 'https://www.youtube.com/embed/0PwrLX29h6Q?si=wmpMxkHU5bEdnCPl?frameborder=0' : 'https://www.youtube.com/embed/K_fryycQ1yw?si=5M-bsBlv1O1lc9jT?frameborder=0';
     return (<Grid padding={["1rem", "5rem"]} gap={10} marginTop={["2rem", "4rem"]} templateColumns='repeat(3, 1fr)'>
         <GridItem colSpan={3}><Heading size={["xs", "3xl"]} style={{ fontWeight: 600 }} letterSpacing="-2px" fontWeight="600" lineHeight="1.0" color="highlight" w="80%">{t('project.headerText')}</Heading></GridItem>
         <GridItem colSpan={3}>
