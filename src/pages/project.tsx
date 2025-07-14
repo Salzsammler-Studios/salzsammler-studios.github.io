@@ -27,7 +27,7 @@ const Project = () => {
 const MobileProject = () => {
     const { i18n, t } = useTranslation();
     const isGerman = i18n.language === 'de';
-    const youtubeUrl = isGerman ? 'https://www.youtube.com/embed/_pMCzDzWwfA?si=6P265PWT41l5tdFC?frameborder=0' : 'https://www.youtube.com/embed/C5qvPOB-ej8?si=6IAWbJVgy59qPoCR?frameborder=0';
+    const youtubeUrl = isGerman ? 'https://www.youtube.com/embed/0PwrLX29h6Q?si=wmpMxkHU5bEdnCPl?frameborder=0' : 'https://www.youtube.com/embed/K_fryycQ1yw?si=5M-bsBlv1O1lc9jT?frameborder=0';
     return (
         <VStack padding={"2rem"} gap={10} marginTop={"2rem"}>
             <Heading size={["lg", "2xl"]} style={{ fontWeight: 700 }} color="highlight">{t('project.headerText')}</Heading>
