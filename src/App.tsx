@@ -3,6 +3,8 @@ import { HashRouter as Router, Route, Routes } from 'react-router-dom';
 import Impressum from './pages/impressum';
 import DataPrivacy from './pages/data_privacy';
 import Feedback from "./pages/feedback";
+import SchalterPrivacy from "./pages/der-schalter/privacy_policy"
+import SchalterSupport from "./pages/der-schalter/support_page";
 
 const App = () => {
     return (
@@ -15,6 +17,8 @@ const App = () => {
                 <Route path="/impressum" element={<Impressum />} />
                 <Route path="/data_privacy" element={<DataPrivacy />} />
                 <Route path="/feedback" element=<Feedback/>/>
+                <Route path="/der-schalter/privacy" element=<SchalterPrivacy/>/>
+                <Route path="/der-schalter/support" element=<SchalterSupport/>/>
                 {/* Add more routes for additional tabs */}
             </Routes>
         </Router>)
