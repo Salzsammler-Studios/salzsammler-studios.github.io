@@ -1,18 +1,23 @@
-# Salzsammler Homepage
-This will be the salzsammler page.
+# Salzsammler Studios
 
-It is currently deployed for free on github pages.
-The master-branch contains the source code
-The gh-pages branch contains the code for deployment
+Website for Salzsammler Studios, built with [Astro](https://astro.build) + [Preact](https://preactjs.com) and statically deployed to netcup via FTP.
 
-### How to deploy changes:
-We deploy changes in the following style:
+## Development
 
-```$ npm run deploy -- -m "Deploy React app to GitHub Pages"```
+```sh
+npm install
+npm run dev      # start dev server at localhost:4321
+npm run build    # build to ./dist/
+npm run preview  # preview the build locally
+```
 
-For more information see:
-https://github.com/gitname/react-gh-pages
+## Deployment
 
-Todo: 
-1. Add DNS to Settings->Pages-> Custom Domain
-2. Verify Domain to account->pages->add a verified domain
+Deployment is handled by the GitHub Actions workflow (`.github/workflows/main.yml`). It must be triggered **manually** from the Actions tab in GitHub — it will not run automatically on push.
+
+The workflow builds the project and uploads `./dist/` to the netcup server via FTP. The FTP credentials are stored as GitHub repository secrets (`FTP_USERNAME`, `FTP_PASSWORD`).
+
+## Branch structure
+
+- `new-website-v2` — main development branch
+- `gh-pages` — legacy, no longer used

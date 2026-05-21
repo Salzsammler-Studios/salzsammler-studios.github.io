@@ -1,0 +1,33 @@
+---
+import Cone from './Cone.tsx';
+
+interface Props {
+    imageSrc: string;
+    imageAlt: string;
+}
+const { imageSrc, imageAlt } = Astro.props;
+---
+
+<section class="relative h-screen min-h-[600px] overflow-hidden bg-stone-50">
+    <!-- Image visible only inside the cone, driven by active nav item -->
+    <Cone client:load imageSrc={imageSrc} imageAlt={imageAlt} />
+
+    <!-- Small text block top right -->
+    <p
+        class="absolute top-28 right-8 max-w-[220px] text-right text-stone-800 text-xs leading-relaxed z-10"
+    >
+        Wir nehmen Ihre Inhalte und machen daraus etwas Spielbares, Erlebbares,
+        Unvergessliches – interaktive Extended-Reality-Installationen für Museen
+        und Kulturinstitutionen.
+    </p>
+
+    <!-- Main headline -->
+    <div class="absolute bottom-16 right-0 left-0 px-6 z-10">
+        <h1
+            class="font-['Barlow_Condensed'] font-black leading-none text-right"
+        >
+            <span class="block text-red-700 text-[12vw]">(D)Ein Thema</span>
+            <span class="block text-stone-900 text-[14vw]">Ein Erlebnis</span>
+        </h1>
+    </div>
+</section>

@@ -1,0 +1,10 @@
+@import "tailwindcss";
+
+@layer utilities {
+    .clip-diagonal-right {
+        clip-path: polygon(0 0, 45% 0, 30% 100%, 0 100%);
+    }
+    .clip-diagonal-section {
+        clip-path: polygon(0 0, 100% 8%, 100% 100%, 0 92%);
+    }
+}
