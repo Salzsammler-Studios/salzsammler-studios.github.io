@@ -1,6 +1,27 @@
 @import "tailwindcss";
 
+@font-face {
+    font-family: "Boldonse";
+    src: url("/fonts/Boldonse-Regular.ttf") format("truetype");
+    font-weight: 400;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "Abel";
+    src: url("/fonts/Abel-Regular.ttf") format("truetype");
+    font-weight: 400;
+    font-display: swap;
+}
+
 @layer utilities {
+    .font-boldonse {
+        font-family: "Boldonse", sans-serif;
+    }
+    .font-abel {
+        font-family: "Abel", sans-serif;
+    }
+
     .clip-diagonal-right {
         clip-path: polygon(0 0, 45% 0, 30% 100%, 0 100%);
     }

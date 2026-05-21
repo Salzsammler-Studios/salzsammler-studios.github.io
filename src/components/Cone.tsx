@@ -5,14 +5,15 @@ interface Props {
   imageAlt: string;
 }
 
-const HALF_SPREAD = 30;
-const TOP_HALF_WIDTH = 8;
+const SPREAD_LEFT = 16;
+const SPREAD_RIGHT = 30;
+const TOP_HALF_WIDTH = 6;
 
 function cone(apex: number): string {
   const tl = Math.max(0, apex - TOP_HALF_WIDTH);
   const tr = Math.min(100, apex + TOP_HALF_WIDTH);
-  const bl = Math.max(0, apex - HALF_SPREAD);
-  const br = Math.min(100, apex + HALF_SPREAD);
+  const bl = apex - SPREAD_LEFT;
+  const br = Math.min(100, apex + SPREAD_RIGHT);
   return `polygon(${tl.toFixed(2)}% 0%, ${tr.toFixed(2)}% 0%, ${br.toFixed(2)}% 100%, ${bl.toFixed(2)}% 100%)`;
 }
 
@@ -29,7 +30,11 @@ export default function Cone({ imageSrc, imageAlt }: Props) {
   useEffect(() => {
     measure();
     window.addEventListener("resize", measure);
-    return () => window.removeEventListener("resize", measure);
+    document.addEventListener("astro:after-swap", measure);
+    return () => {
+      window.removeEventListener("resize", measure);
+      document.removeEventListener("astro:after-swap", measure);
+    };
   }, []);
 
   return (
