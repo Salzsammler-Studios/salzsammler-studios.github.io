@@ -1,5 +1,13 @@
 @import "tailwindcss";
 
+@theme {
+    --color-primary: #a74d4a;
+    --color-secondary: #f6f4ef;
+
+    --font-heading: "Boldonse", sans-serif;
+    --font-body: "Abel", sans-serif;
+}
+
 @font-face {
     font-family: "Boldonse";
     src: url("/fonts/Boldonse-Regular.ttf") format("truetype");
