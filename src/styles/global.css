@@ -44,3 +44,24 @@
         clip-path: polygon(0 0, 100% 8%, 100% 100%, 0 92%);
     }
 }
+
+@layer components {
+    .text-body {
+        @apply font-body text-sm text-stone-500 leading-relaxed;
+    }
+    .text-body-dark {
+        @apply font-body text-sm text-stone-900 leading-relaxed;
+    }
+    .text-display {
+        @apply font-body font-bold text-4xl text-stone-900 leading-tight;
+    }
+    .text-heading {
+        @apply font-body font-bold text-3xl text-stone-900 leading-tight;
+    }
+    .text-subheading {
+        @apply font-body font-semibold text-lg text-stone-700;
+    }
+    .text-label {
+        @apply font-body text-xs tracking-widest uppercase text-stone-400;
+    }
+}

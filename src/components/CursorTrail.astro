@@ -1,0 +1,71 @@
+<canvas id="cursor-trail" class="fixed inset-0 pointer-events-none z-[9999]"
+></canvas>
+
+<script>
+    const canvas = document.getElementById("cursor-trail") as HTMLCanvasElement;
+    const ctx = canvas.getContext("2d")!;
+
+    const NODES = 28;
+    const LERP = 0.8;
+    const MAX_WIDTH = 10;
+
+    let mouse = { x: -999, y: -999 };
+    let nodes = Array.from({ length: NODES }, () => ({ x: -999, y: -999 }));
+    let rafId: number;
+    let color = "";
+
+    function resize() {
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+    }
+
+    function animate() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+        // Head follows mouse
+        nodes[0].x += (mouse.x - nodes[0].x) * LERP;
+        nodes[0].y += (mouse.y - nodes[0].y) * LERP;
+
+        // Each node follows the one ahead of it
+        for (let i = 1; i < NODES; i++) {
+            nodes[i].x += (nodes[i - 1].x - nodes[i].x) * LERP;
+            nodes[i].y += (nodes[i - 1].y - nodes[i].y) * LERP;
+        }
+
+        // Draw segments, tapering width and opacity toward the tail
+        ctx.lineCap = "round";
+        ctx.lineJoin = "round";
+        ctx.strokeStyle = color;
+
+        for (let i = 0; i < NODES - 1; i++) {
+            const t = 1 - i / NODES;
+            ctx.globalAlpha = t * 0.7;
+            ctx.lineWidth = t * MAX_WIDTH;
+            ctx.beginPath();
+            ctx.moveTo(nodes[i].x, nodes[i].y);
+            ctx.lineTo(nodes[i + 1].x, nodes[i + 1].y);
+            ctx.stroke();
+        }
+
+        ctx.globalAlpha = 1;
+        rafId = requestAnimationFrame(animate);
+    }
+
+    function init() {
+        resize();
+        color = getComputedStyle(document.documentElement)
+            .getPropertyValue("--color-primary")
+            .trim();
+        nodes = Array.from({ length: NODES }, () => ({ x: -999, y: -999 }));
+        cancelAnimationFrame(rafId);
+        animate();
+    }
+
+    window.addEventListener("resize", resize);
+    window.addEventListener("mousemove", (e) => {
+        mouse.x = e.clientX;
+        mouse.y = e.clientY;
+    });
+    document.addEventListener("astro:after-swap", init);
+    init();
+</script>
