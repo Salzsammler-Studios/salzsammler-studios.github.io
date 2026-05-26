@@ -1,36 +1,24 @@
 ---
 import Cone from "./Cone.tsx";
-
-interface Props {
-    imageSrc: string;
-    imageAlt: string;
-}
-const { imageSrc, imageAlt } = Astro.props;
 ---
 
-<section class="relative h-screen min-h-[600px] overflow-hidden bg-secondary">
-    <!-- Image visible only inside the cone, driven by active nav item -->
+<section class="relative h-[80vh] min-h-[600px] overflow-hidden bg-secondary">
     <Cone
         client:load
         transition:persist="cone"
-        imageSrc={imageSrc}
-        imageAlt={imageAlt}
+        spreadLeft={-40}
+        spreadRight={160}
+        spreadRight={160}
+        topHalfWidth={12}
+        offset={-4}
+        gradientEnd={50}
     />
 
-    <!-- Small text block top right -->
-    <p
-        class="absolute top-28 right-8 max-w-[220px] text-right text-stone-800 text-xs leading-relaxed z-10"
-    >
-        Wir nehmen Ihre Inhalte und machen daraus etwas Spielbares, Erlebbares,
-        Unvergessliches – interaktive Extended-Reality-Installationen für Museen
-        und Kulturinstitutionen.
-    </p>
-
     <!-- Main headline -->
-    <div class="absolute bottom-16 right-0 left-0 px-6 z-10">
+    <div class="absolute bottom-25 right-0 left-0 px-6 z-10">
         <h1 class="font-boldonse font-black leading-none text-right">
-            <span class="block text-primary text-[12vw]">(D)Ein Thema</span>
-            <span class="block text-stone-900 text-[14vw]">Ein Erlebnis</span>
+            <span class="block text-primary text-[10vw]">Dein Thema</span>
+            <span class="block text-stone-900 text-[10vw]">Dein Erlebnis</span>
         </h1>
     </div>
 </section>

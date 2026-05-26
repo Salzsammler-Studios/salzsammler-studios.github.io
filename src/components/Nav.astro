@@ -7,11 +7,14 @@ const pathname = Astro.url.pathname;
 ---
 
 <nav
-    class="fixed top-0 left-30 right-0 z-50 flex items-center justify-between px-6 py-4"
+    class="fixed top-0 left-0 right-0 z-50 flex items-center justify-between px-6 py-4"
 >
     <a
         href="/"
-        class="text-black text-sm font-semibold tracking-widest uppercase mix-blend-difference"
+        class:list={[
+            "text-sm font-semibold tracking-widest uppercase",
+            pathname === "/" ? "text-white" : "text-black mix-blend-difference",
+        ]}
         data-nav-item
         {...pathname === "/" ? { "data-nav-active": true } : {}}
     >
@@ -23,7 +26,12 @@ const pathname = Astro.url.pathname;
                 <li>
                     <a
                         href={l.href}
-                        class="text-black text-sm tracking-wide hover:opacity-70 transition-opacity mix-blend-difference"
+                        class:list={[
+                            "text-sm tracking-wide hover:opacity-70 transition-opacity",
+                            pathname.startsWith(l.href)
+                                ? "text-white"
+                                : "text-black mix-blend-difference",
+                        ]}
                         data-nav-item
                         {...(pathname.startsWith(l.href)
                             ? { "data-nav-active": true }

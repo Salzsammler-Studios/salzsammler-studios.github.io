@@ -3,9 +3,10 @@
 @theme {
     --color-primary: #a74d4a;
     --color-secondary: #f6f4ef;
+    --color-black: #121212;
 
     --font-heading: "Boldonse", sans-serif;
-    --font-body: "Abel", sans-serif;
+    --font-body: "Poppins", sans-serif;
 }
 
 @font-face {
@@ -26,8 +27,8 @@
     .font-boldonse {
         font-family: "Boldonse", sans-serif;
     }
-    .font-abel {
-        font-family: "Abel", sans-serif;
+    .font-poppins {
+        font-family: "Poppins", sans-serif;
     }
 
     .clip-diagonal-right {
