@@ -1,15 +1,55 @@
 ---
 import Cone from "./Cone.tsx";
+
+interface Props {
+    line1: string;
+    line2?: string;
+}
+
+const { line1, line2 } = Astro.props;
 ---
 
 <section
-    class="relative h-[90dvh] bg-primary mx-6 mt-6 rounded-3xl overflow-hidden"
+    class="relative h-[90dvh] bg-primary mx-6 mt-6 rounded-3xl overflow-hidden animate-hero-reveal"
 >
     <!-- Main headline -->
-    <div class="absolute bottom-10 right-0 left-0 px-6 z-10">
+    <div class="absolute bottom-10 right-0 left-0 px-6 z-10 animate-hero-text">
         <h1 class="text-display">
-            <span class="block text-display">Wir bauen mit Ihnen</span>
-            <span class="block text-display">Das Museum der Zukunft</span>
+            <span class="block text-display">{line1}</span>
+            {line2 && <span class="block text-display">{line2}</span>}
         </h1>
     </div>
 </section>
+
+<style>
+    /* Section wipes in from top to bottom */
+    @keyframes hero-reveal {
+        from {
+            clip-path: inset(0 0 100% 0 round 1.5rem);
+        }
+        to {
+            clip-path: inset(0 0 0% 0 round 1.5rem);
+        }
+    }
+
+    /* Text fades up after the reveal */
+    @keyframes hero-text {
+        from {
+            opacity: 0;
+            transform: translateY(16px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+
+    .animate-hero-reveal {
+        animation: hero-reveal 0.9s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+    }
+
+    .animate-hero-text {
+        opacity: 0;
+        animation: hero-text 0.6s ease-out 0.7s forwards;
+    }
+</style>
