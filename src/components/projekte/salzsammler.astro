@@ -10,6 +10,10 @@ const youtubeId =
         ? "0PwrLX29h6Q?si=wmpMxkHU5bEdnCPl"
         : "K_fryycQ1yw?si=5M-bsBlv1O1lc9jT";
 const youtubeUrl = `https://www.youtube.com/embed/${youtubeId}`;
+
+// Plain ID for thumbnail URL (strip the ?si= tracking param)
+const youtubeIdClean = youtubeId.split("?")[0];
+const youtubeThumbnail = `https://i.ytimg.com/vi/${youtubeIdClean}/maxresdefault.jpg`;
 ---
 
 <section class="px-6 py-24">
@@ -22,17 +26,33 @@ const youtubeUrl = `https://www.youtube.com/embed/${youtubeId}`;
     </div>
     <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
         <!-- YouTube video -->
+        <!-- YouTube facade: thumbnail + play button, iframe loads on click -->
         <div
-            class="relative w-full aspect-video rounded-2xl overflow-hidden shadow-md"
+            class="relative w-full aspect-video rounded-2xl overflow-hidden shadow-md cursor-pointer group"
+            data-yt-src={`${youtubeUrl}&autoplay=1`}
         >
-            <iframe
-                src={youtubeUrl}
-                title="Salzsammler – YouTube"
-                frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowfullscreen
+            <img
+                src={youtubeThumbnail}
+                alt="Salzsammler Video abspielen"
+                class="absolute inset-0 w-full h-full object-cover"
                 loading="lazy"
-                class="absolute inset-0 w-full h-full"></iframe>
+                draggable="false"
+            />
+            <!-- YouTube-style play button -->
+            <div class="absolute inset-0 flex items-center justify-center">
+                <div
+                    class="w-16 h-11 bg-[#FF0000] rounded-xl flex items-center justify-center shadow-lg transition-transform duration-150 group-hover:scale-110"
+                >
+                    <svg
+                        viewBox="0 0 24 24"
+                        class="w-7 h-7 text-white ml-0.5"
+                        fill="currentColor"
+                        aria-hidden="true"
+                    >
+                        <path d="M8 5v14l11-7z"></path>
+                    </svg>
+                </div>
+            </div>
         </div>
         <!-- Description -->
         <div>
@@ -94,3 +114,28 @@ const youtubeUrl = `https://www.youtube.com/embed/${youtubeId}`;
         </div>
     </div>
 </section>
+
+<script>
+    function initYoutubeFacades() {
+        document.querySelectorAll("[data-yt-src]").forEach((wrapper) => {
+            if (wrapper.dataset.ytBound) return;
+            wrapper.dataset.ytBound = "true";
+
+            wrapper.addEventListener("click", () => {
+                const src = wrapper.dataset.ytSrc;
+                const iframe = document.createElement("iframe");
+                iframe.src = src;
+                iframe.allow =
+                    "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
+                iframe.allowFullscreen = true;
+                iframe.frameBorder = "0";
+                iframe.className = "absolute inset-0 w-full h-full";
+                wrapper.innerHTML = "";
+                wrapper.appendChild(iframe);
+            });
+        });
+    }
+
+    initYoutubeFacades();
+    document.addEventListener("astro:page-load", initYoutubeFacades);
+</script>
