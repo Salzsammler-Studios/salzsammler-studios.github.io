@@ -44,34 +44,8 @@
     font-style: italic;
     font-display: swap;
 }
-@font-face {
-    font-family: "Boldonse";
-    src: url("/fonts/Boldonse-Regular.ttf") format("truetype");
-    font-weight: 400;
-    font-display: swap;
-}
-@font-face {
-    font-family: "Anybody";
-    src: url("/fonts/Anybody-VariableFont_wdth,wght.ttf") format("truetype");
-    font-weight: 800;
-    font-display: swap;
-}
-
-@font-face {
-    font-family: "Abel";
-    src: url("/fonts/Abel-Regular.ttf") format("truetype");
-    font-weight: 400;
-    font-display: swap;
-}
 
 @layer utilities {
-    .font-boldonse {
-        font-family: "Boldonse", sans-serif;
-    }
-    .font-poppins {
-        font-family: "Poppins", sans-serif;
-    }
-
     .clip-diagonal-right {
         clip-path: polygon(0 0, 45% 0, 30% 100%, 0 100%);
     }
@@ -88,7 +62,7 @@
         @apply font-body text-sm text-stone-900 leading-relaxed;
     }
     .text-display {
-        @apply font-heading font-semibold text-6xl text-text-light;
+        @apply font-heading font-semibold text-4xl md:text-6xl text-text-light;
     }
     .text-heading {
         @apply font-heading font-bold text-4xl text-stone-900 leading-tight;
