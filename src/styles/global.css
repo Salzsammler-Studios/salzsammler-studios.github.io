@@ -1,11 +1,13 @@
 @import "tailwindcss";
 
 @theme {
-    --color-primary: #a74d4a;
-    --color-secondary: #f6f4ef;
-    --color-tertiary: #ffa673;
+    --color-primary: #af4d42;
+    --color-secondary: #ffc35b;
+    --color-tertiary: #fceada;
+    --color-background: #ffffff;
     --color-support-background: #fff6e3;
-    --color-black: #121212;
+    --color-black: #1a1a1a;
+    --color-text-light: #fff5dc;
 
     --font-heading: "Raleway", sans-serif;
     --font-body: "Merriweather", serif;
@@ -80,19 +82,19 @@
 
 @layer components {
     .text-body {
-        @apply font-body text-sm text-stone-500 leading-relaxed;
+        @apply font-body text-sm text-text-light leading-relaxed;
     }
     .text-body-dark {
         @apply font-body text-sm text-stone-900 leading-relaxed;
     }
     .text-display {
-        @apply font-heading font-semibold text-6xl text-white;
+        @apply font-heading font-semibold text-6xl text-text-light;
     }
     .text-heading {
         @apply font-heading font-bold text-4xl text-stone-900 leading-tight;
     }
     .text-subheading {
-        @apply font-heading font-semibold text-lg text-stone-700;
+        @apply font-heading font-semibold text-lg text-white;
     }
     .text-label {
         @apply font-body text-xs tracking-widest uppercase text-stone-400;
