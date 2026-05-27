@@ -3,10 +3,19 @@ import Layout from "../layouts/Layout.astro";
 import Nav from "../components/Nav.astro";
 import Hero from "../components/Hero.astro";
 import Salzsammler from "../components/projekte/salzsammler.astro";
+import Derschalter from "../components/projekte/derschalter.astro";
+import Button from "../components/Button.astro";
 ---
 
 <Layout title="Projekte – Salzsammler Studios">
     <Nav />
     <Hero line1="Ein Portfolio, das beeindruckt" />
     <Salzsammler />
+    <Derschalter />
+    <div class="bg-secondary rounded-3xl m-10 mt-20 p-10">
+        <h1 class="text-heading text-black pb-5">
+            Du willst auch sowas geiles?
+        </h1>
+        <Button href="/projekte" label="Let's Talk" variant="secondary" />
+    </div>
 </Layout>

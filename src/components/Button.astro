@@ -2,7 +2,7 @@
 interface Props {
     label: string;
     href?: string;
-    variant?: "primary" | "outline" | "ghost";
+    variant?: "primary" | "secondary" | "outline" | "ghost";
     type?: "button" | "submit";
 }
 
@@ -13,6 +13,7 @@ const base =
 
 const variants = {
     primary: "bg-secondary text-primary",
+    secondary: "bg-primary text-text-light",
     outline: "border-2 border-primary text-primary",
     ghost: "text-primary underline underline-offset-4",
 };
