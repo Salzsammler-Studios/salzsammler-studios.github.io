@@ -1,6 +1,7 @@
 ---
 const links = [
     { label: "Projekte", href: "/projekte" },
+    { label: "Team", href: "/team" },
     { label: "Kontakt", href: "/kontakt" },
 ];
 const pathname = Astro.url.pathname;
@@ -54,8 +55,9 @@ const isHome = pathname === "/";
         >
             <a href="/de" class="font-semibold">DE</a>
             <span class="mx-1 opacity-50">|</span>
-            <a href="/en" class="opacity-70 hover:opacity-100 transition-opacity"
-                >ENG</a
+            <a
+                href="/en"
+                class="opacity-70 hover:opacity-100 transition-opacity">ENG</a
             >
         </div>
 
@@ -125,8 +127,9 @@ const isHome = pathname === "/";
         >
             <a href="/de" class="font-semibold">DE</a>
             <span class="mx-1 opacity-50">|</span>
-            <a href="/en" class="opacity-70 hover:opacity-100 transition-opacity"
-                >ENG</a
+            <a
+                href="/en"
+                class="opacity-70 hover:opacity-100 transition-opacity">ENG</a
             >
         </div>
     </div>

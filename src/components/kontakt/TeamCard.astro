@@ -1,0 +1,86 @@
+---
+interface Props {
+    image: string;
+    alt?: string;
+    name: string;
+    role?: string;
+    backTitle: string;
+    backBody: string;
+}
+
+const { image, alt, name, role, backTitle, backBody } = Astro.props;
+---
+
+<!-- Outer wrapper: flip card + name label below -->
+<div
+    class="flex flex-col items-center gap-3 cursor-pointer select-none"
+    data-flip-card
+>
+    <!-- The flipping card -->
+    <div class="[perspective:1000px] w-60 h-80 shrink-0">
+        <div
+            class="flip-inner relative w-full h-full transition-transform duration-500 ease-in-out [transform-style:preserve-3d]"
+        >
+            <!-- Front: white polaroid card with photo inside -->
+            <div
+                class="absolute inset-0 [backface-visibility:hidden] bg-white rounded-2xl shadow-md overflow-hidden"
+            >
+                <img
+                    src={image}
+                    alt={alt ?? name}
+                    class="w-full h-full object-cover object-top"
+                    loading="lazy"
+                    draggable="false"
+                />
+            </div>
+
+            <!-- Back: title top-left, body bottom-right -->
+            <div
+                class="absolute inset-0 [backface-visibility:hidden] [transform:rotateY(180deg)] bg-secondary rounded-2xl shadow-md p-5 flex flex-col justify-between"
+            >
+                <h3
+                    class="font-body font-bold text-md text-primary leading-tight"
+                >
+                    {backTitle}
+                </h3>
+                <p
+                    class="font-body text-xs text-stone-600 leading-relaxed text-right"
+                >
+                    {backBody}
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Name below card -->
+    <div class="text-center">
+        <p class="font-heading font-semibold text-sm text-stone-800">{name}</p>
+    </div>
+</div>
+
+<style>
+    @media (hover: hover) and (pointer: fine) {
+        [data-flip-card]:hover .flip-inner {
+            transform: rotateY(180deg);
+        }
+    }
+    .flip-inner.is-flipped {
+        transform: rotateY(180deg);
+    }
+</style>
+
+<script>
+    function initFlipCards() {
+        document.querySelectorAll("[data-flip-card]").forEach((card) => {
+            if (card.dataset.flipBound) return;
+            card.dataset.flipBound = "true";
+            const inner = card.querySelector(".flip-inner");
+            if (!inner) return;
+            card.addEventListener("click", () => {
+                inner.classList.toggle("is-flipped");
+            });
+        });
+    }
+    initFlipCards();
+    document.addEventListener("astro:page-load", initFlipCards);
+</script>
