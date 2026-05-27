@@ -2,23 +2,14 @@
 import Cone from "./Cone.tsx";
 ---
 
-<section class="relative h-[80vh] min-h-[600px] overflow-hidden bg-secondary">
-    <Cone
-        client:load
-        transition:persist="cone"
-        spreadLeft={-40}
-        spreadRight={160}
-        spreadRight={160}
-        topHalfWidth={12}
-        offset={-4}
-        gradientEnd={50}
-    />
-
+<section
+    class="relative h-[90dvh] bg-primary mx-6 mt-6 rounded-3xl overflow-hidden"
+>
     <!-- Main headline -->
-    <div class="absolute bottom-25 right-0 left-0 px-6 z-10">
-        <h1 class="font-boldonse font-black leading-none text-right">
-            <span class="block text-primary text-[10vw]">Dein Thema</span>
-            <span class="block text-stone-900 text-[10vw]">Dein Erlebnis</span>
+    <div class="absolute bottom-10 right-0 left-0 px-6 z-10">
+        <h1 class="text-display">
+            <span class="block text-display">Wir bauen mit Ihnen</span>
+            <span class="block text-display">Das Museum der Zukunft</span>
         </h1>
     </div>
 </section>

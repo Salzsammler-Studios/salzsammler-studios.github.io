@@ -3,12 +3,45 @@
 @theme {
     --color-primary: #a74d4a;
     --color-secondary: #f6f4ef;
+    --color-tertiary: #ffa673;
+    --color-support-background: #fff6e3;
     --color-black: #121212;
 
-    --font-heading: "Boldonse", sans-serif;
-    --font-body: "Poppins", sans-serif;
+    --font-heading: "Raleway", sans-serif;
+    --font-body: "Merriweather", serif;
 }
 
+@font-face {
+    font-family: "Raleway";
+    src: url("/fonts/Raleway/Raleway-VariableFont_wght.ttf") format("truetype");
+    font-weight: 100 900;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: "Raleway";
+    src: url("/fonts/Raleway/Raleway-Italic-VariableFont_wght.ttf")
+        format("truetype");
+    font-weight: 100 900;
+    font-style: italic;
+    font-display: swap;
+}
+@font-face {
+    font-family: "Merriweather";
+    src: url("/fonts/Merriweather/Merriweather-VariableFont_opsz,wdth,wght.ttf")
+        format("truetype");
+    font-weight: 100 900;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: "Merriweather";
+    src: url("/fonts/Merriweather/Merriweather-Italic-VariableFont_opsz,wdth,wght.ttf")
+        format("truetype");
+    font-weight: 100 900;
+    font-style: italic;
+    font-display: swap;
+}
 @font-face {
     font-family: "Boldonse";
     src: url("/fonts/Boldonse-Regular.ttf") format("truetype");
@@ -53,13 +86,13 @@
         @apply font-body text-sm text-stone-900 leading-relaxed;
     }
     .text-display {
-        @apply font-body font-bold text-4xl text-stone-900 leading-tight;
+        @apply font-heading font-semibold text-6xl text-white;
     }
     .text-heading {
-        @apply font-body font-bold text-3xl text-stone-900 leading-tight;
+        @apply font-heading font-bold text-4xl text-stone-900 leading-tight;
     }
     .text-subheading {
-        @apply font-body font-semibold text-lg text-stone-700;
+        @apply font-heading font-semibold text-lg text-stone-700;
     }
     .text-label {
         @apply font-body text-xs tracking-widest uppercase text-stone-400;

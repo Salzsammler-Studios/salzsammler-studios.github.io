@@ -1,47 +1,36 @@
 ---
+import WorkflowCard from "./WorkflowCard.astro";
+
 const steps = [
     {
         number: "01",
         title: "Das Thema",
-        description:
-            "Alles beginnt mit Ihrem Inhalt: einem Exponat, einer Epoche, einer Geschichte, die bisher nur auf Texttafel existiert.",
+        body: "Alles beginnt mit Ihrem Inhalt: einem Exponat, einer Epoche, einer Geschichte, die bisher nur auf Texttafel existiert.",
     },
     {
         number: "02",
         title: "Die Frage",
-        description:
-            "Wir analysieren das Narrativ und entwickeln das passende interaktive Konzept.",
+        body: "Wir analysieren das Narrativ und entwickeln das passende interaktive Konzept.",
     },
     {
         number: "03",
         title: "Das Erlebnis",
-        description:
-            "Wir bauen eine maßgeschneiderte XR-Installation, die Besucher nicht informiert, sondern mitnimmt.",
+        body: "Wir bauen eine maßgeschneiderte XR-Installation, die Besucher nicht informiert, sondern mitnimmt.",
     },
 ];
 ---
 
-<section class="bg-secondary px-8 py-16">
-    <h2 class="text-display text-primary mb-16">
-        Vom Thema<br />zum Erlebnis
-    </h2>
+<section class="bg-support-background h-[90dvh] rounded-3xl px-20 pt-20">
+    <h2 class="text-heading text-center mb-10">Der Ansatz</h2>
 
-    <div class="grid grid-cols-3 gap-8">
+    <div class="grid grid-cols-3 gap-6">
         {
             steps.map((step) => (
-                <div>
-                    <p class="font-anybody font-black text-7xl text-primary/25 mb-4 leading-none">
-                        {step.number}
-                    </p>
-                    <div class="border-l-4 border-primary pl-3">
-                        <h3 class="text-subheading font-bold mb-3">
-                            {step.title}
-                        </h3>
-                        <p class="text-body max-w-[300px]">
-                            {step.description}
-                        </p>
-                    </div>
-                </div>
+                <WorkflowCard
+                    number={step.number}
+                    title={step.title}
+                    body={step.body}
+                />
             ))
         }
     </div>

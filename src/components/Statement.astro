@@ -1,30 +1,49 @@
-<section class="relative bg-secondary overflow-hidden">
-    <div class="grid grid-cols-2 gap-4 py-16">
-        <div class="flex h-100 min-h-80 gap-4 pl-8">
-            <img
-                src="/images/statement-image.jpg"
-                alt="Interaktive Ausstellungsinstallation mit Kindern"
-                class="w-1/2 object-cover"
-            />
-            <img
-                src="/images/hero.jpg"
-                alt="Interaktive Ausstellungsinstallation mit Kindern"
-                class="w-1/2 object-cover"
-            />
+---
+import StatementCard from "./StatementCard.astro";
+import Button from "./Button.astro";
+---
+
+<section class="relative h-[90dvh] overflow-hidden">
+    <div class="grid grid-cols-2 gap-4 py-20 px-20">
+        <div>
+            <h1 class="text-heading pb-20">
+                Wissen vermitteln ist gut.<br />Wissen <span class="font-light"
+                    >erleben</span
+                > ist besser.
+            </h1>
+            <Button href="/projekte" label="Unsere Projekte" />
         </div>
-        <div
-            class="relative z-10 px-8 max-w-lg flex flex-col justify-center mx-auto"
-        >
-            <p class="text-heading mb-6">
-                Wissen vermitteln ist gut.<br />
-                Wissen <span class="font-light">erleben</span> ist besser.
-            </p>
-            <p class="text-body max-w-sm">
-                Texttafeln und Vitrinen haben ihren Platz – aber die
-                Besucherinnen und Besucher von morgen erwarten mehr. Wir helfen
-                Ihrem Haus, diesen Schritt zu gehen. Ohne Kompromisse an Inhalt,
-                wissenschaftliche Integrität oder ästhetischem Anspruch.
-            </p>
+        <div class="grid grid-cols-1 gap-4 ml-30">
+            <StatementCard
+                title="Individuell konzipiert"
+                text="Wir entwickeln jede Installation von Grund auf neu. Passend zu Ihrem Raum, Ihren Inhalten und Ihrem Publikum."
+            >
+                <img
+                    class="w-full h-full object-contain"
+                    src="/icons/Idea.png"
+                    alt="An Image of a Lightbulb"
+                />
+            </StatementCard>
+            <StatementCard
+                title="Didaktische Tiefe"
+                text="Unser Team verbindet technisches Know-how mit pädagogischer Kompetenz."
+            >
+                <img
+                    class="w-full h-full object-contain"
+                    src="/icons/Idea.png"
+                    alt="An Image of a Lightbulb"
+                />
+            </StatementCard>
+            <StatementCard
+                title="Mit Ihnen gedacht"
+                text="Die besten Erlebnisse entstehen, wo Ihr Fachwissen und unsere Gestaltungserfahrung aufeinandertreffen."
+            >
+                <img
+                    class="w-full h-full object-contain"
+                    src="/icons/Idea.png"
+                    alt="An Image of a Lightbulb"
+                />
+            </StatementCard>
         </div>
     </div>
 </section>

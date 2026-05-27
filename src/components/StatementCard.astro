@@ -1,0 +1,23 @@
+---
+interface Props {
+    title: string;
+    text: string;
+}
+
+const { title, text } = Astro.props;
+---
+
+<div
+    class="flex items-start gap-5 bg-tertiary border border-transparent rounded-2xl px-6 py-5 max-w-sm"
+>
+    <!-- Icon via slot -->
+    <div class="shrink-0 w-10 h-10 mt-1 text-secondary">
+        <slot />
+    </div>
+
+    <!-- Text -->
+    <div>
+        <p class="text-subheading font-bold mb-1">{title}</p>
+        <p class="text-body max-w-xs">{text}</p>
+    </div>
+</div>
