@@ -1,0 +1,32 @@
+---
+const links = [
+    { label: "Projekte", href: "/projekte" },
+    { label: "Kontakt", href: "/kontakt" },
+    { label: "Impressum", href: "/impressum" },
+    { label: "Datenschutz", href: "/data-privacy" },
+];
+---
+
+<footer class="flex bg-primary items-center justify-between px-10 py-8 mt-6">
+    <a
+        href="/"
+        class="font-heading font-bold text-sm tracking-widest uppercase text-secondary"
+    >
+        salzsammler
+    </a>
+
+    <ul class="flex flex-col gap-0 text-right">
+        {
+            links.map((l) => (
+                <ul>
+                    <a
+                        href={l.href}
+                        class="text-body text-secondary hover:text-stone-900 transition-colors"
+                    >
+                        {l.label}
+                    </a>
+                </ul>
+            ))
+        }
+    </ul>
+</footer>
