@@ -8,17 +8,18 @@ interface Props {
 const { number, title, body } = Astro.props;
 ---
 
-<div class="[perspective:1000px] w-full h-64 md:w-70 md:h-90">
+<div
+    class="[perspective:1000px] w-full h-64 md:w-70 md:h-90 cursor-pointer select-none"
+    data-flip-card
+>
     <div
-        class="relative w-full h-full transition-transform duration-500 ease-in-out [transform-style:preserve-3d] hover:[transform:rotateY(180deg)]"
+        class="flip-inner relative w-full h-full transition-transform duration-500 ease-in-out [transform-style:preserve-3d]"
     >
         <!-- Front -->
         <div
             class="absolute inset-0 [backface-visibility:hidden] bg-primary rounded-2xl p-6 flex flex-col justify-between"
         >
-            <span
-                class="font-body font-bold text-5xl text-secondary leading-none"
-            >
+            <span class="font-body font-bold text-5xl text-secondary leading-none">
                 {number}
             </span>
             <h1 class="text-subheading font-medium text-2xl text-text-light">
@@ -30,12 +31,46 @@ const { number, title, body } = Astro.props;
         <div
             class="absolute inset-0 [backface-visibility:hidden] [transform:rotateY(180deg)] bg-secondary rounded-2xl p-6 flex flex-col justify-between"
         >
-            <span
-                class="font-body font-bold text-5xl text-primary leading-none"
-            >
+            <span class="font-body font-bold text-5xl text-primary leading-none">
                 {number}
             </span>
             <p class="text-body text-black">{body}</p>
         </div>
     </div>
 </div>
+
+<style>
+    /* Hover flip for pointer (mouse) devices */
+    @media (hover: hover) and (pointer: fine) {
+        [data-flip-card]:hover .flip-inner {
+            transform: rotateY(180deg);
+        }
+    }
+
+    /* Click/tap flip toggled via JS */
+    .flip-inner.is-flipped {
+        transform: rotateY(180deg);
+    }
+</style>
+
+<script>
+    function initFlipCards() {
+        document.querySelectorAll("[data-flip-card]").forEach((card) => {
+            // Avoid double-binding after view transitions
+            if (card.dataset.flipBound) return;
+            card.dataset.flipBound = "true";
+
+            const inner = card.querySelector(".flip-inner");
+            if (!inner) return;
+
+            card.addEventListener("click", () => {
+                inner.classList.toggle("is-flipped");
+            });
+        });
+    }
+
+    // Initial load
+    initFlipCards();
+    // Re-run after Astro view transitions swap the page
+    document.addEventListener("astro:page-load", initFlipCards);
+</script>

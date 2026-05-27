@@ -1,10 +1,95 @@
+---
+interface Props {
+    lang?: "de" | "en";
+}
+
+const { lang = "de" } = Astro.props;
+
+const youtubeId =
+    lang === "de"
+        ? "0PwrLX29h6Q?si=wmpMxkHU5bEdnCPl"
+        : "K_fryycQ1yw?si=5M-bsBlv1O1lc9jT";
+const youtubeUrl = `https://www.youtube.com/embed/${youtubeId}`;
+---
+
 <section class="px-6 py-24">
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+    <div>
+        <h1 class="text-heading">Salzsammler</h1>
+        <p class="text-subheading font-body font-bold text-primary">
+            Eine interaktive Installation, die es Kindern ermöglicht, <br
+            />Geschichte mit Spielspaß zu begegnen.
+        </p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
+        <!-- YouTube video -->
+        <div
+            class="relative w-full aspect-video rounded-2xl overflow-hidden shadow-md"
+        >
+            <iframe
+                src={youtubeUrl}
+                title="Salzsammler – YouTube"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen
+                loading="lazy"
+                class="absolute inset-0 w-full h-full"></iframe>
+        </div>
+        <!-- Description -->
         <div>
-            <h1 class="text-heading">Salzsammler</h1>
-            <p class="text-subheading font-body font-bold text-primary">
-                Eine interaktive Installation, die es Kindern ermöglicht,
-                Geschichte mit Spielspaß zu begegnen.
+            <p class="text-body-dark">
+                Salzsammler ist eine interaktive Bodenprojektion, die Kinder in
+                die Geschichte der Stadt Regensburg eintauchen lässt. Zwei
+                Szenarien laden zum Entdecken ein: Im ersten erleben die Kinder
+                den mittelalterlichen Handel und Transport von Waren entlang der
+                Donau. Im zweiten erkunden sie Aufbau und Alltag eines römischen
+                Legionslagers.
+            </p>
+
+            <!-- Character figures -->
+            <ul
+                class="flex flex-row items-end justify-center gap-8 mt-8 list-none"
+            >
+                {
+                    [
+                        {
+                            src: "/images/projects/Buerger03.png",
+                            alt: "Bürger 3",
+                        },
+                        {
+                            src: "/images/projects/Buergerin01.png",
+                            alt: "Bürgerin 1",
+                        },
+                        {
+                            src: "/images/projects/Buerger01.png",
+                            alt: "Bürger 1",
+                        },
+                        {
+                            src: "/images/projects/Buergerin02.png",
+                            alt: "Bürgerin 2",
+                        },
+                        {
+                            src: "/images/projects/Buerger02.png",
+                            alt: "Bürger 2",
+                        },
+                    ].map((figure) => (
+                        <li>
+                            <img
+                                src={figure.src}
+                                alt={figure.alt}
+                                class="h-14 w-auto object-contain"
+                                loading="lazy"
+                                draggable="false"
+                            />
+                        </li>
+                    ))
+                }
+            </ul>
+            <p class="text-body-dark pt-6">
+                Was Salzsammler besonders macht: Die Kinder spielen nicht vor
+                einem Bildschirm, sondern mittendrin. Ihr eigener Körper wird
+                zum Werkzeug: jede Bewegung auf der Spielfläche verändert die
+                Welt unter ihren Füßen. So entsteht keine Lernsituation, die
+                belehrt, sondern eine, die neugierig macht.
             </p>
         </div>
     </div>

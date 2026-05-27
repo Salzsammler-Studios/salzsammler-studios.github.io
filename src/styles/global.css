@@ -59,7 +59,7 @@
         @apply font-body text-sm text-text-light leading-relaxed;
     }
     .text-body-dark {
-        @apply font-body text-sm text-stone-900 leading-relaxed;
+        @apply font-body text-sm text-black leading-relaxed;
     }
     .text-display {
         @apply font-heading font-semibold text-4xl md:text-6xl text-text-light;
