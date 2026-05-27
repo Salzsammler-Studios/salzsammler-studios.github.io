@@ -1,0 +1,92 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Nav from "../components/Nav.astro";
+---
+
+<Layout title="Impressum – Salzsammler Studios">
+    <Nav />
+    <main class="min-h-screen bg-secondary px-6 py-30 max-w-3xl mx-auto">
+        <h1 class="text-heading mb-2">Impressum</h1>
+        <p class="text-body-dark mb-10">Angaben gemäß § 5 TMG</p>
+
+        <!-- Firma & Anschrift -->
+        <section class="mb-8">
+            <address class="not-italic text-body-dark space-y-1">
+                <p class="font-semibold">
+                    Schilling &amp; Schäfer GbR, Salzsammler Studios
+                </p>
+                <p>Neufeldstr. 6</p>
+                <p>81243 München</p>
+            </address>
+        </section>
+
+        <!-- Gesellschafter -->
+        <section class="mb-8">
+            <p class="text-body-dark">
+                <span class="font-semibold"
+                    >Vertretungsberechtigte Gesellschafter:</span
+                >
+                Nic Schilling und Ruben Schäfer
+            </p>
+        </section>
+
+        <!-- Kontakt -->
+        <section class="mb-8">
+            <h2
+                class="font-heading font-semibold text-base text-stone-900 mb-2"
+            >
+                Kontakt
+            </h2>
+            <address class="not-italic text-body-dark space-y-1">
+                <p>Telefon: 0176 24071386</p>
+                <p>
+                    E-Mail:
+                    <a
+                        href="mailto:info@salzsammler.de"
+                        class="text-primary underline hover:opacity-80"
+                    >
+                        info@salzsammler.de
+                    </a>
+                </p>
+            </address>
+        </section>
+
+        <!-- Inhaltlich Verantwortlicher -->
+        <section class="mb-10">
+            <p class="text-body-dark">
+                <span class="font-semibold">Inhaltlich Verantwortlicher:</span>
+                Ruben Schäfer, Veigelesgasse 8, 71404 Korb
+            </p>
+        </section>
+
+        <!-- Haftungshinweis -->
+        <section class="mb-10">
+            <h2
+                class="font-heading font-semibold text-base text-stone-900 mb-3"
+            >
+                Haftungshinweis
+            </h2>
+            <div class="text-body-dark space-y-4">
+                <p>
+                    Wir übernehmen keinerlei Verantwortung oder Haftung für die
+                    Angaben auf dieser Webseite. Unser Ziel ist es, aktuelle und
+                    genaue Informationen bereitzustellen. Allerdings kann nicht
+                    garantiert werden, dass die auf dieser Webseite verfügbaren
+                    Angaben tatsächlich aktuell, umfassend, komplett oder genau
+                    sind.
+                </p>
+                <p>
+                    Bei den bereitgestellten Informationen handelt es sich um
+                    solche allgemeiner Art, die nicht auf die besonderen
+                    Bedürfnisse bestimmter Personen oder Unternehmen abgestimmt
+                    sind. Insbesondere soll durch sie keine Beratung erfolgen.
+                </p>
+                <p>
+                    Sofern von dieser Webseite auf andere Webseiten verwiesen
+                    wird, können wir deren Inhalt nicht beeinflussen und für
+                    diesen auch keine Verantwortung übernehmen.
+                </p>
+            </div>
+        </section>
+    </main>
+</Layout>
