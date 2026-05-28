@@ -1,27 +1,28 @@
 ---
 import WorkflowCard from "./WorkflowCard.astro";
+import Button from "./Button.astro";
 
 const steps = [
     {
         number: "01",
         title: "Das Thema",
-        body: "Alles beginnt mit Ihrem Inhalt: einem Exponat, einer Epoche, einer Geschichte, die bisher nur auf Texttafel existiert.",
+        body: "Alles beginnt mit Ihrem Inhalt: einem Exponat, einer Epoche, einer Geschichte. Wir arbeiten uns gemeinsam mit Ihnen in die Themen ein und lernen Ihre Zielgruppe kennen.",
     },
     {
         number: "02",
         title: "Die Frage",
-        body: "Wir analysieren das Narrativ und entwickeln das passende interaktive Konzept.",
+        body: "Was möchten Sie vermitteln und wie kann man das erleben? Wir analysieren Ihre Inhalte und entwickeln das passende interaktive Konzept.",
     },
     {
         number: "03",
         title: "Das Erlebnis",
-        body: "Wir bauen eine maßgeschneiderte XR-Installation, die Besucher nicht informiert, sondern mitnimmt.",
+        body: "Wir bauen mithilfe modernster Technik eine maßgeschneiderte Erfahrung welche nicht nur informiert, sondern Ihre Themen spielerisch vermittelt.",
     },
 ];
 ---
 
 <section
-    class="bg-tertiary h-auto md:h-[90dvh] rounded-3xl px-6 md:px-30 pt-10 md:pt-20 pb-10 md:pb-0"
+    class="bg-tertiary h-auto md:min-h-[90dvh] rounded-3xl px-6 md:px-30 pt-10 md:pt-20 pb-10"
 >
     <h1 class="text-heading text-black text-center mb-20">Der Ansatz</h1>
 
@@ -35,5 +36,12 @@ const steps = [
                 />
             ))
         }
+    </div>
+    <div class="flex justify-center mt-20">
+        <Button
+            href="/kontakt"
+            label="Klingt nach Ihrem nächsten Projekt?"
+            variant="primary"
+        />
     </div>
 </section>
