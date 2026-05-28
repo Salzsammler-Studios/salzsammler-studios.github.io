@@ -12,7 +12,7 @@ const members = [
         role: "Creative Direction",
         backTitle: "Co-Founder",
         backBody:
-            "Konzeption, Design und Projektleitung. Nic sorgt dafür, dass aus Ideen echte Erlebnisse werden.",
+            "Konzeption, Design und Akquise. Nic sorgt dafür, dass aus Ideen echte Erlebnisse werden.",
     },
     {
         image: "/images/team/tina.png",
@@ -36,7 +36,10 @@ const members = [
 <Layout title="Team – Salzsammler Studios">
     <Nav />
     <Hero line1="Wir sind" line2="Salzsammler" variant="half" />
-    <main class="h-[90dvh] px-6 py-24">
+    <h1 class="text-subheading text-black p-10 max-w-xl">
+        Kreativität braucht Raum. Wir schaffen ihn.
+    </h1>
+    <main class="h-[90dvh] px-6 py-14">
         <div class="flex flex-row flex-wrap justify-center gap-16">
             {
                 members.map((m) => (
