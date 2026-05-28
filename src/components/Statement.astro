@@ -3,7 +3,7 @@ import StatementCard from "./StatementCard.astro";
 import Button from "./Button.astro";
 ---
 
-<section class="relative h-auto min-h-[90vh] overflow-hidden">
+<section class="relative h-auto min-h-[90vb] overflow-hidden">
     <div
         class="grid grid-cols-1 md:grid-cols-2 gap-4 py-10 md:py-20 px-6 md:px-20"
     >
@@ -20,15 +20,15 @@ import Button from "./Button.astro";
             </p>
             <Button href="/projekte" label="Unsere Projekte" />
         </div>
-        <div class="grid grid-cols-1 gap-4 ml-0 md:ml-60">
+        <div class="grid grid-cols-1 gap-4 ml-auto w-full max-w-sm">
             <StatementCard
                 title="Individuell konzipiert"
                 text="Wir entwickeln jede Installation von Grund auf neu. Passend zu Ihrem Raum, Ihren Inhalten und Ihrem Publikum."
             >
                 <img
                     class="w-full h-full object-contain"
-                    src="/icons/Idea.png"
-                    alt="An Image of a Lightbulb"
+                    src="/icons/web-puzzle.png"
+                    alt="An Image of two puzzle pieces"
                 />
             </StatementCard>
             <StatementCard
@@ -47,8 +47,8 @@ import Button from "./Button.astro";
             >
                 <img
                     class="w-full h-full object-contain"
-                    src="/icons/Idea.png"
-                    alt="An Image of a Lightbulb"
+                    src="/icons/web-hand.png"
+                    alt="An Image of a two hands shaking"
                 />
             </StatementCard>
         </div>
