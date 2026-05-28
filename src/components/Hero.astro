@@ -1,4 +1,6 @@
 ---
+import LightRays from "./LightRays.jsx";
+
 interface Props {
     line1: string;
     line2?: string;
@@ -13,6 +15,23 @@ const heightClass = variant === "half" ? "h-[50dvh]" : "h-[90dvh]";
 <section
     class={`relative ${heightClass} bg-primary mx-6 mt-6 rounded-3xl overflow-hidden animate-hero-reveal`}
 >
+    <!-- Light rays overlay -->
+    <div class="absolute inset-0">
+        <LightRays
+            client:load
+            raysOrigin="top-right"
+            raysColor="#ffffff"
+            raysSpeed={0.8}
+            lightSpread={0.6}
+            rayLength={4}
+            fadeDistance={1.2}
+            followMouse={true}
+            mouseInfluence={0.08}
+            noiseAmount={0.05}
+            distortion={0.02}
+        />
+    </div>
+
     <!-- Main headline -->
     <div class="absolute bottom-10 right-0 left-0 px-6 z-10 animate-hero-text">
         <h1 class="text-display">

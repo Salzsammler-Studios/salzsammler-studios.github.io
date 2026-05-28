@@ -13,6 +13,7 @@
     "@astrojs/preact": "^5.1.3",
     "@tailwindcss/vite": "^4.3.0",
     "astro": "^6.3.6",
+    "ogl": "^1.0.11",
     "preact": "^10.29.2",
     "tailwindcss": "^4.3.0"
   }

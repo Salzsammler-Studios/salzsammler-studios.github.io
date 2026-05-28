@@ -1,5 +1,6 @@
 @import "tailwindcss";
 
+/* ─── Theme A (default) ───────────────────────────────────── */
 @theme {
     --color-primary: #af4d42;
     --color-secondary: #ffc35b;
@@ -11,6 +12,18 @@
 
     --font-heading: "Raleway", sans-serif;
     --font-body: "Merriweather", serif;
+}
+
+/* ─── Theme B ─────────────────────────────────────────────── */
+/* To switch: change data-theme="a" → data-theme="b" in Layout.astro */
+[data-theme="b"] {
+    --color-primary: #0f1226;
+    --color-secondary: #3a5bff;
+    --color-tertiary: #f2f3f7;
+    --color-background: #ffffff;
+    --color-support-background: #f2f3f7;
+    --color-black: #0a0b14;
+    --color-text-light: #ffffff;
 }
 
 @font-face {
