@@ -9,7 +9,7 @@ const { number, title, body } = Astro.props;
 ---
 
 <div
-    class="[perspective:1000px] w-full h-64 md:w-70 md:h-90 cursor-pointer select-none"
+    class="[perspective:1000px] w-full h-64 md:h-90 cursor-pointer select-none"
     data-flip-card
 >
     <div
@@ -19,7 +19,9 @@ const { number, title, body } = Astro.props;
         <div
             class="absolute inset-0 [backface-visibility:hidden] bg-primary rounded-2xl p-6 flex flex-col justify-between"
         >
-            <span class="font-body font-bold text-5xl text-secondary leading-none">
+            <span
+                class="font-body font-bold text-5xl text-secondary leading-none"
+            >
                 {number}
             </span>
             <h1 class="text-subheading font-medium text-2xl text-text-light">
@@ -31,7 +33,9 @@ const { number, title, body } = Astro.props;
         <div
             class="absolute inset-0 [backface-visibility:hidden] [transform:rotateY(180deg)] bg-secondary rounded-2xl p-6 flex flex-col justify-between"
         >
-            <span class="font-body font-bold text-5xl text-primary leading-none">
+            <span
+                class="font-body font-bold text-5xl text-primary leading-none"
+            >
                 {number}
             </span>
             <p class="text-body text-black">{body}</p>
