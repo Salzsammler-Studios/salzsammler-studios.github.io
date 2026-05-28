@@ -66,6 +66,12 @@
         ctx.strokeStyle = grad;
         ctx.stroke();
 
+        // Small dot directly under the mouse
+        ctx.beginPath();
+        ctx.arc(mouse.x, mouse.y, 5, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(${r},${g},${b},0.85)`;
+        ctx.fill();
+
         rafId = requestAnimationFrame(animate);
     }
 
