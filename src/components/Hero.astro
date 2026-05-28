@@ -2,13 +2,16 @@
 interface Props {
     line1: string;
     line2?: string;
+    variant?: "full" | "half";
 }
 
-const { line1, line2 } = Astro.props;
+const { line1, line2, variant = "full" } = Astro.props;
+
+const heightClass = variant === "half" ? "h-[50dvh]" : "h-[90dvh]";
 ---
 
 <section
-    class="relative h-[90dvh] bg-primary mx-6 mt-6 rounded-3xl overflow-hidden animate-hero-reveal"
+    class={`relative ${heightClass} bg-primary mx-6 mt-6 rounded-3xl overflow-hidden animate-hero-reveal`}
 >
     <!-- Main headline -->
     <div class="absolute bottom-10 right-0 left-0 px-6 z-10 animate-hero-text">
