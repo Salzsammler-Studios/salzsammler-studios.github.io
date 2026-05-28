@@ -15,8 +15,8 @@ const isHome = pathname === "/";
         <a
             href="/"
             class:list={[
-                "text-sm font-semibold tracking-widest uppercase",
-                isHome ? "text-text-light" : "text-black mix-blend-difference",
+                "text-sm tracking-widest uppercase text-text-light",
+                isHome ? "font-bold" : "font-light",
             ]}
             data-nav-item
             {...isHome ? { "data-nav-active": true } : {}}
@@ -32,10 +32,10 @@ const isHome = pathname === "/";
                         <a
                             href={l.href}
                             class:list={[
-                                "text-sm tracking-wide hover:opacity-70 transition-opacity",
+                                "text-sm text-text-light tracking-wide hover:opacity-70 transition-opacity",
                                 pathname.startsWith(l.href)
-                                    ? "text-text-light"
-                                    : "text-black mix-blend-difference",
+                                    ? "font-bold"
+                                    : "font-light",
                             ]}
                             data-nav-item
                             {...(pathname.startsWith(l.href)
@@ -115,7 +115,9 @@ const isHome = pathname === "/";
                     href={l.href}
                     class:list={[
                         "text-text-light text-sm tracking-wide hover:opacity-70 transition-opacity",
-                        pathname.startsWith(l.href) ? "font-semibold" : "",
+                        pathname.startsWith(l.href)
+                            ? "font-bold"
+                            : "font-medium",
                     ]}
                 >
                     {l.label}

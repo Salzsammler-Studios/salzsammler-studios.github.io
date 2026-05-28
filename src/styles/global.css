@@ -18,7 +18,7 @@
 /* To switch: change data-theme="a" → data-theme="b" in Layout.astro */
 [data-theme="b"] {
     --color-primary: #0f1226;
-    --color-secondary: #3a5bff;
+    --color-secondary: #627cff;
     --color-tertiary: #f2f3f7;
     --color-background: #ffffff;
     --color-support-background: #f2f3f7;
