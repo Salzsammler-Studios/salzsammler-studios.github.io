@@ -73,20 +73,6 @@
     transform: translateY(0);
 }
 
-/* ─── Scroll reveal ───────────────────────────────────────── */
-[data-fade] {
-    opacity: 0;
-    transform: translateY(1.5rem);
-    transition:
-        opacity 0.6s ease,
-        transform 0.6s ease;
-}
-
-[data-fade].is-visible {
-    opacity: 1;
-    transform: translateY(0);
-}
-
 @layer utilities {
     .clip-diagonal-right {
         clip-path: polygon(0 0, 45% 0, 30% 100%, 0 100%);
@@ -113,6 +99,6 @@
         @apply font-heading font-semibold text-lg text-white;
     }
     .text-label {
-        @apply font-body text-xs tracking-widest uppercase text-stone-400;
+        @apply font-heading font-semibold text-xs tracking-widest text-stone-400;
     }
 }

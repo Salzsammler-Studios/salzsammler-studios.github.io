@@ -1,7 +1,4 @@
-<form
-    id="contact-form"
-    class="w-full max-w-xl bg-primary rounded-3xl px-8 py-10 flex flex-col gap-5 mt-8"
->
+<form id="contact-form" class="w-full flex flex-col gap-5">
     <!-- Honeypot: hidden from humans, bots fill it in -->
     <input
         type="text"
@@ -15,82 +12,99 @@
     <input type="hidden" name="_t" id="_t" />
 
     <div class="flex flex-col gap-1">
-        <label for="name" class="text-label text-text-light/60">Name</label>
+        <label for="name" class="pl-2 text-label text-black/60">Ihr Name</label>
         <input
             type="text"
             id="name"
             name="name"
             required
-            class="bg-white/10 text-text-light placeholder:text-text-light/40 rounded-xl px-4 py-3 text-sm outline-none focus:ring-2 focus:ring-secondary transition"
+            class="bg-secondary/15 text-black placeholder:text-black/30 rounded-xl px-4 py-3 text-sm outline-none focus:ring-2 focus:ring-secondary transition"
             placeholder="Max Mustermann"
         />
     </div>
 
     <div class="flex flex-col gap-1">
-        <label for="email" class="text-label text-text-light/60">E-Mail</label>
+        <label for="email" class="pl-2 text-label text-black/60"
+            >Ihre E-Mail</label
+        >
         <input
             type="email"
             id="email"
             name="email"
             required
-            class="bg-white/10 text-text-light placeholder:text-text-light/40 rounded-xl px-4 py-3 text-sm outline-none focus:ring-2 focus:ring-secondary transition"
+            class="bg-secondary/15 text-black placeholder:text-black/30 rounded-xl px-4 py-3 text-sm outline-none focus:ring-2 focus:ring-secondary transition"
             placeholder="max@example.de"
         />
     </div>
 
     <div class="flex flex-col gap-1">
-        <label for="message" class="text-label text-text-light/60">Nachricht</label>
+        <label for="message" class="pl-2 text-label text-black/60"
+            >Ihre Nachricht</label
+        >
         <textarea
             id="message"
             name="message"
             required
-            rows="5"
-            class="bg-white/10 text-text-light placeholder:text-text-light/40 rounded-xl px-4 py-3 text-sm outline-none focus:ring-2 focus:ring-secondary transition resize-none"
-            placeholder="Erzählen Sie uns von Ihrem Projekt…"
-        ></textarea>
+            rows="7"
+            class="bg-secondary/15 text-black placeholder:text-black/30 rounded-xl px-4 py-3 text-sm outline-none focus:ring-2 focus:ring-secondary transition resize-none"
+            placeholder="Erzählen Sie uns von Ihrem Projekt…"></textarea>
+        <p class="text-xs text-black/40 mt-1">
+            Detaillierte Informationen zum Umgang mit Nutzerdaten finden Sie in
+            unserer
+            <a href="/data-privacy" class="text-secondary hover:underline"
+                >Datenschutzerklärung</a
+            >.
+        </p>
     </div>
 
-    <button
-        type="submit"
-        id="submit-btn"
-        class="bg-secondary text-primary font-semibold text-sm rounded-xl px-6 py-3 hover:opacity-80 transition-opacity disabled:opacity-50 self-start"
-    >
-        Nachricht senden
-    </button>
-
-    <p id="form-status" class="text-sm hidden"></p>
+    <div class="flex flex-col gap-2 items-end">
+        <button
+            type="submit"
+            id="submit-btn"
+            class="bg-secondary text-white font-semibold text-sm rounded-xl px-8 py-3 hover:opacity-80 transition-opacity disabled:opacity-50"
+        >
+            Anfrage senden
+        </button>
+        <p id="form-status" class="text-sm hidden"></p>
+    </div>
 </form>
 
 <script>
-    const tField = document.getElementById('_t') as HTMLInputElement | null;
+    const tField = document.getElementById("_t") as HTMLInputElement | null;
     if (tField) tField.value = String(Math.floor(Date.now() / 1000));
 
-    const form   = document.getElementById('contact-form') as HTMLFormElement | null;
-    const btn    = document.getElementById('submit-btn')   as HTMLButtonElement | null;
-    const status = document.getElementById('form-status')  as HTMLElement | null;
+    const form = document.getElementById(
+        "contact-form",
+    ) as HTMLFormElement | null;
+    const btn = document.getElementById(
+        "submit-btn",
+    ) as HTMLButtonElement | null;
+    const status = document.getElementById("form-status") as HTMLElement | null;
 
-    const ENDPOINT = 'https://YOUR_NETCUP_DOMAIN/contact.php'; // ← swap this
+    const ENDPOINT = "https://YOUR_NETCUP_DOMAIN/contact.php"; // ← swap this
 
-    form?.addEventListener('submit', async (e) => {
+    form?.addEventListener("submit", async (e) => {
         e.preventDefault();
         if (!form || !btn || !status) return;
 
         btn.disabled = true;
-        btn.textContent = 'Wird gesendet…';
-        status.className = 'text-sm hidden';
+        btn.textContent = "Wird gesendet…";
+        status.className = "text-sm hidden";
 
         const payload = {
-            website: (form.elements.namedItem('website') as HTMLInputElement).value,
-            _t:      (form.elements.namedItem('_t')      as HTMLInputElement).value,
-            name:    (form.elements.namedItem('name')    as HTMLInputElement).value,
-            email:   (form.elements.namedItem('email')   as HTMLInputElement).value,
-            message: (form.elements.namedItem('message') as HTMLTextAreaElement).value,
+            website: (form.elements.namedItem("website") as HTMLInputElement)
+                .value,
+            _t: (form.elements.namedItem("_t") as HTMLInputElement).value,
+            name: (form.elements.namedItem("name") as HTMLInputElement).value,
+            email: (form.elements.namedItem("email") as HTMLInputElement).value,
+            message: (form.elements.namedItem("message") as HTMLTextAreaElement)
+                .value,
         };
 
         try {
             const res = await fetch(ENDPOINT, {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(payload),
             });
 
@@ -98,20 +112,24 @@
 
             if (res.ok && json.success) {
                 form.reset();
-                if (tField) tField.value = String(Math.floor(Date.now() / 1000));
-                status.textContent = 'Ihre Nachricht wurde gesendet. Wir melden uns bald!';
-                status.className = 'text-sm text-secondary';
+                if (tField)
+                    tField.value = String(Math.floor(Date.now() / 1000));
+                status.textContent =
+                    "Ihre Nachricht wurde gesendet. Wir melden uns bald!";
+                status.className = "text-sm text-green-600";
             } else {
-                status.textContent = json.error ?? 'Ein Fehler ist aufgetreten.';
-                status.className = 'text-sm text-red-400';
+                status.textContent =
+                    json.error ?? "Ein Fehler ist aufgetreten.";
+                status.className = "text-sm text-red-500";
             }
         } catch {
-            status.textContent = 'Verbindungsfehler. Bitte versuchen Sie es erneut.';
-            status.className = 'text-sm text-red-400';
+            status.textContent =
+                "Verbindungsfehler. Bitte versuchen Sie es erneut.";
+            status.className = "text-sm text-red-500";
         } finally {
             btn.disabled = false;
-            btn.textContent = 'Nachricht senden';
-            status.classList.remove('hidden');
+            btn.textContent = "Anfrage senden";
+            status.classList.remove("hidden");
         }
     });
 </script>

@@ -1,4 +1,9 @@
 ---
+interface Props {
+    variant?: "light" | "dark";
+}
+const { variant = "light" } = Astro.props;
+
 const links = [
     { label: "Projekte", href: "/projekte" },
     { label: "Team", href: "/team" },
@@ -6,6 +11,7 @@ const links = [
 ];
 const pathname = Astro.url.pathname;
 const isHome = pathname === "/";
+const textColor = variant === "dark" ? "text-black" : "text-text-light";
 ---
 
 <nav class="absolute top-10 left-4 right-4 md:left-10 md:right-10 z-50">
@@ -15,7 +21,8 @@ const isHome = pathname === "/";
         <a
             href="/"
             class:list={[
-                "text-sm tracking-widest uppercase text-text-light",
+                "text-sm tracking-widest uppercase",
+                textColor,
                 isHome ? "font-bold" : "font-light",
             ]}
             data-nav-item
@@ -32,7 +39,8 @@ const isHome = pathname === "/";
                         <a
                             href={l.href}
                             class:list={[
-                                "text-sm text-text-light tracking-wide hover:opacity-70 transition-opacity",
+                                "text-sm tracking-wide hover:opacity-70 transition-opacity",
+                                textColor,
                                 pathname.startsWith(l.href)
                                     ? "font-bold"
                                     : "font-light",
@@ -51,7 +59,7 @@ const isHome = pathname === "/";
 
         <!-- Desktop: language switcher -->
         <div
-            class="hidden md:block text-text-light text-sm tracking-wide mix-blend-difference"
+            class:list={["hidden md:block text-sm tracking-wide mix-blend-difference", textColor]}
         >
             <a href="/de" class="font-semibold">DE</a>
             <span class="mx-1 opacity-50">|</span>
@@ -66,7 +74,7 @@ const isHome = pathname === "/";
             id="nav-toggle"
             class:list={[
                 "md:hidden p-1 rounded-md transition-opacity hover:opacity-70",
-                isHome ? "text-text-light" : "text-black",
+                textColor,
             ]}
             aria-label="Menü öffnen"
             aria-expanded="false"
