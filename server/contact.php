@@ -1,6 +1,6 @@
 <?php
 // ── Config ────────────────────────────────────────────────────────────────────
-$to             = 'contact@salzsammler.de';
+$to             = 'info@salzsammler.de';
 $allowed_origin = 'https://salzsammler.de; // swap for custom domain
 $rate_file      = sys_get_temp_dir() . '/ss_contact_rate.json';
 $max_per_window = 3;    // max submissions per IP
