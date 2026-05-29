@@ -1,12 +1,13 @@
 ---
 interface Props {
-    number: string;
+    icon: string;
+    iconDark?: string;
     title: string;
     body: string;
     delay?: number;
 }
 
-const { number, title, body, delay } = Astro.props;
+const { icon, iconDark, title, body, delay } = Astro.props;
 ---
 
 <div
@@ -22,11 +23,7 @@ const { number, title, body, delay } = Astro.props;
         <div
             class="absolute inset-0 [backface-visibility:hidden] bg-primary rounded-2xl p-6 flex flex-col justify-between"
         >
-            <span
-                class="font-body font-bold text-5xl text-secondary leading-none"
-            >
-                {number}
-            </span>
+            <img src={icon} alt="" class="w-16 h-16 object-contain" />
             <h1 class="text-subheading font-medium text-2xl text-text-light">
                 {title}
             </h1>
@@ -36,11 +33,7 @@ const { number, title, body, delay } = Astro.props;
         <div
             class="absolute inset-0 [backface-visibility:hidden] [transform:rotateY(180deg)] bg-secondary rounded-2xl p-6 flex flex-col justify-between"
         >
-            <span
-                class="font-body font-bold text-5xl text-primary leading-none"
-            >
-                {number}
-            </span>
+            <img src={iconDark ?? icon} alt="" class="w-16 h-16 object-contain" />
             <p class="text-body text-black">{body}</p>
         </div>
     </div>

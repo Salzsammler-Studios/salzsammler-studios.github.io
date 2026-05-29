@@ -4,17 +4,20 @@ import Button from "../Button.astro";
 
 const steps = [
     {
-        number: "01",
+        icon: "/ui/web-thema.png",
+        iconDark: "/ui/web-thema-dark.png",
         title: "Das Thema",
         body: "Alles beginnt mit Ihrem Inhalt: einem Exponat, einer Epoche, einer Geschichte. Wir arbeiten uns gemeinsam mit Ihnen in die Themen ein und lernen Ihre Zielgruppe kennen.",
     },
     {
-        number: "02",
+        icon: "/ui/web-frage.png",
+        iconDark: "/ui/web-frage-dark.png",
         title: "Die Frage",
         body: "Was möchten Sie vermitteln und wie kann man das erleben? Wir analysieren Ihre Inhalte und entwickeln das passende interaktive Konzept.",
     },
     {
-        number: "03",
+        icon: "/ui/web-experience.png",
+        iconDark: "/ui/web-experience-dark.png",
         title: "Das Erlebnis",
         body: "Wir bauen mithilfe modernster Technik eine maßgeschneiderte Erfahrung welche nicht nur informiert, sondern Ihre Themen spielerisch vermittelt.",
     },
@@ -25,13 +28,14 @@ const steps = [
     class="bg-tertiary h-auto rounded-3xl px-6 md:px-30 pt-10 md:pt-20 pb-10"
 >
     <div data-fade data-fade-delay="0">
-        <h1 class="text-heading text-black text-center mb-20">Der Ansatz</h1>
+        <h1 class="text-heading text-black text-center mb-20">Unser Ansatz</h1>
     </div>
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
         {
             steps.map((step, i) => (
                 <WorkflowCard
-                    number={step.number}
+                    icon={step.icon}
+                    iconDark={step.iconDark}
                     title={step.title}
                     body={step.body}
                     delay={i * 150}
