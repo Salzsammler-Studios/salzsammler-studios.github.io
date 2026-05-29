@@ -19,6 +19,7 @@
 [data-theme="b"] {
     --color-primary: #0f1226;
     --color-secondary: #627cff;
+    --color-secondary-light: #d5dcff;
     --color-tertiary: #f2f3f7;
     --color-background: #ffffff;
     --color-support-background: #f2f3f7;
@@ -62,7 +63,9 @@
 [data-fade] {
     opacity: 0;
     transform: translateY(1.5rem);
-    transition: opacity 0.6s ease, transform 0.6s ease;
+    transition:
+        opacity 0.6s ease,
+        transform 0.6s ease;
 }
 
 [data-fade].is-visible {
@@ -74,7 +77,9 @@
 [data-fade] {
     opacity: 0;
     transform: translateY(1.5rem);
-    transition: opacity 0.6s ease, transform 0.6s ease;
+    transition:
+        opacity 0.6s ease,
+        transform 0.6s ease;
 }
 
 [data-fade].is-visible {
