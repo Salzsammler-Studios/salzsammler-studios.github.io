@@ -57,17 +57,7 @@ const textColor = variant === "dark" ? "text-black" : "text-text-light";
             }
         </ul>
 
-        <!-- Desktop: language switcher -->
-        <div
-            class:list={["hidden md:block text-sm tracking-wide mix-blend-difference", textColor]}
-        >
-            <a href="/de" class="font-semibold">DE</a>
-            <span class="mx-1 opacity-50">|</span>
-            <a
-                href="/en"
-                class="opacity-70 hover:opacity-100 transition-opacity">ENG</a
-            >
-        </div>
+        <!-- Desktop: language switcher (disabled) -->
 
         <!-- Mobile: hamburger button -->
         <button
@@ -132,16 +122,6 @@ const textColor = variant === "dark" ? "text-black" : "text-text-light";
                 </a>
             ))
         }
-        <div
-            class="text-text-light text-sm tracking-wide pt-3 border-t border-white/20"
-        >
-            <a href="/de" class="font-semibold">DE</a>
-            <span class="mx-1 opacity-50">|</span>
-            <a
-                href="/en"
-                class="opacity-70 hover:opacity-100 transition-opacity">ENG</a
-            >
-        </div>
     </div>
 </nav>
 
