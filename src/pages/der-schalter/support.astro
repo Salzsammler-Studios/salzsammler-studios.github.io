@@ -5,36 +5,36 @@ import Nav from "../../components/Nav.astro";
 
 <Layout title="Support – Der Schalter">
     <Nav />
-    <main class="min-h-screen bg-secondary px-6 py-30 max-w-3xl mx-auto">
-
+    <main class="min-h-screen px-6 py-30 max-w-3xl mx-auto">
         <h1 class="text-heading mb-2">Support – Der Schalter</h1>
-        <p class="text-body mb-12">Wir helfen dir gerne weiter.</p>
+        <p class="text-body-dark mb-12">Wir helfen dir gerne weiter.</p>
 
         <!-- Kontakt -->
         <section class="mb-10">
-            <h2 class="text-subheading mb-3">Kontakt</h2>
+            <h2 class="text-subheading text-primary mb-3">Kontakt</h2>
             <p class="text-body-dark mb-3">
                 Bei Fragen, Problemen oder Feedback zur App
                 <em>Der Schalter</em> erreichst du uns per E-Mail:
             </p>
             <p class="text-body-dark">
                 <a
-                    href="mailto:info@salzsammler.de"
+                    href="mailto:kontakt@salzsammler.de"
                     class="text-primary underline hover:opacity-80"
                 >
-                    info@salzsammler.de
+                    kontakt@salzsammler.de
                 </a>
             </p>
         </section>
 
         <!-- Häufige Fragen -->
         <section class="mb-10">
-            <h2 class="text-subheading mb-6">Häufige Fragen</h2>
+            <h2 class="text-subheading text-primary mb-6">Häufige Fragen</h2>
 
             <div class="space-y-8">
-
                 <div>
-                    <h3 class="font-heading font-semibold text-base text-stone-900 mb-2">
+                    <h3
+                        class="font-heading font-semibold text-base text-stone-900 mb-2"
+                    >
                         Die Kamera startet nicht
                     </h3>
                     <p class="text-body-dark">
@@ -50,7 +50,9 @@ import Nav from "../../components/Nav.astro";
                 </div>
 
                 <div>
-                    <h3 class="font-heading font-semibold text-base text-stone-900 mb-2">
+                    <h3
+                        class="font-heading font-semibold text-base text-stone-900 mb-2"
+                    >
                         Der QR-Code wird nicht erkannt
                     </h3>
                     <p class="text-body-dark">
@@ -60,7 +62,9 @@ import Nav from "../../components/Nav.astro";
                 </div>
 
                 <div>
-                    <h3 class="font-heading font-semibold text-base text-stone-900 mb-2">
+                    <h3
+                        class="font-heading font-semibold text-base text-stone-900 mb-2"
+                    >
                         Das Gewinnspiel-Formular lässt sich nicht absenden
                     </h3>
                     <p class="text-body-dark">
@@ -71,35 +75,34 @@ import Nav from "../../components/Nav.astro";
                 </div>
 
                 <div>
-                    <h3 class="font-heading font-semibold text-base text-stone-900 mb-2">
+                    <h3
+                        class="font-heading font-semibold text-base text-stone-900 mb-2"
+                    >
                         Die App stürzt ab oder verhält sich unerwartet
                     </h3>
                     <p class="text-body-dark">
                         Schreib uns eine E-Mail an
                         <a
-                            href="mailto:info@salzsammler.de"
+                            href="mailto:kontakt@salzsammler.de"
                             class="text-primary underline hover:opacity-80"
                         >
-                            info@salzsammler.de
+                            kontakt@salzsammler.de
                         </a>
-                        mit einer kurzen Beschreibung des Problems sowie deinem
-                        Gerätemodell und der iOS-Version. Wir melden uns so
-                        schnell wie möglich.
+                        mit einer kurzen Beschreibung des Problems sowie deinem Gerätemodell
+                        und der iOS-Version. Wir melden uns so schnell wie möglich.
                     </p>
                 </div>
-
             </div>
         </section>
 
         <!-- App-Version -->
         <section class="mb-10">
-            <h2 class="text-subheading mb-3">App-Version</h2>
+            <h2 class="text-subheading text-primary mb-3">App-Version</h2>
             <p class="text-body-dark">
-                Die aktuelle Version von <em>Der Schalter</em> ist im App Store
-                verfügbar. Stelle sicher, dass du die neueste Version
-                installiert hast, um von allen Verbesserungen zu profitieren.
+                Die aktuelle Version von <em>Der Schalter</em> ist im App Store verfügbar.
+                Stelle sicher, dass du die neueste Version installiert hast, um von
+                allen Verbesserungen zu profitieren.
             </p>
         </section>
-
     </main>
 </Layout>
