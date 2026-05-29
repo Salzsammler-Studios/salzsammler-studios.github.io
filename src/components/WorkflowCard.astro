@@ -3,14 +3,17 @@ interface Props {
     number: string;
     title: string;
     body: string;
+    delay?: number;
 }
 
-const { number, title, body } = Astro.props;
+const { number, title, body, delay } = Astro.props;
 ---
 
 <div
     class="[perspective:1000px] w-full h-64 md:h-90 cursor-pointer select-none"
     data-flip-card
+    data-fade
+    data-fade-delay={delay ?? 0}
 >
     <div
         class="flip-inner relative w-full h-full transition-transform duration-500 ease-in-out [transform-style:preserve-3d]"

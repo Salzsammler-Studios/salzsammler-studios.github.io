@@ -2,13 +2,16 @@
 interface Props {
     title: string;
     text: string;
+    delay?: number;
 }
 
-const { title, text } = Astro.props;
+const { title, text, delay } = Astro.props;
 ---
 
 <div
     class="flex items-start gap-5 bg-primary border border-transparent rounded-2xl px-6 py-5 w-full"
+    data-fade
+    data-fade-delay={delay ?? 0}
 >
     <!-- Icon via slot -->
     <div class="shrink-0 w-16 h-16 mt-1 text-secondary">

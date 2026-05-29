@@ -24,15 +24,17 @@ const steps = [
 <section
     class="bg-tertiary h-auto md:min-h-[90dvh] rounded-3xl px-6 md:px-30 pt-10 md:pt-20 pb-10"
 >
-    <h1 class="text-heading text-black text-center mb-20">Der Ansatz</h1>
-
+    <div data-fade data-fade-delay="0">
+        <h1 class="text-heading text-black text-center mb-20">Der Ansatz</h1>
+    </div>
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
         {
-            steps.map((step) => (
+            steps.map((step, i) => (
                 <WorkflowCard
                     number={step.number}
                     title={step.title}
                     body={step.body}
+                    delay={i * 150}
                 />
             ))
         }
