@@ -1,0 +1,150 @@
+---
+interface Props {
+    variant?: "light" | "dark";
+}
+const { variant = "light" } = Astro.props;
+
+const links = [
+    { label: "Projekte", href: "/projekte" },
+    { label: "Team", href: "/team" },
+    { label: "Kontakt", href: "/kontakt" },
+];
+const pathname = Astro.url.pathname;
+const isHome = pathname === "/";
+const textColor = variant === "dark" ? "text-black" : "text-text-light";
+---
+
+<nav class="absolute top-10 left-4 right-4 md:left-10 md:right-10 z-50">
+    <!-- Top bar -->
+    <div class="flex items-center justify-between px-6 py-4">
+        <!-- Logo -->
+        <a
+            href="/"
+            class:list={[
+                "text-sm tracking-widest uppercase",
+                textColor,
+                isHome ? "font-bold" : "font-light",
+            ]}
+            data-nav-item
+            {...isHome ? { "data-nav-active": true } : {}}
+        >
+            salzsammler
+        </a>
+
+        <!-- Desktop: nav links -->
+        <ul class="hidden md:flex gap-8">
+            {
+                links.map((l) => (
+                    <li>
+                        <a
+                            href={l.href}
+                            class:list={[
+                                "text-sm tracking-wide hover:opacity-70 transition-opacity",
+                                textColor,
+                                pathname.startsWith(l.href)
+                                    ? "font-bold"
+                                    : "font-light",
+                            ]}
+                            data-nav-item
+                            {...(pathname.startsWith(l.href)
+                                ? { "data-nav-active": true }
+                                : {})}
+                        >
+                            {l.label}
+                        </a>
+                    </li>
+                ))
+            }
+        </ul>
+
+        <!-- Desktop: language switcher (disabled) -->
+
+        <!-- Mobile: hamburger button -->
+        <button
+            id="nav-toggle"
+            class:list={[
+                "md:hidden p-1 rounded-md transition-opacity hover:opacity-70",
+                textColor,
+            ]}
+            aria-label="Menü öffnen"
+            aria-expanded="false"
+        >
+            <!-- Hamburger icon -->
+            <svg
+                id="hamburger-icon"
+                xmlns="http://www.w3.org/2000/svg"
+                class="w-6 h-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                stroke-width="2"
+            >
+                <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M4 6h16M4 12h16M4 18h16"></path>
+            </svg>
+            <!-- Close icon (hidden by default) -->
+            <svg
+                id="close-icon"
+                xmlns="http://www.w3.org/2000/svg"
+                class="w-6 h-6 hidden"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                stroke-width="2"
+            >
+                <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+        </button>
+    </div>
+
+    <!-- Mobile: dropdown menu -->
+    <div
+        id="mobile-menu"
+        class="hidden flex-col gap-4 px-6 py-6 bg-primary rounded-2xl mt-1 md:hidden"
+    >
+        {
+            links.map((l) => (
+                <a
+                    href={l.href}
+                    class:list={[
+                        "text-text-light text-sm tracking-wide hover:opacity-70 transition-opacity",
+                        pathname.startsWith(l.href)
+                            ? "font-bold"
+                            : "font-medium",
+                    ]}
+                >
+                    {l.label}
+                </a>
+            ))
+        }
+    </div>
+</nav>
+
+<script>
+    const toggle = document.getElementById("nav-toggle");
+    const menu = document.getElementById("mobile-menu");
+    const hamburgerIcon = document.getElementById("hamburger-icon");
+    const closeIcon = document.getElementById("close-icon");
+
+    toggle?.addEventListener("click", () => {
+        const isOpen = menu?.classList.contains("flex");
+        if (isOpen) {
+            menu?.classList.remove("flex");
+            menu?.classList.add("hidden");
+            hamburgerIcon?.classList.remove("hidden");
+            closeIcon?.classList.add("hidden");
+            toggle.setAttribute("aria-expanded", "false");
+        } else {
+            menu?.classList.remove("hidden");
+            menu?.classList.add("flex");
+            hamburgerIcon?.classList.add("hidden");
+            closeIcon?.classList.remove("hidden");
+            toggle.setAttribute("aria-expanded", "true");
+        }
+    });
+</script>

@@ -1,0 +1,64 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Nav from "../components/Nav.astro";
+import Hero from "../components/Hero.astro";
+import TeamCard from "../components/team/TeamCard.astro";
+import Footer from "../components/Footer.astro";
+
+const members = [
+    {
+        image: "/images/team/nic.jpeg",
+        name: "Nic Schilling",
+        role: "Creative Direction",
+        backTitle: "Co-Founder",
+        backBody:
+            "Konzeption und Design. Nic sorgt dafür, dass aus Ideen echte Erlebnisse werden.",
+    },
+    {
+        image: "/images/team/ruben.png",
+        name: "Ruben Schäfer",
+        role: "Technology",
+        backTitle: "Co-Founder",
+        backBody:
+            "Entwicklung und technische Umsetzung. Ruben baut die Systeme, die unsere Installationen zum Leben erwecken.",
+    },
+    {
+        image: "/images/team/tina.png",
+        name: "Tina Wolfrum",
+        role: "Artist",
+        backTitle: "Artist",
+        backBody:
+            "Grafikdesign und visuelle Gestaltung. Tina entwickelt Charaktere, Illustrationen und ganze Spielwelten.",
+    },
+];
+---
+
+<Layout title="Team – Salzsammler Studios">
+    <Nav variant="dark" />
+    <div class="p-10 max-w-3xl mt-30 ml-5">
+        <h1 class="text-display text-black">
+            Hinter jedem Erlebnis steckt ein Team
+        </h1>
+        <p class="text-body-dark pt-8 max-w-xl">
+            Hinter unseren Projekten stecken Menschen mit unterschiedlichen
+            Hintergründen aus Kunst, Technik und Kultur. Gemeinsam entwickeln
+            wir Erlebnisse, die nicht nur beeindrucken, sondern bedeuten.
+        </p>
+    </div>
+    <main class="h-[90dvh] px-6 py-14">
+        <div class="flex flex-row flex-wrap justify-center gap-16">
+            {
+                members.map((m) => (
+                    <TeamCard
+                        image={m.image}
+                        name={m.name}
+                        role={m.role}
+                        backTitle={m.backTitle}
+                        backBody={m.backBody}
+                    />
+                ))
+            }
+        </div>
+    </main>
+    <Footer />
+</Layout>

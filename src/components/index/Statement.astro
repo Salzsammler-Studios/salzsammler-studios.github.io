@@ -1,0 +1,64 @@
+---
+import StatementCard from "./StatementCard.astro";
+import Button from "../Button.astro";
+---
+
+<section class="relative h-auto overflow-hidden">
+    <div
+        class="grid grid-cols-1 md:grid-cols-2 gap-4 py-10 md:py-20 px-6 md:px-20"
+    >
+        <div>
+            <h1 data-fade data-fade-delay="0" class="text-heading pb-6">
+                Wissen vermitteln ist gut.<br />Wissen <span class="font-light"
+                    >erleben</span
+                > ist besser.
+            </h1>
+            <p data-fade data-fade-delay="100" class="text-body-dark pb-20">
+                Texttafeln und Vitrinen haben ihren Platz, <br />
+                aber die Besucherinnen und Besucher von morgen<br />
+                erwarten mehr.
+            </p>
+            <Button
+                data-fade
+                data-fade-delay="200"
+                href="/projekte"
+                label="Unsere Projekte"
+            />
+        </div>
+        <div class="grid grid-cols-1 gap-4 ml-auto w-full max-w-sm">
+            <StatementCard
+                title="Individuell konzipiert"
+                text="Wir entwickeln jede Installation von Grund auf neu. Passend zu Ihrem Raum, Ihren Inhalten und Ihrem Publikum."
+                delay={100}
+            >
+                <img
+                    class="w-full h-full object-contain"
+                    src="/icons/web-puzzle.png"
+                    alt="An Image of two puzzle pieces"
+                />
+            </StatementCard>
+            <StatementCard
+                title="Didaktische Tiefe"
+                text="Unser Team verbindet technisches Know-how mit pädagogischer Kompetenz."
+                delay={200}
+            >
+                <img
+                    class="w-full h-full object-contain"
+                    src="/icons/web-wissen.png"
+                    alt="An Image of a Lightbulb"
+                />
+            </StatementCard>
+            <StatementCard
+                title="Mit Ihnen gedacht"
+                text="Die besten Erlebnisse entstehen, wo Ihr Fachwissen und unsere Erfahrung aufeinandertreffen."
+                delay={300}
+            >
+                <img
+                    class="w-full h-full object-contain"
+                    src="/icons/web-hand.png"
+                    alt="An Image of a two hands shaking"
+                />
+            </StatementCard>
+        </div>
+    </div>
+</section>

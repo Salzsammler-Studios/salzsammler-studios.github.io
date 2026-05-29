@@ -1,0 +1,170 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Nav from "../../components/Nav.astro";
+---
+
+<Layout title="Datenschutzerklärung – Der Schalter">
+    <main class="min-h-screen px-6 py-30 max-w-3xl mx-auto">
+        <h1 class="text-heading mb-2">Datenschutzerklärung</h1>
+        <p class="text-body-dark mb-12">
+            App: <strong class="font-semibold text-stone-700"
+                >Der Schalter</strong
+            >
+            &nbsp;|&nbsp; Zuletzt aktualisiert: Februar 2026
+        </p>
+
+        <!-- 1. Verantwortlicher -->
+        <section class="mb-10">
+            <h2 class="text-subheading text-primary mb-3">
+                1. Verantwortlicher
+            </h2>
+            <address class="not-italic text-body-dark space-y-1">
+                <p>Schäfer &amp; Schilling GbR, Salzsammler</p>
+                <p>
+                    E-Mail:
+                    <a
+                        href="mailto:info@salzsammler.de"
+                        class="text-primary underline hover:opacity-80"
+                    >
+                        info@salzsammler.de
+                    </a>
+                </p>
+            </address>
+        </section>
+
+        <!-- 2. Grundsatz -->
+        <section class="mb-10">
+            <h2 class="text-subheading text-primary mb-3">2. Grundsatz</h2>
+            <p class="text-body-dark">
+                Wir nehmen den Schutz Ihrer persönlichen Daten ernst. Diese
+                Datenschutzerklärung erläutert, welche Daten die App
+                <em>Der Schalter</em> erhebt, wie sie verwendet werden und welche
+                Rechte Sie haben.
+            </p>
+        </section>
+
+        <!-- 3. Kamerazugriff -->
+        <section class="mb-10">
+            <h2 class="text-subheading mb-3">
+                3. Kamerazugriff und QR-Code-Scan
+            </h2>
+            <p class="text-body-dark mb-3">
+                Die App verwendet die Kamera Ihres Geräts ausschließlich, um
+                QR-Codes zu erkennen. Es werden dabei:
+            </p>
+            <ul class="list-disc list-inside text-body-dark mb-3 space-y-1">
+                <li>keine Fotos oder Videos aufgenommen,</li>
+                <li>keine Kamerabilder gespeichert oder weitergeleitet,</li>
+                <li>keine Bilddaten an Server übertragen.</li>
+            </ul>
+            <p class="text-body-dark mb-3">
+                Die Kameraverarbeitung findet vollständig lokal auf Ihrem Gerät
+                statt. Sobald ein QR-Code erkannt wurde, wird nur der darin
+                enthaltene Text (ein Stationsbezeichner) intern
+                weiterverarbeitet.
+            </p>
+            <p class="text-body-dark">
+                <span class="font-semibold">Rechtsgrundlage:</span> Art. 6 Abs. 1
+                lit. b DSGVO
+            </p>
+        </section>
+
+        <!-- 4. Gewinnspiel-Formular -->
+        <section class="mb-10">
+            <h2 class="text-subheading mb-3">4. Gewinnspiel-Formular</h2>
+            <p class="text-body-dark mb-3">
+                Wenn Sie freiwillig am Gewinnspiel teilnehmen, werden folgende
+                Daten erhoben:
+            </p>
+            <ul class="list-disc list-inside text-body-dark mb-3 space-y-1">
+                <li><span class="font-semibold">Name</span></li>
+                <li><span class="font-semibold">E-Mail-Adresse</span></li>
+            </ul>
+            <p class="text-body-dark mb-3">
+                Diese Daten werden per HTTPS an unseren Server (
+                <code class="bg-stone-100 px-1 rounded text-sm"
+                    >salzsammler.de</code
+                >) übermittelt und anschließend an die
+                <span class="font-semibold">Sparkasse Selb</span> als Veranstalterin
+                des Gewinnspiels weitergeleitet. Die Sparkasse ist für die weitere
+                Verarbeitung Ihrer Daten im Rahmen des Gewinnspiels verantwortlich.
+                Wir selbst speichern oder verwenden die Daten nicht darüber hinaus.
+            </p>
+            <p class="text-body-dark">
+                <span class="font-semibold">Rechtsgrundlage:</span> Art. 6 Abs. 1
+                lit. a DSGVO (Einwilligung)
+            </p>
+        </section>
+
+        <!-- 5. Keine weiteren Datenerhebungen -->
+        <section class="mb-10">
+            <h2 class="text-subheading mb-3">
+                5. Keine weiteren Datenerhebungen
+            </h2>
+            <p class="text-body-dark">
+                Die App erhebt keine weiteren personenbezogenen Daten. Es werden
+                keine Standortdaten, Gerätekennungen, Nutzungsstatistiken oder
+                Absturzberichte an externe Dienste übermittelt. Es werden keine
+                Tracking- oder Werbebibliotheken von Drittanbietern eingesetzt.
+            </p>
+        </section>
+
+        <!-- 6. Datenspeicherung -->
+        <section class="mb-10">
+            <h2 class="text-subheading text-primary mb-3">
+                6. Datenspeicherung
+            </h2>
+            <p class="text-body-dark">
+                Alle Spielfortschritte und App-Daten werden ausschließlich lokal
+                auf Ihrem Gerät gespeichert. Es gibt keine Nutzerkonten und
+                keine Cloud-Synchronisierung.
+            </p>
+        </section>
+
+        <!-- 7. Ihre Rechte -->
+        <section class="mb-10">
+            <h2 class="text-subheading text-primary mb-3">7. Ihre Rechte</h2>
+            <p class="text-body-dark mb-3">Sie haben das Recht auf:</p>
+            <ul class="list-disc list-inside text-body-dark mb-3 space-y-1">
+                <li>Auskunft über Ihre gespeicherten Daten (Art. 15 DSGVO)</li>
+                <li>Berichtigung unrichtiger Daten (Art. 16 DSGVO)</li>
+                <li>Löschung Ihrer Daten (Art. 17 DSGVO)</li>
+                <li>Einschränkung der Verarbeitung (Art. 18 DSGVO)</li>
+                <li>Widerruf einer Einwilligung (Art. 7 Abs. 3 DSGVO)</li>
+                <li>Beschwerde bei einer Aufsichtsbehörde (Art. 77 DSGVO)</li>
+            </ul>
+            <p class="text-body-dark">
+                Zur Ausübung Ihrer Rechte:
+                <a
+                    href="mailto:info@salzsammler.de"
+                    class="text-primary underline hover:opacity-80"
+                >
+                    info@salzsammler.de
+                </a>
+            </p>
+        </section>
+
+        <!-- 8. Datensicherheit -->
+        <section class="mb-10">
+            <h2 class="text-subheading text-primary mb-3">
+                8. Datensicherheit
+            </h2>
+            <p class="text-body-dark">
+                Die Übermittlung von Gewinnspieldaten erfolgt verschlüsselt via
+                HTTPS/TLS.
+            </p>
+        </section>
+
+        <!-- 9. Änderungen -->
+        <section class="mb-10">
+            <h2 class="text-subheading text-primary mb-3">
+                9. Änderungen dieser Datenschutzerklärung
+            </h2>
+            <p class="text-body-dark">
+                Wir behalten uns vor, diese Datenschutzerklärung bei Bedarf
+                anzupassen. Die jeweils aktuelle Version ist unter der URL
+                erreichbar, unter der Sie dieses Dokument gefunden haben.
+            </p>
+        </section>
+    </main>
+</Layout>

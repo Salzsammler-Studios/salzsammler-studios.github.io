@@ -1,0 +1,52 @@
+---
+const logos = [
+    { src: "/partner-logos/logo-fff.png", alt: "FFF" },
+    { src: "/partner-logos/logo-sparkasse.png", alt: "Sparkasse Selb" },
+    { src: "/partner-logos/logo-innovativehs.png", alt: "Innovative HS" },
+    { src: "/partner-logos/logo-iei.png", alt: "IEI" },
+    { src: "/partner-logos/logo-regensburg.png", alt: "Regensburg" },
+    { src: "/partner-logos/logo-welterbe.png", alt: "Welterbe" },
+];
+
+// Duplicate for seamless infinite loop
+const track = [...logos, ...logos];
+---
+
+<section class="py-16 overflow-hidden bg-white">
+    <h2 class="text-heading text-left mx-20 mb-10">Unsere Partner</h2>
+
+    <div class="relative w-full overflow-hidden">
+        <div class="flex gap-16 w-max animate-marquee">
+            {
+                track.map((logo) => (
+                    <div class="w-40 h-20 flex items-center justify-center shrink-0">
+                        <img
+                            src={logo.src}
+                            alt={logo.alt}
+                            class="max-w-full max-h-full object-contain hover:grayscale-0 hover:opacity-100 transition-all duration-300"
+                        />
+                    </div>
+                ))
+            }
+        </div>
+    </div>
+</section>
+
+<style>
+    @keyframes marquee {
+        from {
+            transform: translateX(0);
+        }
+        to {
+            transform: translateX(-50%);
+        }
+    }
+
+    .animate-marquee {
+        animation: marquee 18s linear infinite;
+    }
+
+    .animate-marquee:hover {
+        animation-play-state: paused;
+    }
+</style>

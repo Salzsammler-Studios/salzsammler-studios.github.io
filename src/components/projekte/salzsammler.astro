@@ -1,0 +1,141 @@
+---
+interface Props {
+    lang?: "de" | "en";
+}
+
+const { lang = "de" } = Astro.props;
+
+const youtubeId =
+    lang === "de"
+        ? "0PwrLX29h6Q?si=wmpMxkHU5bEdnCPl"
+        : "K_fryycQ1yw?si=5M-bsBlv1O1lc9jT";
+const youtubeUrl = `https://www.youtube.com/embed/${youtubeId}`;
+
+// Plain ID for thumbnail URL (strip the ?si= tracking param)
+const youtubeIdClean = youtubeId.split("?")[0];
+const youtubeThumbnail = `https://i.ytimg.com/vi/${youtubeIdClean}/maxresdefault.jpg`;
+---
+
+<section class="px-6 py-24">
+    <div>
+        <h1 class="text-heading">Salzsammler</h1>
+        <p class="text-subheading font-body font-bold text-secondary">
+            Eine interaktive Installation, die es Kindern ermöglicht, <br
+            />Geschichte mit Spielspaß zu begegnen.
+        </p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
+        <!-- YouTube video -->
+        <!-- YouTube facade: thumbnail + play button, iframe loads on click -->
+        <div
+            class="relative w-full aspect-video rounded-2xl overflow-hidden shadow-md cursor-pointer group"
+            data-yt-src={`${youtubeUrl}&autoplay=1`}
+        >
+            <img
+                src={youtubeThumbnail}
+                alt="Salzsammler Video abspielen"
+                class="absolute inset-0 w-full h-full object-cover"
+                loading="lazy"
+                draggable="false"
+            />
+            <!-- YouTube-style play button -->
+            <div class="absolute inset-0 flex items-center justify-center">
+                <div
+                    class="w-16 h-11 bg-[#FF0000] rounded-xl flex items-center justify-center shadow-lg transition-transform duration-150 group-hover:scale-110"
+                >
+                    <svg
+                        viewBox="0 0 24 24"
+                        class="w-7 h-7 text-white ml-0.5"
+                        fill="currentColor"
+                        aria-hidden="true"
+                    >
+                        <path d="M8 5v14l11-7z"></path>
+                    </svg>
+                </div>
+            </div>
+        </div>
+        <!-- Description -->
+        <div>
+            <p class="text-body-dark">
+                Salzsammler ist eine interaktive Bodenprojektion, die Kinder in
+                die Geschichte der Stadt Regensburg eintauchen lässt. Zwei
+                Szenarien laden zum Entdecken ein: Im ersten erleben die Kinder
+                den mittelalterlichen Handel und Transport von Waren entlang der
+                Donau. Im zweiten erkunden sie Aufbau und Alltag eines römischen
+                Legionslagers.
+            </p>
+
+            <!-- Character figures -->
+            <ul
+                class="flex flex-row items-end justify-center gap-8 mt-8 list-none"
+            >
+                {
+                    [
+                        {
+                            src: "/images/projects/Buerger03.png",
+                            alt: "Bürger 3",
+                        },
+                        {
+                            src: "/images/projects/Buergerin01.png",
+                            alt: "Bürgerin 1",
+                        },
+                        {
+                            src: "/images/projects/Buerger01.png",
+                            alt: "Bürger 1",
+                        },
+                        {
+                            src: "/images/projects/Buergerin02.png",
+                            alt: "Bürgerin 2",
+                        },
+                        {
+                            src: "/images/projects/Buerger02.png",
+                            alt: "Bürger 2",
+                        },
+                    ].map((figure) => (
+                        <li>
+                            <img
+                                src={figure.src}
+                                alt={figure.alt}
+                                class="h-14 w-auto object-contain"
+                                loading="lazy"
+                                draggable="false"
+                            />
+                        </li>
+                    ))
+                }
+            </ul>
+            <p class="text-body-dark pt-6">
+                Was Salzsammler besonders macht: Die Kinder spielen nicht vor
+                einem Bildschirm, sondern mitten in der Projektion. Ihr eigener
+                Körper wird zum Werkzeug: jede Bewegung auf der Spielfläche
+                verändert die Welt unter ihren Füßen. So entsteht eine
+                Lernsituation, die nicht belehrt, sondern zum Erkunden einlädt.
+            </p>
+        </div>
+    </div>
+</section>
+
+<script>
+    function initYoutubeFacades() {
+        document.querySelectorAll("[data-yt-src]").forEach((wrapper) => {
+            if (wrapper.dataset.ytBound) return;
+            wrapper.dataset.ytBound = "true";
+
+            wrapper.addEventListener("click", () => {
+                const src = wrapper.dataset.ytSrc;
+                const iframe = document.createElement("iframe");
+                iframe.src = src;
+                iframe.allow =
+                    "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
+                iframe.allowFullscreen = true;
+                iframe.frameBorder = "0";
+                iframe.className = "absolute inset-0 w-full h-full";
+                wrapper.innerHTML = "";
+                wrapper.appendChild(iframe);
+            });
+        });
+    }
+
+    initYoutubeFacades();
+    document.addEventListener("astro:page-load", initYoutubeFacades);
+</script>

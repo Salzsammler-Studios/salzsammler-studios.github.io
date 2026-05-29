@@ -1,0 +1,104 @@
+@import "tailwindcss";
+
+/* ─── Theme A (default) ───────────────────────────────────── */
+@theme {
+    --color-primary: #af4d42;
+    --color-secondary: #ffc35b;
+    --color-tertiary: #fceada;
+    --color-background: #ffffff;
+    --color-support-background: #fff6e3;
+    --color-black: #1a1a1a;
+    --color-text-light: #fff5dc;
+
+    --font-heading: "Raleway", sans-serif;
+    --font-body: "Merriweather", serif;
+}
+
+/* ─── Theme B ─────────────────────────────────────────────── */
+/* To switch: change data-theme="a" → data-theme="b" in Layout.astro */
+[data-theme="b"] {
+    --color-primary: #0f1226;
+    --color-secondary: #627cff;
+    --color-secondary-light: #d5dcff;
+    --color-tertiary: #f2f3f7;
+    --color-background: #ffffff;
+    --color-support-background: #f2f3f7;
+    --color-black: #0a0b14;
+    --color-text-light: #ffffff;
+}
+
+@font-face {
+    font-family: "Raleway";
+    src: url("/fonts/Raleway/Raleway-VariableFont_wght.ttf") format("truetype");
+    font-weight: 100 900;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: "Raleway";
+    src: url("/fonts/Raleway/Raleway-Italic-VariableFont_wght.ttf")
+        format("truetype");
+    font-weight: 100 900;
+    font-style: italic;
+    font-display: swap;
+}
+@font-face {
+    font-family: "Merriweather";
+    src: url("/fonts/Merriweather/Merriweather-VariableFont_opsz,wdth,wght.ttf")
+        format("truetype");
+    font-weight: 100 900;
+    font-style: normal;
+    font-display: swap;
+}
+@font-face {
+    font-family: "Merriweather";
+    src: url("/fonts/Merriweather/Merriweather-Italic-VariableFont_opsz,wdth,wght.ttf")
+        format("truetype");
+    font-weight: 100 900;
+    font-style: italic;
+    font-display: swap;
+}
+
+/* ─── Scroll reveal ───────────────────────────────────────── */
+[data-fade] {
+    opacity: 0;
+    transform: translateY(1.5rem);
+    transition:
+        opacity 0.6s ease,
+        transform 0.6s ease;
+}
+
+[data-fade].is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+@layer utilities {
+    .clip-diagonal-right {
+        clip-path: polygon(0 0, 45% 0, 30% 100%, 0 100%);
+    }
+    .clip-diagonal-section {
+        clip-path: polygon(0 0, 100% 8%, 100% 100%, 0 92%);
+    }
+}
+
+@layer components {
+    .text-body {
+        @apply font-body text-sm text-text-light leading-relaxed;
+    }
+    .text-body-dark {
+        @apply font-body text-sm text-black leading-relaxed;
+    }
+    .text-display {
+        @apply font-heading font-semibold text-4xl md:text-6xl text-text-light;
+    }
+    .text-heading {
+        @apply font-heading font-bold text-4xl text-stone-900 leading-tight;
+    }
+    .text-subheading {
+        @apply font-heading font-semibold text-lg text-white;
+    }
+    .text-label {
+        @apply font-heading font-semibold text-xs tracking-widest text-stone-400;
+    }
+}

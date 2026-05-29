@@ -1,0 +1,107 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Nav from "../../components/Nav.astro";
+---
+
+<Layout title="Support – Der Schalter">
+    <main class="min-h-screen px-6 py-30 max-w-3xl mx-auto">
+        <h1 class="text-heading mb-2">Support – Der Schalter</h1>
+        <p class="text-body-dark mb-12">Wir helfen dir gerne weiter.</p>
+
+        <!-- Kontakt -->
+        <section class="mb-10">
+            <h2 class="text-subheading text-primary mb-3">Kontakt</h2>
+            <p class="text-body-dark mb-3">
+                Bei Fragen, Problemen oder Feedback zur App
+                <em>Der Schalter</em> erreichst du uns per E-Mail:
+            </p>
+            <p class="text-body-dark">
+                <a
+                    href="mailto:kontakt@salzsammler.de"
+                    class="text-primary underline hover:opacity-80"
+                >
+                    kontakt@salzsammler.de
+                </a>
+            </p>
+        </section>
+
+        <!-- Häufige Fragen -->
+        <section class="mb-10">
+            <h2 class="text-subheading text-primary mb-6">Häufige Fragen</h2>
+
+            <div class="space-y-8">
+                <div>
+                    <h3
+                        class="font-heading font-semibold text-base text-stone-900 mb-2"
+                    >
+                        Die Kamera startet nicht
+                    </h3>
+                    <p class="text-body-dark">
+                        Stelle sicher, dass die App die Berechtigung hat, auf
+                        die Kamera zuzugreifen. Gehe dazu in die
+                        <strong class="font-semibold">Einstellungen</strong>
+                        deines Geräts &gt;
+                        <strong class="font-semibold">Der Schalter</strong>
+                        &gt;
+                        <strong class="font-semibold">Kamera</strong>
+                        und aktiviere den Zugriff.
+                    </p>
+                </div>
+
+                <div>
+                    <h3
+                        class="font-heading font-semibold text-base text-stone-900 mb-2"
+                    >
+                        Der QR-Code wird nicht erkannt
+                    </h3>
+                    <p class="text-body-dark">
+                        Halte die Kamera ruhig und sorge für ausreichend Licht.
+                        Der QR-Code sollte vollständig im Rahmen sichtbar sein.
+                    </p>
+                </div>
+
+                <div>
+                    <h3
+                        class="font-heading font-semibold text-base text-stone-900 mb-2"
+                    >
+                        Das Gewinnspiel-Formular lässt sich nicht absenden
+                    </h3>
+                    <p class="text-body-dark">
+                        Stelle sicher, dass du Name und E-Mail-Adresse
+                        ausgefüllt und die Teilnahmebedingungen akzeptiert hast.
+                        Prüfe außerdem deine Internetverbindung.
+                    </p>
+                </div>
+
+                <div>
+                    <h3
+                        class="font-heading font-semibold text-base text-stone-900 mb-2"
+                    >
+                        Die App stürzt ab oder verhält sich unerwartet
+                    </h3>
+                    <p class="text-body-dark">
+                        Schreib uns eine E-Mail an
+                        <a
+                            href="mailto:kontakt@salzsammler.de"
+                            class="text-primary underline hover:opacity-80"
+                        >
+                            kontakt@salzsammler.de
+                        </a>
+                        mit einer kurzen Beschreibung des Problems sowie deinem Gerätemodell
+                        und der iOS-Version. Wir melden uns so schnell wie möglich.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- App-Version -->
+        <section class="mb-10">
+            <h2 class="text-subheading text-primary mb-3">App-Version</h2>
+            <p class="text-body-dark">
+                Die aktuelle Version von <em>Der Schalter</em> ist im App Store verfügbar.
+                Stelle sicher, dass du die neueste Version installiert hast, um von
+                allen Verbesserungen zu profitieren.
+            </p>
+        </section>
+    </main>
+</Layout>

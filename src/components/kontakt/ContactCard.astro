@@ -1,0 +1,35 @@
+---
+interface Props {
+    text: string;
+    link: string;
+    href: string;
+}
+
+const { text, link, href } = Astro.props;
+---
+
+<div class="flex flex-col items-center">
+    <!-- Icon circle sits above the card via negative margin -->
+    <div
+        class="w-28 h-28 rounded-full bg-white shadow-md flex items-center justify-center z-10 -mb-14"
+    >
+        <slot />
+    </div>
+
+    <!-- Card body -->
+    <div
+        class="w-72 md:w-88 h-52 rounded-2xl bg-white shadow-md flex items-center justify-center"
+    >
+        <div class="flex flex-col items-center gap-3 pt-10 px-6">
+            <p class="text-2xl font-light text-primary text-center">{text}</p>
+            <a
+                href={href}
+                target="_blank"
+                rel="noopener noreferrer"
+                class="text-2xl font-semibold text-primary text-center hover:opacity-70 transition-opacity"
+            >
+                {link}
+            </a>
+        </div>
+    </div>
+</div>

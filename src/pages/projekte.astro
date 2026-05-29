@@ -1,0 +1,29 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Nav from "../components/Nav.astro";
+import Hero from "../components/Hero.astro";
+import Salzsammler from "../components/projekte/salzsammler.astro";
+import Derschalter from "../components/projekte/derschalter.astro";
+import Button from "../components/Button.astro";
+import Footer from "../components/Footer.astro";
+---
+
+<Layout title="Projekte – Salzsammler Studios">
+    <Nav />
+    <Hero line1="Einblick in unsere Arbeit" variant="half" />
+    <Salzsammler />
+    <Derschalter />
+    <div class="bg-secondary rounded-3xl mx-auto my-20 p-10 w-fit">
+        <h1 class="text-heading text-black pb-5">
+            Ihr nächstes Projekt wartet.
+        </h1>
+        <div class="flex justify-center">
+            <Button
+                href="/kontakt"
+                label="Gespräch vereinbaren"
+                variant="secondary"
+            />
+        </div>
+    </div>
+    <Footer />
+</Layout>
