@@ -1,6 +1,8 @@
 name: FTP Deployment
 
 on:
+  push:
+    branches: [main]
   workflow_dispatch:
 
 jobs:
@@ -22,6 +24,9 @@ jobs:
 
       - name: Build
         run: npm run build
+
+      - name: Copy PHP scripts into dist
+        run: cp server/contact.php dist/contact.php
 
       - name: Deploy over FTP
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
