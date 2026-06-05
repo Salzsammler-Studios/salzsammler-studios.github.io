@@ -90,10 +90,10 @@
         @apply font-body text-sm text-black leading-relaxed;
     }
     .text-display {
-        @apply font-heading font-semibold text-4xl md:text-6xl text-text-light;
+        @apply font-heading font-semibold text-3xl md:text-6xl text-text-light;
     }
     .text-heading {
-        @apply font-heading font-bold text-4xl text-stone-900 leading-tight;
+        @apply font-heading font-bold text-3xl md:text-4xl text-stone-900 leading-tight;
     }
     .text-subheading {
         @apply font-heading font-semibold text-lg text-white;
