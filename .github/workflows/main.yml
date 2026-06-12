@@ -36,5 +36,6 @@ jobs:
           server: hosting203126.ae831.netcup.net
           username: ${{ secrets.FTP_USERNAME }}
           password: ${{ secrets.FTP_PASSWORD }}
+          protocol: ftps
           server-dir: /salzsammler.de/
           local-dir: ./dist/
