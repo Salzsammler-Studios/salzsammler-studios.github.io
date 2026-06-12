@@ -211,11 +211,8 @@ import Layout from "../../layouts/Layout.astro";
             const json = await res.json();
 
             if (res.ok && json.status === "ok") {
-                form.reset();
-                btn.disabled = false;
                 btn.textContent = "✓ Gesendet";
                 btn.classList.add("btn-success");
-                setTimeout(resetBtn, 2500);
                 showToast("Danke! Deine Teilnahme wurde registriert.", true);
             } else {
                 resetBtn();
