@@ -1,0 +1,229 @@
+---
+import Layout from "../../layouts/Layout.astro";
+---
+
+<Layout title="Gewinnspiel – Der Schalter">
+    <main class="min-h-screen px-6 py-20 max-w-xl mx-auto">
+        <h1 class="text-heading mb-2">Gewinnspiel</h1>
+        <p class="text-body-dark mb-10">
+            Füll das Formular aus und nimm am Gewinnspiel teil.
+        </p>
+
+        <form id="gewinnspiel-form" class="flex flex-col gap-5" novalidate>
+            <div class="flex flex-col gap-1">
+                <label for="name" class="text-label text-black/60 pl-2"
+                    >Name</label
+                >
+                <input
+                    type="text"
+                    id="name"
+                    name="name"
+                    required
+                    autocomplete="name"
+                    class="bg-tertiary text-black placeholder:text-black/30 rounded-xl px-4 py-3 text-sm outline-none focus:ring-2 focus:ring-secondary transition"
+                    placeholder="Max Mustermann"
+                />
+                <p id="name-error" class="text-xs text-red-500 pl-2 hidden">
+                    Bitte gib deinen Namen ein.
+                </p>
+            </div>
+
+            <div class="flex flex-col gap-1">
+                <label for="email" class="text-label text-black/60 pl-2"
+                    >E-Mail</label
+                >
+                <input
+                    type="email"
+                    id="email"
+                    name="email"
+                    required
+                    autocomplete="email"
+                    class="bg-tertiary text-black placeholder:text-black/30 rounded-xl px-4 py-3 text-sm outline-none focus:ring-2 focus:ring-secondary transition"
+                    placeholder="max@example.de"
+                />
+                <p id="email-error" class="text-xs text-red-500 pl-2 hidden">
+                    Bitte gib eine gültige E-Mail-Adresse ein.
+                </p>
+            </div>
+
+            <div class="flex flex-col gap-1">
+                <label for="school" class="text-label text-black/60 pl-2"
+                    >Schule</label
+                >
+                <input
+                    type="text"
+                    id="school"
+                    name="school"
+                    class="bg-tertiary text-black placeholder:text-black/30 rounded-xl px-4 py-3 text-sm outline-none focus:ring-2 focus:ring-secondary transition"
+                    placeholder="Beispiel-Gymnasium München"
+                />
+            </div>
+
+            <div class="flex justify-end mt-2">
+                <button
+                    type="submit"
+                    id="submit-btn"
+                    class="bg-secondary text-white font-semibold text-sm rounded-xl px-8 py-3 hover:opacity-80 transition-all duration-300 disabled:opacity-50"
+                >
+                    Teilnehmen
+                </button>
+            </div>
+        </form>
+
+        <div
+            id="toast"
+            role="alert"
+            aria-live="polite"
+            class="fixed bottom-6 right-6 z-50 flex items-center gap-3 rounded-xl px-5 py-4 shadow-xl text-sm font-semibold text-white max-w-xs pointer-events-none"
+            style="opacity:0;transform:translateY(1rem);"
+        >
+            <span id="toast-icon"></span>
+            <span id="toast-message"></span>
+        </div>
+    </main>
+</Layout>
+
+<style>
+    #toast {
+        transition:
+            opacity 0.3s ease,
+            transform 0.3s ease;
+    }
+    #toast.toast-show {
+        opacity: 1 !important;
+        transform: translateY(0) !important;
+        pointer-events: auto !important;
+    }
+    #toast.toast-success {
+        background-color: #16a34a;
+    }
+    #toast.toast-error {
+        background-color: #ef4444;
+    }
+    #submit-btn.btn-success {
+        background-color: #16a34a;
+    }
+</style>
+
+<script>
+    const ENDPOINT = "https://salzsammler.de/der-schalter-api/send_email.php";
+    const API_KEY =
+        "1d96b22110c7bf8eb8b834a214c60564bf5d22a03b123d44c2d01a49bd173acc";
+
+    const form = document.getElementById(
+        "gewinnspiel-form",
+    ) as HTMLFormElement | null;
+    const btn = document.getElementById(
+        "submit-btn",
+    ) as HTMLButtonElement | null;
+    const toast = document.getElementById("toast")!;
+    const toastIcon = document.getElementById("toast-icon")!;
+    const toastMessage = document.getElementById("toast-message")!;
+
+    let toastTimer: ReturnType<typeof setTimeout> | null = null;
+
+    function showToast(message: string, success: boolean) {
+        if (toastTimer) clearTimeout(toastTimer);
+        toast.classList.remove("toast-success", "toast-error", "toast-show");
+        void toast.offsetWidth;
+        toast.classList.add(
+            success ? "toast-success" : "toast-error",
+            "toast-show",
+        );
+        toastIcon.textContent = success ? "✓" : "✕";
+        toastMessage.textContent = message;
+        toastTimer = setTimeout(
+            () => toast.classList.remove("toast-show"),
+            4000,
+        );
+    }
+
+    function resetBtn() {
+        if (!btn) return;
+        btn.disabled = false;
+        btn.textContent = "Teilnehmen";
+        btn.classList.remove("btn-success");
+    }
+
+    function getField(name: string) {
+        return (
+            form!.elements.namedItem(name) as HTMLInputElement
+        ).value.trim();
+    }
+
+    function isValidEmail(value: string) {
+        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
+    }
+
+    function setError(id: string, show: boolean) {
+        document.getElementById(id)?.classList.toggle("hidden", !show);
+    }
+
+    form?.addEventListener("submit", async (e) => {
+        e.preventDefault();
+        if (!form || !btn) return;
+
+        const name = getField("name");
+        const email = getField("email");
+        const school = getField("school");
+
+        let valid = true;
+
+        if (!name || typeof name !== "string" || name.length === 0) {
+            setError("name-error", true);
+            valid = false;
+        } else {
+            setError("name-error", false);
+        }
+
+        if (!email || !isValidEmail(email)) {
+            setError("email-error", true);
+            valid = false;
+        } else {
+            setError("email-error", false);
+        }
+
+        if (!valid) return;
+
+        btn.disabled = true;
+        btn.textContent = "Wird gesendet…";
+
+        const content =
+            `Name: ${name}\n` + `E-Mail: ${email}\n` + `Schule: ${school}`;
+
+        const payload = {
+            name,
+            address: email,
+            subject: "Gewinnspiel – Der Schalter",
+            content,
+        };
+
+        try {
+            const res = await fetch(ENDPOINT, {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                    "X-API-KEY": API_KEY,
+                },
+                body: JSON.stringify(payload),
+            });
+
+            const json = await res.json();
+
+            if (res.ok && json.status === "ok") {
+                form.reset();
+                btn.disabled = false;
+                btn.textContent = "✓ Gesendet";
+                btn.classList.add("btn-success");
+                setTimeout(resetBtn, 2500);
+                showToast("Danke! Deine Teilnahme wurde registriert.", true);
+            } else {
+                resetBtn();
+                showToast(json.error ?? "Ein Fehler ist aufgetreten.", false);
+            }
+        } catch {
+            resetBtn();
+            showToast("Verbindungsfehler. Bitte versuche es erneut.", false);
+        }
+    });
+</script>
