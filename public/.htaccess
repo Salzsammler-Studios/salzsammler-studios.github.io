@@ -1,0 +1,8 @@
+RewriteEngine On
+RewriteBase /
+
+# For /der-schalter/* paths that don't resolve to a real file or directory,
+# serve the download page
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^der-schalter/.+ /der-schalter/ [L]
