@@ -11,7 +11,7 @@ $API_KEY = "1d96b22110c7bf8eb8b834a214c60564bf5d22a03b123d44c2d01a49bd173acc";
 $ALLOWED_ORIGIN = "https://salzsammler.de";
 
 // Where emails should go
-$RECEIVER_EMAIL = "info@salzsammler.de";
+$RECEIVER_EMAIL = "finanziellebildung@sparkasse-hochfranken.de";
 
 // From address (must exist on your domain ideally)
 $FROM_EMAIL = "gewinnspiel@salzsammler.de";
