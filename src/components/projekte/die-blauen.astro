@@ -1,0 +1,70 @@
+---
+const youtubeId = "7vY50kWrqPk";
+const youtubeUrl = `https://www.youtube.com/embed/${youtubeId}`;
+const youtubeThumbnail = `https://i.ytimg.com/vi/${youtubeId}/maxresdefault.jpg`;
+---
+
+<section class="py-10 md:py-20 px-6 md:px-20">
+    <div>
+        <h1 class="text-heading">Die Blauen</h1>
+        <p class="text-subheading font-body font-bold text-secondary">
+            XR trifft Didaktik.
+        </p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mt-8">
+        <!-- YouTube facade -->
+        <div
+            class="relative w-full aspect-video rounded-2xl overflow-hidden shadow-md cursor-pointer group"
+            data-yt-src={`${youtubeUrl}?autoplay=1`}
+        >
+            <img
+                src={youtubeThumbnail}
+                alt="Die Blauen Video abspielen"
+                class="absolute inset-0 w-full h-full object-cover"
+                loading="lazy"
+                draggable="false"
+            />
+            <div class="absolute inset-0 flex items-center justify-center">
+                <div
+                    class="w-16 h-11 bg-[#FF0000] rounded-xl flex items-center justify-center shadow-lg transition-transform duration-150 group-hover:scale-110"
+                >
+                    <svg
+                        viewBox="0 0 24 24"
+                        class="w-7 h-7 text-white ml-0.5"
+                        fill="currentColor"
+                        aria-hidden="true"
+                    >
+                        <path d="M8 5v14l11-7z"></path>
+                    </svg>
+                </div>
+            </div>
+        </div>
+        <!-- Description -->
+        <div>
+            <p class="text-body-dark">
+                Die Blauen ist eine interaktive Bodenprojektion über das
+                Einlasspersonal der Bayreuther Festspiele. Vom 27.07. bis
+                07.08.2026 wurde die Installation im Neuseum gezeigt und dort
+                live entwickelt. Das Publikum erlebte mit, wie das Projekt Tag
+                für Tag Form annahm: von ersten Skizzen und Platzhaltern, mit
+                denen dank der vorbereiteten Grundstruktur bereits interagiert
+                werden konnte, bis zur fertigen Installation.
+            </p>
+            <p class="text-body-dark pt-6">
+                Was Die Blauen besonders macht: Die Entwicklung fand im offenen
+                Austausch mit der Stadtgesellschaft statt. Besucher:innen kamen
+                direkt mit dem Team ins Gespräch, darunter auch aktive und
+                ehemalige Blaue. Zwei Besucherinnen, die den Beruf vor über
+                vierzig Jahren ausübten, brachten Einblicke mit, die unmittelbar
+                in die Installation einflossen. Künftig ist Die Blauen auf
+                Messen und Veranstaltungen zu erleben.
+            </p>
+            <p class="text-body-dark pt-6">
+                Begleitend fand ein FLINTA*-Workshop zu XR und Didaktik statt,
+                gefördert durch Future Skills von Start Into Media.
+                Teilnehmende aus der Medienbranche erprobten dort Pitching,
+                Ideation und XR-Design.
+            </p>
+        </div>
+    </div>
+</section>
