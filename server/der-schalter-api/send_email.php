@@ -77,6 +77,7 @@ $name = trim(strip_tags($data["name"]));
 $address = trim(strip_tags($data["address"]));
 $subject = trim(strip_tags($data["subject"]));
 $content = trim(strip_tags($data["content"]));
+$phone = isset($data["phone"]) ? trim(strip_tags($data["phone"])) : "";
 
 // Prevent header injection
 $subject = str_replace(["\r", "\n"], "", $subject);
@@ -87,8 +88,9 @@ $subject = str_replace(["\r", "\n"], "", $subject);
 
 $body =
     "Name: $name\n" .
-    "Address: $address\n\n" .
-    "-------------------------\n" .
+    "E-Mail: $address\n" .
+    ($phone !== "" ? "Telefon Erziehungsberechtigte: $phone\n" : "") .
+    "\n-------------------------\n" .
     "$content\n";
 
 $headers = "From: $FROM_EMAIL\r\n";
